@@ -53,3 +53,36 @@ Total channel: 1.075 views dalam 48 jam. Top content 28 hari: AC (680 pada lapor
 - [ ] Nilai ulang video "Tidak Tidur" setelah 48 jam
 - [ ] Hook video berikutnya: klaim mitos langsung di detik 0-2, teks besar + gerakan
 - [ ] Uji pola yang sama di 3-5 video berikutnya
+
+## 2026-11-11 18:39-18:43: Gelombang kedua + perbandingan engagement
+
+### Realtime 48 jam (18:39)
+
+| Video | 18:29 | 18:39 | Selisih |
+|---|---|---|---|
+| Masuk Angin | 307 | 437 | +130 |
+| Tukang AC | 768 | 775 | +7 |
+| Tidak Tidur | 0 | 2 | +2 |
+| Total channel | 1.075 | 1.214 | +139 |
+
+Masuk Angin mendapat gelombang distribusi kedua (grafik engaged views: naik, datar, lalu naik lagi). Distribusi Shorts datang bergelombang; jeda bukan berarti video berhenti.
+
+### Engagement (18:43)
+
+| Metrik | Masuk Angin (umur 73 menit) | Tukang AC (umur 19 jam) |
+|---|---|---|
+| Views (realtime) | 437 | 775 |
+| Engaged views | 336 | 98 |
+| Rasio engaged/views | ~77% | ~13% |
+| Stayed to watch | **67,3%** | **11,9%** |
+| Swiped away | 32,7% | 88,1% |
+| Hype | 0 | 0 |
+
+### Koreksi kesimpulan
+
+- **Insight awal "Masuk Angin lebih masuk" ternyata benar.** Revisi sebelumnya (yang menyebut 65,5% terlalu rendah dan videonya tidak lolos tes) keliru setelah dibandingkan dengan video AC.
+- Views AC yang besar sebagian besar adalah penonton yang **langsung swipe** (88,1%). Hanya 98 yang benar-benar menonton.
+- Masuk Angin, dalam 73 menit, sudah punya engaged views 3x lebih banyak daripada AC dalam 19 jam.
+- **Jadikan Masuk Angin template**: topik keluhan sehari-hari, karakter stickman langsung terlihat di frame pertama.
+- Dugaan masalah AC: frame pembuka padat teks/infografis sehingga orang swipe sebelum tertarik. Perlu dicek di 2-3 detik pertama.
+- Audience Retention kedua video belum tersedia (diproses hingga 2 hari).
