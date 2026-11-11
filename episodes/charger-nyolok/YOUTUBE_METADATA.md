@@ -22,3 +22,24 @@ Subscribe Mitos Rumahan & Fakta Unik (@MitosRumahan), besok ada lagi!
 #mitosrumahan #faktaunik #hematlistrik #magiccom #charger #tagihanlistrik #shorts
 
 **Jadwal upload:** 18.30-19.30 WIB (pakai Schedule).
+
+---
+
+## Thumbnail
+- `thumbnail_shorts_1080x1920.jpg`: untuk Shorts (pilih sebagai cover di Studio/aplikasi bila tersedia). Teks: "CHARGER NYOLOK? PELAKUNYA MAGIC COM".
+- `thumbnail_1280x720.jpg`: untuk versi landscape atau tampilan di beranda/pencarian web.
+- Keduanya diambil dari frame 30,5 dtk (magic com + Rp40.000 per bulan + alat ukur 40 W).
+
+## Judul yang direkomendasikan
+Judul 1 (paling jelas soal topik). Judul 2 dan 3 untuk diuji bila perlu.
+
+## Tag
+Tag tambahan di kolom "Tags" Studio (opsional): mitos listrik, boros listrik, magic com, charger hp, tagihan listrik, tips hemat listrik, fakta unik indonesia
+
+## Komentar pin (tulis sendiri, lalu pin)
+"Sumber lengkap ada di deskripsi. Hitungannya pakai tarif PLN R-1 1.300 VA. Watt tiap alat bisa beda, cek label di bawah alatmu. Alat apa yang paling bikin boros di rumahmu? Tulis di komentar."
+
+## Data pendukung
+- Durasi 45 detik, 1080x1920, 30 fps. File upload: `charger-nyolok-shorts.mp4` (22 MB). Master: `charger-nyolok.mp4` (81 MB).
+- Suara: ElevenLabs "Jonathan Wiratama", model eleven_v4.
+- Catatan: angka watt magic com (40 W) adalah angka tengah; sebutkan di deskripsi (sudah ada).
