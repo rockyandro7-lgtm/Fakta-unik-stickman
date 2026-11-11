@@ -143,6 +143,10 @@ function drawFace(ctx, hx, hy, hr, f, o, sil) {
     if (k === 'squint') {
       ctx.beginPath(); ctx.moveTo(x - side * .035, y - .03); ctx.lineTo(x + side * .03, y); ctx.lineTo(x - side * .035, y + .03); ctx.stroke(); continue;
     }
+    if (k === 'flinch') {
+      // > <  (ujung menunjuk ke tengah wajah): meringis saat benturan/ledakan
+      ctx.beginPath(); ctx.moveTo(x + side * .035, y - .03); ctx.lineTo(x - side * .03, y); ctx.lineTo(x + side * .035, y + .03); ctx.stroke(); continue;
+    }
     if (k === 'happy') { ctx.beginPath(); ctx.arc(x, y + .015, .032, Math.PI * 1.1, Math.PI * 1.9); ctx.stroke(); continue; }
     if (k === 'spiral') {
       ctx.beginPath(); const rot = (o.t || 0) * 9 * side;
@@ -187,6 +191,7 @@ function drawFace(ctx, hx, hy, hr, f, o, sil) {
   else if (m === 'flat') { line(ctx, mx - .03, my, mx + .03, my, .014); }
   else if (m === 'frown') { ctx.beginPath(); ctx.arc(mx, my + .04, .04, Math.PI + .6, -.6); ctx.stroke(); }
   else if (m === 'smirk') { ctx.beginPath(); ctx.moveTo(mx - .035, my + .005); ctx.quadraticCurveTo(mx + .01, my + .02, mx + .045, my - .02); ctx.stroke(); }
+  else if (m === 'wobble') { ctx.beginPath(); for (let i = 0; i <= 12; i++) { const u = i / 12; const px = mx - .04 + u * .08, py = my + Math.sin(u * Math.PI * 3) * .009; i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); } ctx.stroke(); }
   else if (m === 'o') { ellipse(ctx, mx, my + .005, .02, .026); fillStroke(ctx, '#5a1e24', .012); }
   else if (m === 'grin' || m === 'teeth') {
     const w = m === 'teeth' ? .06 : .058, h = m === 'teeth' ? .045 : .042;
@@ -196,6 +201,8 @@ function drawFace(ctx, hx, hy, hr, f, o, sil) {
     else { ctx.fillStyle = '#fff'; ctx.fillRect(mx - w, my - .03, w * 2, .03); ellipse(ctx, mx, my + h * 1.25, w * .5, h * .45); ctx.fillStyle = '#e8707a'; ctx.fill(); }
     ctx.restore(); mp(); ctx.lineWidth = .013; ctx.strokeStyle = INK; ctx.stroke();
   }
+  // keringat (0..1): tetes di pelipis, aksesori ekspresi gugup
+  if (f.sweat) sweat(ctx, hx + hr * .78, hy - hr * .42, .05, clamp(f.sweat));
   // patch
   if (patch) {
     const side = patch.pos, lift = patch.lift || 0;

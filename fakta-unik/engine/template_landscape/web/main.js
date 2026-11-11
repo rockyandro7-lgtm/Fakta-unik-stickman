@@ -48,6 +48,70 @@ function blit(src, dx, blur) {
   for (let k = 0; k < n; k++) { const off = n > 1 ? (k / (n - 1) - .5) * blur : 0; out.globalAlpha = 1 / (k + 1); const x = dx + off; out.drawImage(src, x, 0); if (x > 0) out.drawImage(src, x - W, 0); if (x < 0) out.drawImage(src, x + W, 0); }
   out.restore();
 }
+
+// ---------- v5 transitions ----------
+// Setiap shot boleh punya tr: 'dissolve' | 'portal' | 'match' | 'spin' | 'whip', plus xt (durasi setengah transisi).
+//  portal: zoomOut {x,y,r} atau {x,y,w,h} = bukaan (jendela/pintu) di shot ini; shot berikut terlihat DI DALAM bukaan
+//          lalu semua membesar bersama dengan laju hampir konstan (~8%/frame) = kamera terbang menembus.
+//  match:  menyelam ke bentuk zoomOut {x,y,r} lalu muncul dari bentuk zoomIn {x,y,r} di shot berikut (lingkaran -> lingkaran).
+//  spin:   pivot [x,y] + spin (rad): objek di pivot tetap, dunia berayun ke adegan baru (gambar objek yang sama di pivot kedua shot).
+const XT_DEF = { dissolve: .14, portal: .4, match: .34, spin: .22 };
+const xtOf = sh => sh && XT_DEF[sh.tr] ? (sh.xt || XT_DEF[sh.tr]) : 0;
+const buf2 = document.createElement('canvas'); buf2.width = W; buf2.height = H; const bctx2 = buf2.getContext('2d');
+function regionK(r) { return Math.hypot(W, H) / 2 / Math.max(8, r) * 1.05; }
+function drawScaled(src, cx, cy, k, q, rot = 0, alpha = 1, blurPx = 0) {
+  // skala k di sekitar (cx,cy); titik itu bergeser ke tengah layar sebanding q (0..1); putar rot
+  const tx = lerp(cx, W / 2, q), ty = lerp(cy, H / 2, q);
+  out.save(); out.setTransform(1, 0, 0, 1, 0, 0); out.globalAlpha = alpha; if (blurPx > .5) out.filter = `blur(${blurPx.toFixed(1)}px)`;
+  out.translate(tx, ty); out.rotate(rot); out.scale(k, k); out.translate(-cx, -cy); out.drawImage(src, 0, 0); out.restore();
+}
+function compositeX(X, t) {
+  const A = SHOTS[X.a], Bs = SHOTS[X.b], p = X.p;
+  renderShot(bctx, X.a, Math.min(t, A.end - 1e-3)); renderShot(bctx2, X.b, Math.max(t, Bs.start));
+  out.fillStyle = '#000'; out.fillRect(0, 0, W, H);
+  if (X.tr === 'dissolve') { drawScaled(buf, W / 2, H / 2, 1, 0); drawScaled(buf2, W / 2, H / 2, 1, 0, 0, ease(p)); return; }
+  if (X.tr === 'portal') {
+    const o = A.zoomOut || { x: W / 2, y: H / 2, r: 200 }, rr = o.r || Math.hypot(o.w, o.h) / 2;
+    const Ka = Math.max(1.5, o.w ? Math.max(W / o.w, H / o.h) * 1.02 : regionK(rr)); // skala saat bukaan menutup layar
+    const e = p * (.7 + .3 * p), k = Math.pow(Ka, e), cx = lerp(o.x, W / 2, e), cy = lerp(o.y, H / 2, e);
+    drawScaled(buf, o.x, o.y, k, e, 0, 1, 0);
+    out.save(); out.setTransform(1, 0, 0, 1, 0, 0); out.beginPath();
+    if (o.w) out.rect(cx - o.w / 2 * k, cy - o.h / 2 * k, o.w * k, o.h * k); else out.arc(cx, cy, rr * k, 0, TAU);
+    out.clip(); out.globalAlpha = sstepX(inv(0, .2, p)); const kb = k / Ka; out.translate(cx, cy); out.scale(kb, kb); out.translate(-W / 2, -H / 2); out.drawImage(buf2, 0, 0); out.restore();
+    return;
+  }
+  if (X.tr === 'match') {
+    // keluar: menembus area zoomOut (jendela, mulut meriam, lingkaran) sampai memenuhi layar;
+    // masuk: mulai dari area zoomIn yang memenuhi layar lalu mundur ke framing normal. Bentuk yang sama = match cut.
+    const o = A.zoomOut || { x: W / 2, y: H / 2, r: 160 }, n = Bs.zoomIn || { x: W / 2, y: H / 2, r: 160 };
+    const Ka = regionK(o.r), Kb = regionK(n.r);
+    // kalibrasi referensi: puncak zoom ~7-10%/frame -> easing kuadrat (bukan kubik); biarkan SHOT mendorong kamera
+    // sampai bukaan mengisi ~50% layar, transisi hanya menyelesaikan sisanya
+    if (p < .5) { const q = p / .5, e = q * q, k = Math.pow(Ka, e); drawScaled(buf, o.x, o.y, k, e, 0, 1, e * 8); }
+    else { const q = (p - .5) / .5, e = (1 - q) * (1 - q), k = Math.pow(Kb, e); drawScaled(buf2, n.x, n.y, k, e, 0, 1, e * 8); }
+    const m = inv(.4, .6, p); if (m > 0 && m < 1) { // sambungan lembut 2-3 frame
+      if (p < .5) { const e = 1, k = Math.pow(Kb, e); drawScaled(buf2, n.x, n.y, k, e, 0, m); }
+      else { drawScaled(buf, o.x, o.y, Ka, 1, 0, 1 - m); }
+    }
+    return;
+  }
+  if (X.tr === 'spin') {
+    // kamera berayun di sekitar objek yang terkunci (pivot sama di kedua shot): dunia berputar, objek tetap.
+    const pa = A.pivot || [W / 2, H / 2], pb = Bs.pivot || pa, ang = A.spin || .7;
+    const ea = easeIn(Math.min(1, p / .6)), eb = 1 - easeOut(Math.max(0, (p - .4) / .6));
+    const m = sstepX(inv(.35, .65, p)), bl = Math.sin(p * Math.PI) * 14;
+    // latar: salinan diperbesar + blur supaya sudut tidak hitam saat frame berputar
+    drawScaledPivot(p < .5 ? buf : buf2, p < .5 ? pa : pb, p < .5 ? ang * ea : -ang * eb, 2.3, 1, 24);
+    drawScaledPivot(buf, pa, ang * ea, 1 + .12 * ea, 1, bl);
+    drawScaledPivot(buf2, pb, -ang * eb, 1 + .12 * eb, m, bl);
+    return;
+  }
+}
+const sstepX = x => x * x * (3 - 2 * x);
+function drawScaledPivot(src, pv, rot, k, alpha, blurPx) {
+  out.save(); out.setTransform(1, 0, 0, 1, 0, 0); out.globalAlpha = alpha; if (blurPx > .5) out.filter = `blur(${blurPx.toFixed(1)}px)`;
+  out.translate(pv[0], pv[1]); out.rotate(rot); out.scale(k, k); out.translate(-pv[0], -pv[1]); out.drawImage(src, 0, 0); out.restore();
+}
 function renderFrame(f) {
   const tNew = f / FPS; const t = Math.min(toOld(tNew), SHOTS[SHOTS.length - 1].end - 1e-3);
   let i = SHOTS.findIndex(s => t >= s.start && t < s.end); if (i < 0) i = SHOTS.length - 1;
@@ -55,12 +119,20 @@ function renderFrame(f) {
   const WT = .2; // whip half-length (6 frames)
   out.setTransform(1, 0, 0, 1, 0, 0); out.fillStyle = '#000'; out.fillRect(0, 0, W, H);
   let dx = 0, blur = 0, done = false;
+  // v5: transisi kamera kontinu (dissolve | zoom | spin), lihat reference/analisis/
+  const nx = SHOTS[i + 1], pv = SHOTS[i - 1];
+  let X = null; // {a: shot keluar, b: shot masuk, p: 0..1 melintasi batas, tr}
+  if (xtOf(s) && nx && t > s.end - xtOf(s)) X = { a: i, b: i + 1, p: .5 * (t - (s.end - xtOf(s))) / xtOf(s), tr: s.tr, B: s.end };
+  else if (xtOf(pv) && t < s.start + xtOf(pv)) X = { a: i - 1, b: i, p: .5 + .5 * (t - s.start) / xtOf(pv), tr: pv.tr, B: s.start };
+  if (X) { compositeX(X, t); }
+  else {
   // outgoing whip
   if (s.tr === 'whip' && i < SHOTS.length - 1 && t > s.end - WT) { const p = easeIn((t - (s.end - WT)) / WT); dx = -p * W * .39; blur = p * 260; }
   const prev = SHOTS[i - 1];
   if (prev && prev.tr === 'whip' && t < s.start + WT) { const p = 1 - easeOut((t - s.start) / WT); dx = p * W * .39; blur = p * 260; }
   renderShot(bctx, i, t);
   blit(buf, dx, blur);
+  }
   // grade: vignette + grain
   out.save(); out.setTransform(1, 0, 0, 1, 0, 0);
   const g = out.createRadialGradient(W / 2, H * .47, Math.max(W, H) * .26, W / 2, H / 2, Math.max(W, H) * .65); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(10,5,20,.32)'); out.fillStyle = g; out.fillRect(0, 0, W, H);

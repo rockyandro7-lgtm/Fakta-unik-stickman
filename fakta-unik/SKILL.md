@@ -40,11 +40,12 @@ Jika unduhan audio ElevenLabs ditolak proxy (403), host `elevenlabsusercontent.c
 5. **Timing kata (Scribe).** `creative_attach_reference_file` (url mp3, `flow_id` yang sama) lalu `creative_transcribe_audio` (`eleven_scribe_v1`, `connect_from` = node audio) lalu poll. Unduh `words_download_url` ke `scribe_words.json`. Scribe menulis angka sebagai kata ("empat"); `align_scribe.py` mencocokkan dengan naskah dan menginterpolasi sisanya.
    Lalu: `python3 "$ENGINE/tools/prep_voice.py" audio/vo_raw.mp3` (memangkas hening dan menyimpan selisih waktunya).
 6. **Shot.** Tulis ulang `web/shots.js` dan `audio.py` untuk topik baru. Panduan:
+   - **Wajib baca `reference/teknik-visual-v5.md` dulu** (aturan kamera, ekspresi, transisi hasil reverse engineering; contoh siap render di `examples/demo-v5-teknik/shots.js`). Ringkasnya: kamera tidak pernah diam (>0,4 dtk), transisi pakai `tr: 'portal' | 'spin' | 'match' | 'dissolve'` (maks 1 hard cut / 10 dtk), ikuti BENDA yang jadi fakta, ekspresi ditukar per kata dengan `exprTrack` (busur usaha > kaget > lega), benda korban mitos diberi wajah (`propFace`), angka dibuktikan lewat fisika/skala (`pulleyGag`, scale reveal, `timeGrade`).
    - 10-15 shot, kebanyakan 2-4 detik; ide baru = shot baru. Batas shot ditempel ke kata dengan `BOUND` dan `fw(baris,'kata')` (lihat contoh), bukan angka detik tetap.
    - Jaga wajah dan properti penting di luar pita caption (y sekitar 1250-1420) dan di dalam area aman (x 100-980, y 220-1500).
    - Gunakan variasi: wide, close-up (latar di-blur), grafik penuh layar (termometer, jam, petri), stempel MITOS, dan satu shot yang menunjukkan **mekanisme**.
    - **Berjalan wajib pakai `walkCycle(jarakPx, s, dir)`** (di `chars.js`): fase langkah mengikuti jarak sehingga kaki tidak meluncur, lutut menekuk ke depan saat mengayun, pinggul turun naik, badan condong. Sebarkan hasilnya ke `drawStick` (`legs`, `arms`, `bob`, `footDir`, `lean`). Untuk tokoh `flip: -1`, tetap pakai `dir = 1`. Helper `walkTo(x0, x1, lt, t0, t1, s)` di contoh #3 menghitung posisi dan pose sekaligus. Jangan pakai pose kaki bergantian manual (terlihat seperti menggunting).
-   - Tokoh tetap: **Ibu** (`IBU`, topi chef, baju pink) dan **Budi** (`BUDI`, jambul, baju hijau). Ekspresi: `eyes` normal/wide/happy/squint/x/spiral, `mouth` smile/grin/o/frown/flat/smirk.
+   - Tokoh tetap: **Ibu** (`IBU`, topi chef, baju pink) dan **Budi** (`BUDI`, jambul, baju hijau). Ekspresi: `eyes` normal/wide/happy/squint/half/smug/x/spiral/flinch(> <), `mouth` smile/grin/teeth/o/frown/flat/smirk/wobble, `sweat` 0..1. Lebih baik pakai preset `EXPR` lewat `exprTrack(lt, [[t,'kaget'],...])`: netral, sombong, licik, datar, kaget, takjub, lega, bangga, ngeden, meringis, cemas, curiga, sadar.
 7. **Cek gambar:** `node "$ENGINE/tools/render.js" stills 0.4,5.6,10,...` di folder episode, lihat `stills/` dan perbaiki yang tabrakan.
 8. **Suara efek dan musik:** edit cue di `audio.py` (waktu diambil dari kata lewat `W(baris,'kata')`).
 9. **Build:** `bash "$ENGINE/make.sh" <folder-episode>` (`WORKERS=4`). Hasil: `<folder>/<nama>.mp4`. `AUDIO_ONLY=1` hanya mix ulang suara.
@@ -53,7 +54,20 @@ Jika unduhan audio ElevenLabs ditolak proxy (403), host `elevenlabsusercontent.c
 ## Properti yang sudah ada (`web/env_home.js`, `web/env_health.js`)
 `kitchenBG` (dapur), `drawFridge` (kulkas berwajah: mood happy/joy/worry/hot/broken, pintu `door` 0-1, `cold`, `temp`), `drawPot` (panci beruap), `drawBox` (wadah+tutup), `drawPlate` (piring, `sick`), `drawBug` (bakteri), `drawThermo` (termometer zona 4°/60°), `drawClock`, `drawStamp` (MITOS), `drawX`, `drawCheck`, `qmark`, `stink`, `popText`, `drawSubBanner` (banner channel YouTube dengan tombol SUBSCRIBE yang bisa "diklik"), `drawChannelAvatar`, `table`.
 `env_health.js`: `drawFan` (kipas angin), `drawWind` (hembusan angin), `drawClipboard` (papan diagnosis + coret), `drawSkin` (irisan kulit + kapiler melebar/pecah), `drawBack` + `drawCoin` (punggung dikerok), `drawStomach`, `drawBattery`, `drawHeart`, `drawECG`, `drawIGD`. `env_sleep.js`: `bedroomBG`, `drawBed`, `drawEye` (mata merah, kelopak turun), `drawHourCounter`, `drawCalendar`, `drawVintageCard`, `drawHallucinations`, `drawGlass`, `drawBook`. `drawBug` menerima warna `c1`/`c2`/`spike` (misal virus flu biru).
-Contoh lengkap: template (#2 kulkas) dan `examples/03-masuk-angin/` (shots.js, audio.py, script.json). Tambahkan properti baru di `env_home.js` (satu fungsi per benda, garis tepi tinta `INK`, warna jenuh, bayangan sel). Properti bajak laut asli ada di `env.js`.
+Contoh lengkap: template (#2 kulkas), `examples/03-masuk-angin/` (shots.js, audio.py, script.json), dan `examples/demo-v5-teknik/` (semua teknik v5). Tambahkan properti baru di `env_home.js` (satu fungsi per benda, garis tepi tinta `INK`, warna jenuh, bayangan sel). Properti bajak laut asli ada di `env.js`.
+
+## Toolkit v5 (`web/fx_v5.js`, dimuat di kedua template)
+- Ekspresi: `EXPR`, `exprTrack`, `propFace`. Kamera: `camKeys`, `camLock` (benda terkunci di layar, dunia berayun), `camGeo`, `parallax`, `toScreen`.
+- Efek: `glint`, `glowRing`, `innerGlow`, `flash`, `timeGrade`, `groundShadow`. Gag angka: `pulleyGag`.
+- Transisi di `main.js`: properti shot `tr` + `zoomOut`/`zoomIn`/`pivot`/`spin`/`xt` (tabel di `reference/teknik-visual-v5.md`).
+
+## Analisis video referensi (meningkatkan skill dari video lain)
+Jika pengguna mengirim video referensi (rekaman layar Shorts/Reels/TikTok) untuk dipelajari:
+1. `python3 -I tools/video_ref/analyze.py VIDEO OUT/` (+ `--dense T0 T1 --box x,y,w,h` untuk crop wajah). Baca `tools/video_ref/README.md`.
+2. Storyboard tiap 0,2 dtk, cek tiap kandidat transisi frame per frame, crop wajah 10-15 fps, ukur angka kalibrasi.
+3. Tulis `reference/analisis/ref-NN-<nama>.md` (beat sheet, mikro ekspresi, kamera, aset, keterbatasan).
+4. Pindahkan prinsip baru ke `reference/teknik-visual-v5.md` + helper di `fx_v5.js` (salin ke kedua template), uji dengan demo, lalu analisis hasil render KITA dengan alat yang sama dan bandingkan angkanya.
+5. Ambil teknik, jangan menyalin karakter/aset/naskah referensi. Simpan semua perubahan skill di repo `Duru` (commit + push); upload zip ke Drive hanya bila pengguna setuju.
 
 ## Catatan teknis
 - Biaya kredit ElevenLabs per video 40 detik: suara sekitar 650, Scribe sekitar 250.
