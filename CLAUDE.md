@@ -11,3 +11,5 @@ hanya salinan rilis yang diupload bila pengguna setuju.
 - Setiap update skill: commit + push ke repo ini. Perubahan mesin di `engine/template/web/` juga disalin ke
   `engine/template_landscape/web/` (`chars.js`, `fx_v5.js`, dan blok transisi v5 di `main.js`).
 - Riwayat versi: v4 = baseline dari Drive; v5 (11-11-2026) = toolkit kamera/ekspresi/transisi dari referensi 01 + alat analisis video.
+- v6 (11-11-2026) = aturan konsistensi aset + sinkron suara (`reference/konsistensi-sinkron-v6.md`), `tools/sync/` (tighten, mapwords),
+  aset listrik rumah (`env_listrik.js`). Episode dikerjakan di `episodes/<nama>/`; MP4 tidak di-commit (kirim ke pengguna/Drive).

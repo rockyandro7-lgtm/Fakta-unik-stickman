@@ -10,7 +10,7 @@ Topik kesehatan: tambahkan keterangan "bukan pengganti saran dokter" di deskrips
 | 2 | Cas HP semalaman merusak baterai | Setengah mitos: ada proteksi overcharge, tapi baterai lama di 100% mempercepat penuaan | Tirto, CNN Indonesia, Samsung Community | [Perlu cek] |
 | 3 | Tidur rambut basah bikin flu | Flu disebabkan virus, bukan rambut basah/dingin | Medicastore | [Perlu cek] |
 | 4 | Mandi malam bikin rematik | Rematik (autoimun) bukan karena mandi malam | Medicastore | [Perlu cek] |
-| 5 | Charger dicolok tanpa HP = tidak makan listrik | Tetap ada konsumsi kecil | Listrik Indonesia | [Perlu cek] |
+| 5 | Charger nyolok tanpa HP bikin tagihan bengkak (SUDAH: episode `episodes/charger-nyolok`, 45 dtk) | Hampir mitos: sekitar 0,1 W = seribuan rupiah per tahun; yang boros magic com mode warm (sekitar 40 W, sekitar Rp40 ribu per bulan) | EU 2019/1782, tarif PLN R-1 1.300 VA, lihat SUMBER.md episode | Selesai |
 | 6 | Kulkas diset paling dingin biar awet | Boros listrik; pengaturan tepat lebih baik | Okezone, Momsmoney (Kontan) | [Perlu cek] |
 | 7 | Minum 8 gelas air sehari wajib | Kebutuhan beda tiap orang | Detik Health | [Perlu cek] |
 | 8 | Gula bikin anak hiperaktif | Tidak terbukti | Medicastore, Detik Health | [Perlu cek] |

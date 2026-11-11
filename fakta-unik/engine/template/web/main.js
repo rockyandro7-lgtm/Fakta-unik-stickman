@@ -25,7 +25,7 @@ const CHUNKS = (() => {
   return ch;
 })();
 // caption style: all lowercase, no punctuation (hyphens become spaces; letters, digits and % stay)
-const capText = s => s.toLowerCase().replace(/[-\u2013\u2014]/g, ' ').replace(/[^\p{L}\p{N}% ]/gu, '').replace(/\s+/g, ' ').trim();
+const capText = s => s.toLowerCase().replace(/(\d),(?=\d)/g, '$1\u0001').replace(/[-\u2013\u2014]/g, ' ').replace(/[^\p{L}\p{N}%\u0001 ]/gu, '').replace(/\u0001/g, ',').replace(/\s+/g, ' ').trim(); // koma desimal (0,1) dipertahankan
 function drawCaption(ctx, t) {
   const c = CHUNKS.find(c => t >= c.s && t < c.e); if (!c) return;
   const k = clamp((t - c.s) / .1); const sc = .82 + .18 * backOut(k);

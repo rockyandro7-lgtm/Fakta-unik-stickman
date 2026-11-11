@@ -51,6 +51,19 @@ Jika unduhan audio ElevenLabs ditolak proxy (403), host `elevenlabsusercontent.c
 9. **Build:** `bash "$ENGINE/make.sh" <folder-episode>` (`WORKERS=4`). Hasil: `<folder>/<nama>.mp4`. `AUDIO_ONLY=1` hanya mix ulang suara.
 10. **QA dan serah:** pastikan durasi 30-45 detik, caption sinkron, tidak ada kata "follow", angka sesuai sumber. Kirim file ke pengguna dan sebutkan sumber fakta. Simpan naskah dan sumber di `topik_bank.md` (tandai topik sudah dipakai).
 
+## Tambahan v6 (konsistensi + sinkron) — wajib
+- **Baca `reference/konsistensi-sinkron-v6.md`.** Ringkas: satu fungsi per aset dan per latar, palet + tata letak terkunci;
+  semua timing dari kata (`wt(baris,'kata')`), tidak ada angka detik tetap; timing diukur pada audio final.
+- **Alur suara v6** (menggantikan `prep_voice.py` bila durasi harus pas):
+  `python3 tools/sync/tighten.py audio/vo_raw.mp3 --target 44.4` lalu `python3 tools/sync/mapwords.py scribe_raw.json merge.json`
+  lalu `make.sh`. Simpan transkrip Scribe mentah sebagai `scribe_raw.json`.
+- **Aset listrik rumah** (`web/env_listrik.js`): `ruangScene` (ruang tamu + kalender + stopkontak), `drawCharger` (berwajah, versi `kw`,
+  `hot`, `out`, label harga), `drawOutlet`, `drawBolt`, `drawPhoneGhost`, `drawGauge` (alat ukur watt), `drawRiceCooker` (magic com berwajah,
+  lampu WARM, tutup = mulut), `drawPowerStrip`, `drawPlug`, `drawCord`, `drawNote`, `drawRpCoin`, `drawBill` (tagihan bisa menggembung),
+  `drawWallClock`, `dapurBack`/`dapurMeja`, `spotlight`, `pcbBG`, `drawChip`, `drawCap`, `drawZzz`, `drawLed`, `drawBowl`.
+- Contoh episode lengkap v5+v6: `episodes/charger-nyolok/` di repo Duru (shots.js, audio.py, script.json, merge.json, SUMBER.md, metadata).
+- Caption mempertahankan koma desimal ("0,1").
+
 ## Properti yang sudah ada (`web/env_home.js`, `web/env_health.js`)
 `kitchenBG` (dapur), `drawFridge` (kulkas berwajah: mood happy/joy/worry/hot/broken, pintu `door` 0-1, `cold`, `temp`), `drawPot` (panci beruap), `drawBox` (wadah+tutup), `drawPlate` (piring, `sick`), `drawBug` (bakteri), `drawThermo` (termometer zona 4°/60°), `drawClock`, `drawStamp` (MITOS), `drawX`, `drawCheck`, `qmark`, `stink`, `popText`, `drawSubBanner` (banner channel YouTube dengan tombol SUBSCRIBE yang bisa "diklik"), `drawChannelAvatar`, `table`.
 `env_health.js`: `drawFan` (kipas angin), `drawWind` (hembusan angin), `drawClipboard` (papan diagnosis + coret), `drawSkin` (irisan kulit + kapiler melebar/pecah), `drawBack` + `drawCoin` (punggung dikerok), `drawStomach`, `drawBattery`, `drawHeart`, `drawECG`, `drawIGD`. `env_sleep.js`: `bedroomBG`, `drawBed`, `drawEye` (mata merah, kelopak turun), `drawHourCounter`, `drawCalendar`, `drawVintageCard`, `drawHallucinations`, `drawGlass`, `drawBook`. `drawBug` menerima warna `c1`/`c2`/`spike` (misal virus flu biru).
