@@ -1,91 +1,99 @@
 1
-00:00:00,000 --> 00:00:02,762
-Bagaimana Jerman menaklukkan Prancis hanya dalam enam
+00:00:00,000 --> 00:00:03,263
+Bagaimana Jerman menaklukkan Prancis hanya dalam enam minggu?
 
 2
-00:00:02,734 --> 00:00:03,267
-minggu?
-
-3
-00:00:03,273 --> 00:00:04,021
+00:00:03,273 --> 00:00:04,049
 Jawabannya:
 
-4
-00:00:04,059 --> 00:00:05,698
+3
+00:00:04,059 --> 00:00:05,671
 Blitzkrieg, perang kilat.
 
-5
-00:00:05,681 --> 00:00:08,448
+4
+00:00:05,681 --> 00:00:08,438
 Sebelumnya, Perang Dunia Pertama macet di parit.
 
-6
-00:00:08,448 --> 00:00:10,924
+5
+00:00:08,448 --> 00:00:10,974
 Empat tahun, garis depan nyaris tak bergerak.
 
-7
-00:00:11,006 --> 00:00:12,059
+6
+00:00:11,006 --> 00:00:12,021
 Jerman belajar.
 
+7
+00:00:12,031 --> 00:00:14,751
+Heinz Guderian dan rekan-rekannya memadukan tank,
+
 8
-00:00:12,031 --> 00:00:15,293
-Heinz Guderian dan rekan-rekannya memadukan tank, pesawat,
+00:00:14,761 --> 00:00:15,992
+pesawat, dan radio,
 
 9
-00:00:15,265 --> 00:00:17,600
-dan radio, untuk menghantam cepat di satu
+00:00:16,058 --> 00:00:17,941
+untuk menghantam cepat di satu titik.
 
 10
-00:00:17,572 --> 00:00:17,933
-titik.
-
-11
-00:00:17,951 --> 00:00:20,489
+00:00:17,951 --> 00:00:20,446
 September, seribu sembilan ratus tiga puluh sembilan.
 
-12
-00:00:20,456 --> 00:00:21,565
+11
+00:00:20,456 --> 00:00:21,615
 Polandia diserang.
 
+12
+00:00:21,656 --> 00:00:23,486
+Stuka menghantam dari udara,
+
 13
-00:00:21,656 --> 00:00:24,955
-Stuka menghantam dari udara, panzer menerobos pertahanan.
+00:00:23,496 --> 00:00:24,954
+panzer menerobos pertahanan.
 
 14
-00:00:24,964 --> 00:00:27,661
-Mei tahun berikutnya, panzer melintasi hutan Ardennes
+00:00:24,964 --> 00:00:26,074
+Mei tahun berikutnya,
 
 15
-00:00:27,634 --> 00:00:30,240
-yang dianggap mustahil, memutari Garis Maginot.
+00:00:26,084 --> 00:00:28,993
+panzer melintasi hutan Ardennes yang dianggap mustahil,
 
 16
-00:00:30,240 --> 00:00:32,675
-Sekutu terkepung di Dunkirk, dan Paris jatuh
+00:00:29,003 --> 00:00:30,230
+memutari Garis Maginot.
 
 17
-00:00:32,647 --> 00:00:33,715
-pada empat belas Juni.
+00:00:30,240 --> 00:00:31,772
+Sekutu terkepung di Dunkirk,
 
 18
-00:00:33,680 --> 00:00:36,009
-Tapi di Uni Soviet, kilat itu padam.
+00:00:31,782 --> 00:00:33,670
+dan Paris jatuh pada empat belas Juni.
 
 19
-00:00:35,952 --> 00:00:38,994
-Wilayahnya terlalu luas, logistik kewalahan, dan musim
+00:00:33,680 --> 00:00:34,967
+Tapi di Uni Soviet,
 
 20
-00:00:38,966 --> 00:00:39,911
-dingin datang.
+00:00:34,977 --> 00:00:35,942
+kilat itu padam.
 
 21
-00:00:39,829 --> 00:00:40,650
-Pelajarannya:
+00:00:35,952 --> 00:00:37,452
+Wilayahnya terlalu luas,
 
 22
-00:00:40,641 --> 00:00:43,605
-kecepatan bisa memenangkan pertempuran, tapi belum tentu
+00:00:37,462 --> 00:00:39,819
+logistik kewalahan, dan musim dingin datang.
 
 23
-00:00:43,577 --> 00:00:44,614
-memenangkan perang.
+00:00:39,829 --> 00:00:40,631
+Pelajarannya:
+
+24
+00:00:40,641 --> 00:00:42,738
+kecepatan bisa memenangkan pertempuran,
+
+25
+00:00:42,748 --> 00:00:44,664
+tapi belum tentu memenangkan perang.
