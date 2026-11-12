@@ -37,9 +37,10 @@ function drawMapBase(ctx, t, cam, o = {}) {
   const tr = o.trees == null ? 1 : o.trees;
   if (tr > 0) { const r2 = rng(9); ctx.save(); ctx.globalAlpha *= tr; for (let i = 0; i < 26; i++) { const lo = 4.75 + r2() * 1.45, la = 49.55 + r2() * .8; const [x, y] = proj(lo, la); drawPine(ctx, x, y + 40, .2 + r2() * .05, { col: PRG.pine }); } ctx.restore(); }
   // Garis Maginot: tembok bergerigi abu-abu
-  const mg = o.maginot == null ? 1 : o.maginot;
-  if (mg > 0) { ctx.save(); ctx.globalAlpha *= mg; ctx.beginPath(); MAGINOT.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.lineWidth = 30; ctx.strokeStyle = INK; ctx.stroke(); ctx.lineWidth = 18; ctx.strokeStyle = PRG.conc; ctx.stroke();
-    for (let i = 0; i < MAGINOT.length - 1; i++) { const [a, b] = [MAGINOT[i], MAGINOT[i + 1]]; for (let q = .25; q < 1; q += .5) { const x = lerp(a[0], b[0], q), y = lerp(a[1], b[1], q); rrect(ctx, x - 16, y - 16, 32, 32, 5); fillStroke(ctx, PRG.concDk, 5); } } ctx.restore(); }
+  const mg = o.maginot == null ? 1 : o.maginot, mk = o.maginotK == null ? 1 : o.maginotK;
+  const MGP = (() => { if (mk >= 1) return MAGINOT; const e = polyAt(MAGINOT, mk), out = [MAGINOT[0]]; let acc = 0; for (let i = 1; i < MAGINOT.length; i++) { const l = Math.hypot(MAGINOT[i][0] - MAGINOT[i - 1][0], MAGINOT[i][1] - MAGINOT[i - 1][1]); if (acc + l >= mk * e.len) break; acc += l; out.push(MAGINOT[i]); } out.push([e.x, e.y]); return out; })();
+  if (mg > 0 && mk > 0) { ctx.save(); ctx.globalAlpha *= mg; ctx.beginPath(); MGP.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.lineWidth = 30; ctx.strokeStyle = INK; ctx.stroke(); ctx.lineWidth = 18; ctx.strokeStyle = PRG.conc; ctx.stroke();
+    for (let i = 0; i < MGP.length - 1; i++) { const [a, b] = [MGP[i], MGP[i + 1]]; for (let q = .25; q < 1; q += .5) { const x = lerp(a[0], b[0], q), y = lerp(a[1], b[1], q); rrect(ctx, x - 16, y - 16, 32, 32, 5); fillStroke(ctx, PRG.concDk, 5); } } ctx.restore(); }
   // label negara + kota
   const L = o.labels || {};
   const lab = (s, x, y, size, a, col = '#fff') => { if (a > 0) { ctx.save(); ctx.globalAlpha *= a; text(ctx, s, x, y, size, col, INK, size * .2); ctx.restore(); } };
@@ -127,4 +128,12 @@ function ringScene(ctx, t, cam) {
   ctx.fillStyle = 'rgba(0,0,0,.08)'; ctx.fillRect(-800, 1180, 2700, 40);
   for (const [y, c] of [[1000, MPC.red], [1080, '#ffffff'], [1160, MPC.blue]]) line(ctx, -800, y, 1900, y, 14, c);
   for (const x of [-60, 1140]) { rrect(ctx, x - 26, 940, 52, 300, 10); fillStroke(ctx, '#d9dbe0', 7); }
+}
+
+// Prancis "runtuh": wilayah Prancis diwarnai abu-hijau Jerman dari utara ke selatan sampai garis yLine (koordinat dunia).
+function franceFall(ctx, yLine, a = 1) {
+  if (a <= 0) return; ctx.save(); ctx.beginPath(); MAPGEO.FR.forEach(ring => ring.forEach(([lo, la], i) => { const [x, y] = proj(lo, la); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); })); ctx.closePath(); ctx.clip();
+  ctx.globalAlpha *= a; ctx.fillStyle = 'rgba(124,132,113,.75)'; ctx.fillRect(-2000, -2000, 5000, yLine + 2000);
+  ctx.strokeStyle = 'rgba(80,90,70,.35)'; ctx.lineWidth = 10; for (let x = -2000; x < 3000; x += 60) { ctx.beginPath(); ctx.moveTo(x, -2000); ctx.lineTo(x + 600, yLine); ctx.stroke(); }
+  ctx.restore();
 }

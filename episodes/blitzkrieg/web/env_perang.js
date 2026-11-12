@@ -227,6 +227,7 @@ function maginotScene(ctx, t, cam, o = {}) {
   skyFill(ctx, PRG.sky, PRG.skyLo); applyCam(ctx, cam, 1);
   drawCloud(ctx, 120 + t * 8, 300, 110, 3); drawCloud(ctx, 980 + t * 6, 160, 80, 5); drawCloud(ctx, -700 + t * 7, 420, 90, 2);
   hillBand(ctx, 820, 140, PRG.hillFar, 1); hillBand(ctx, 930, 90, PRG.hill, 3);
+  if (o.behind) o.behind(ctx);   // benda di balik tembok (contoh: tank lewat di bukit belakang)
   const T = MAG.top, G = MAG.ground;
   // atap/parapet
   rrect(ctx, MAG.x0, T - 40, MAG.x1 - MAG.x0, 70, 18); fillStroke(ctx, PRG.concHi, 8);
@@ -295,4 +296,47 @@ function snowScene(ctx, t, cam) {
   const r = rng(22); for (let x = -1500; x < 2800; x += 210) drawPine(ctx, x + r() * 90, SLJ.ground - 170 - r() * 30, .7 + r() * .2, { col: '#3d5f55', snow: 1 });
   rrect(ctx, -1600, SLJ.ground - 40, 4400, 1500, 0); fillStroke(ctx, PRG.snow, 8);
   ctx.fillStyle = PRG.snowDk; for (let i = 0; i < 9; i++) { ellipse(ctx, -1200 + i * 420, SLJ.ground + 80 + (i % 3) * 90, 160, 18); ctx.fill(); }
+}
+
+// ===== aset tambahan episode penuh =====
+// Perangkap rahang (simbol "jebakan"). (x,y) = dasar tengah. open 1 = terbuka, 0 = menutup (KLAK).
+function drawTrap(ctx, x, y, s = 1, open = 1) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  ellipse(ctx, 0, 0, 170, 34); fillStroke(ctx, PRG.steelDk, 7); circle(ctx, 0, -6, 26); fillStroke(ctx, '#e8c04a', 6);
+  for (const side of [-1, 1]) {
+    ctx.save(); ctx.translate(side * 8, -6); ctx.rotate(side * lerp(0, -1.35, open));
+    ctx.beginPath(); ctx.arc(side * 0, 0, 150, side > 0 ? -Math.PI : -Math.PI, 0); ctx.lineWidth = 12; ctx.strokeStyle = INK; ctx.stroke(); ctx.lineWidth = 6; ctx.strokeStyle = PRG.steel; ctx.stroke();
+    for (let i = 1; i < 10; i++) { const a = -Math.PI + i * Math.PI / 10, px = Math.cos(a) * 150, py = Math.sin(a) * 150; path(ctx, [[px - Math.cos(a) * 0, py], [px - Math.cos(a) * 34, py - Math.sin(a) * 34 + 4], [px + 10, py]]); fillStroke(ctx, '#f2f2f2', 4); }
+    ctx.restore();
+  }
+  ctx.restore();
+}
+// Gerbong kereta kayu (Compiègne). (x,y) = rel di tengah. o: { year: label di papan, glow }
+function drawCarriage(ctx, x, y, s = 1, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  line(ctx, -900, 0, 900, 0, 14, '#5a4a3a'); for (let i = -880; i < 900; i += 70) { rrect(ctx, i, -6, 40, 16, 4); fillStroke(ctx, '#7a5636', 3); }
+  for (const wx of [-460, -300, 300, 460]) { circle(ctx, wx, -60, 58); fillStroke(ctx, '#3b3b42', 7); circle(ctx, wx, -60, 20); fillStroke(ctx, '#8a8a90', 5); }
+  const body = () => rrect(ctx, -620, -520, 1240, 420, 24);
+  body(); fillStroke(ctx, '#8a4b2c', 9); ctx.save(); body(); ctx.clip();
+  for (let i = -600; i < 620; i += 52) line(ctx, i, -520, i, -100, 3, 'rgba(60,25,10,.28)');
+  ctx.fillStyle = 'rgba(255,255,255,.15)'; ctx.fillRect(-620, -510, 1240, 20); ctx.fillStyle = 'rgba(40,15,5,.2)'; ctx.fillRect(-620, -160, 1240, 60); ctx.restore(); body(); fillStroke(ctx, null, 9);
+  ctx.beginPath(); ctx.moveTo(-650, -520); ctx.quadraticCurveTo(0, -620, 650, -520); ctx.closePath(); fillStroke(ctx, '#5a5560', 8);
+  for (const wx of [-460, -230, 230, 460]) { rrect(ctx, wx - 80, -440, 160, 140, 14); fillStroke(ctx, '#ffe8a8', 7); line(ctx, wx, -440, wx, -300, 5); }
+  if (o.year) { rrect(ctx, -150, -470, 300, 110, 14); fillStroke(ctx, '#f5ead2', 7); text(ctx, o.year, 0, -414, 84, '#5a2a14', INK, 0); }
+  ctx.restore();
+}
+// Meja tanda tangan + kertas + pena. (x,y) = lantai tengah.
+function drawDesk(ctx, x, y, s = 1, o = {}) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  for (const lx of [-170, 170]) line(ctx, lx, 0, lx, -230, 16, PRG.woodDk);
+  rrect(ctx, -230, -260, 460, 40, 10); fillStroke(ctx, PRG.wood, 7);
+  ctx.save(); ctx.translate(-20, -262); ctx.rotate(-.06); rrect(ctx, -90, -18, 180, 24, 4); fillStroke(ctx, '#ffffff', 5);
+  if (o.sign) { ctx.beginPath(); for (let i = 0; i <= 20 * clamp(o.sign); i++) { const px = -60 + i * 5, py = -6 + Math.sin(i * 1.3) * 5; i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); } ctx.lineWidth = 3; ctx.strokeStyle = '#2a3f8f'; ctx.stroke(); }
+  ctx.restore(); ctx.restore();
+}
+// Lapangan hutan Compiègne (latar gerbong).
+function clearingScene(ctx, t, cam, o = {}) {
+  skyFill(ctx, o.sepia ? '#d9c39a' : '#9fd3e8', o.sepia ? '#efe0bf' : '#e3f3f2'); applyCam(ctx, cam, 1);
+  const r = rng(41); for (let x = -1400; x < 2500; x += 130) drawPine(ctx, x + r() * 50, 1150 - r() * 40, .9 + r() * .25, { col: o.sepia ? '#7d6a48' : PRG.pineFar });
+  rrect(ctx, -1600, 1140, 4400, 1500, 0); fillStroke(ctx, o.sepia ? '#b9a37a' : PRG.grass, 8); grassTufts(ctx, -1500, 2600, 1150, 44, o.sepia ? '#8e7a55' : PRG.grassDk);
 }
