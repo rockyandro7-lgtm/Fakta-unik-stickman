@@ -29,7 +29,8 @@ Channel YouTube Shorts **Mitos Rumahan & Fakta Unik** (@MitosRumahan): video sti
 
 ## Status saat ini (update tiap session)
 - Sudah rilis: Masuk Angin (#3), Freon Habis, Tidak Tidur 11 Hari, Charger Nyolok (episode di `episodes/charger-nyolok`).
-- Antrean berikutnya: Tidur rambut basah bikin flu (#3 bank), Mandi malam bikin rematik (#4), Cas HP semalaman (#2).
+- **Siap upload (12-11-2026): Kerupuk** (`episodes/kerupuk`, format "Kenapa X?" pertama, 58 dtk). MP4 dikirim terpisah; render ulang: `bash fakta-unik/engine/make.sh episodes/kerupuk`. Setelah tayang, bandingkan retensinya dengan Masuk Angin di `PERFORMANCE_NOTES.md`.
+- Antrean berikutnya: sesuai arahan pemilik, utamakan format "Kenapa X?" (ide di bagian bawah `topik_bank.md`). Topik kesehatan lama (#2, #3, #4) hanya bila diminta.
 - Belum diisi: checklist analitik di `PERFORMANCE_NOTES.md` (retention per detik, sumber traffic, data 7 hari).
 - Kalau pengguna hanya bilang "ide topik" atau "lanjut", mulai dari antrean di atas, cek `PERFORMANCE_NOTES.md`, lalu usulkan.
 

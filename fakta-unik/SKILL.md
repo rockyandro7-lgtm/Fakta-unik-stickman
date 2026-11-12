@@ -61,6 +61,8 @@ Jika unduhan audio ElevenLabs ditolak proxy (403), host `elevenlabsusercontent.c
   `hot`, `out`, label harga), `drawOutlet`, `drawBolt`, `drawPhoneGhost`, `drawGauge` (alat ukur watt), `drawRiceCooker` (magic com berwajah,
   lampu WARM, tutup = mulut), `drawPowerStrip`, `drawPlug`, `drawCord`, `drawNote`, `drawRpCoin`, `drawBill` (tagihan bisa menggembung),
   `drawWallClock`, `dapurBack`/`dapurMeja`, `spotlight`, `pcbBG`, `drawChip`, `drawCap`, `drawZzz`, `drawLed`, `drawBowl`.
+- **Aset dapur kerupuk** (`web/env_kerupuk.js`, palet `KRP`, tata letak `KR`): `drawKerupuk` (SATU fungsi untuk irisan gel basah -> kerupuk mentah kaca -> mengembang: opsi `dry`, `p`, `tilt`, `wet`, `crack`), `drawStove`, `drawWok` (callback isi wajan di antara minyak dan bibir depan), `drawSack`, `drawJug`, `drawBasin`, `drawDoughLump`, `drawLog` (gelondong adonan: `cook`, `stretch` karet, `core` inti mentah, `cut`), `drawDandang`, `drawTampah`, `drawKnife`, `drawSerok`, `halamanBG` (halaman jemur + matahari), dunia mikro `microBG`, `drawDrop`, `drawSteamBall`, `drawPores`, `pushArrow`, `sfxText` (TOK/KRIUK di dalam dunia), `mixC` (campur warna hex bertingkat; `lerpC` mengembalikan rgb() jadi tidak bisa dicampur ulang).
+- Format "Kenapa X?" (contoh: `episodes/kerupuk/`): pertanyaan di kalimat 1, re-hook misteri di kalimat 2 yang dijawab di tengah, rantai masalah -> solusi, momen mekanisme di dunia mikro, akhir kembali ke frame 0 (loop). Durasi video = akhir suara + 0,6 dtk (`main.js`), jadi shot terakhir berakhir di `WORDS[last].e + .6`.
 - Contoh episode lengkap v5+v6: `episodes/charger-nyolok/` di repo Duru (shots.js, audio.py, script.json, merge.json, SUMBER.md, metadata).
 - Caption mempertahankan koma desimal ("0,1").
 

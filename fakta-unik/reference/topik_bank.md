@@ -21,6 +21,15 @@ Topik kesehatan: tambahkan keterangan "bukan pengganti saran dokter" di deskrips
 | 13 | Ngecas motor listrik di dalam rumah bahaya | Sumber dari produsen – hati-hati bias | Medcom | [Perlu cek] |
 | 14 | Isi bensin subuh lebih banyak | Klaim beredar, belum terverifikasi | Listrik Indonesia | [Perlu cek – belum jelas] |
 | 15 | Makanan panas harus dingin dulu (sudah jadi #2) | – | – | Selesai |
+| 16 | **Kenapa kerupuk sekeras kayu bisa mengembang di wajan?** (format "Kenapa X?", SUDAH: `episodes/kerupuk`, 58 dtk) | Tapioka dikukus jadi gel, dijemur menyisakan sedikit air, di minyak panas air jadi uap dan mendorong gel yang melunak membentuk rongga, lalu mengeras lagi | Lihat `episodes/kerupuk/SUMBER.md` | Selesai |
+
+## Ide format "Kenapa X?" (arah konten 12-11-2026, bukan kesehatan)
+Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masalah-solusi yang bisa digambar.
+- Kenapa es batu mengapung, padahal batu tenggelam? (air memuai saat membeku)
+- Kenapa iris bawang merah bikin mata perih? (senyawa sulfur yang menguap)
+- Kenapa kopi/teh panas "berasap" di pagi hari tapi tidak di siang hari? (uap mengembun di udara dingin)
+- Kenapa nasi yang didinginkan jadi keras? (retrogradasi pati; nyambung dengan episode kerupuk)
+- Kenapa jangkrik bunyi makin cepat saat panas? (perlu cek kuat)
 
 Ide format lain (non-fakta-check, ringan): "masak keasinan tanda mau nikah", "jangan kasih cabai rawit ke teman" (mitos budaya – tandai sebagai kepercayaan, bukan sains).
 
