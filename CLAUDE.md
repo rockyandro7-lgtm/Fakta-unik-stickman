@@ -1,9 +1,22 @@
 # Fakta-unik-stickman: BACA INI DULU
 
-Satu repo untuk semuanya. Semua branch lama sudah digabung ke `main`. Kerjakan di `main` (atau branch kerja yang diminta), jangan bikin repo/branch terpisah per video.
+Satu repo untuk semuanya. **`main` = satu-satunya versi terbaru.** Jangan bikin repo/branch terpisah per video.
+
+## Sinkron repo (wajib, izin tetap dari pemilik: Leandro & Karunia)
+Setiap sesi cloud bekerja di branch `claude/...` sendiri. Hasil kerja yang tidak digabung ke `main` tidak terlihat oleh sesi berikutnya,
+dan pemilik tidak mau terus mengingatkan. Karena itu pemilik **mengizinkan Claude menggabungkan ke `main` dan push `main`** sesuai aturan ini:
+1. **Awal sesi, sebelum mengerjakan apa pun:** baca keluaran hook `[sinkron repo]` (`.claude/hooks/session-start.sh`).
+   Kalau hook tidak jalan, cek manual: `git fetch --prune origin` lalu `git branch -r --no-merged origin/main`.
+   Kalau ada branch yang belum masuk `main`: gabungkan ke `main` (`git checkout main && git merge --ff-only origin/main && git merge --no-edit origin/<branch>`),
+   push `main`, lalu bawa ke branch sesi ini (`git checkout <branch-sesi> && git merge --ff-only main`, atau `git merge main` bila tidak bisa fast-forward).
+   Sebutkan singkat ke pengguna apa saja yang digabung.
+2. **Akhir sesi (setiap kali ada commit):** push branch sesi, lalu gabungkan ke `main` dan push `main`. Jangan tunggu disuruh.
+3. **Kalau ada konflik merge:** berhenti, jangan pilih sepihak, jelaskan konfliknya ke pengguna dan tanya.
+4. Branch `claude/...` yang isinya sudah 100% ada di `main` (cek `git branch -r --merged origin/main`) boleh dihapus dari GitHub, kecuali branch sesi ini.
+5. Jangan rewrite history `main` (tidak ada force push ke `main`).
 
 ## Ini apa
-Channel YouTube Shorts **Mitos Rumahan & Fakta Unik** (@MitosRumahan): video stickman vertikal 45 detik, membongkar mitos sehari-hari (Bahasa Indonesia). Pemilik akun: Leandro & Karunia.
+Channel YouTube Shorts **Mitos Rumahan & Fakta Unik** (@MitosRumahan): video stickman vertikal (45-75 detik), mitos sehari-hari dan format "Kenapa X?" (Bahasa Indonesia). Pemilik akun: Leandro & Karunia.
 
 ## Peta repo
 | Path | Isi |
