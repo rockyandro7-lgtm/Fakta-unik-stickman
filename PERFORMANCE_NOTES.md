@@ -148,3 +148,23 @@ Dugaan mekanisme (cara kerja internal YouTube tidak dipublikasikan, jadi ini taf
 3. Hasilnya tercatat sebagai "Shorts feed", bukan "Channel pages".
 
 Data pembanding yang dibutuhkan: views Kerupuk sejak 11.30 dan stayed-to-watch-nya. Kalau Masuk Angin mendapat tambahan views setara atau lebih besar dari Kerupuk, berarti Masuk Angin sedang dijadikan "video andalan" channel.
+
+## 2026-11-12: Rencana pengamatan, upload Blitzkrieg 17.30 WIB
+
+Tujuan: menguji apakah upload baru mengangkat video lama (seperti Kerupuk mengangkat Masuk Angin).
+
+**Dugaan sebelum upload (ditulis dulu agar tidak menyesuaikan tafsiran setelah melihat data):**
+- Kalau dorongan ke video lama terjadi per penonton (penonton yang suka satu Short disodori Short lain dari channel), efeknya bergantung pada kemiripan penonton. Blitzkrieg bertopik sejarah, penontonnya mungkin berbeda dari penonton keluhan sehari-hari, jadi **kenaikan Masuk Angin bisa lebih kecil** daripada setelah Kerupuk.
+- Kerupuk (umur ~6 jam saat Blitzkrieg tayang) mungkin lebih ikut terangkat daripada Masuk Angin karena formatnya sama ("Kenapa X?").
+- Video AC (88% swipe) diperkirakan tidak ikut naik.
+
+**Data yang dicatat (Realtime per video: total views; jika ada, sumber traffic):**
+
+| Waktu | Masuk Angin | Kerupuk | AC Freon | Tidak Tidur | Charger | Blitzkrieg |
+|---|---|---|---|---|---|---|
+| 17.25 (sebelum) | | | | | | 0 |
+| 18.30 (+1 jam) | | | | | | |
+| 20.30 (+3 jam) | | | | | | |
+| besok pagi | | | | | | |
+
+Pembanding: setelah Kerupuk, Masuk Angin naik ~1.300 ke ~2.400 dalam ~3¼ jam (laju pagi ~25-45/jam naik ke ~340/jam). Catat juga laju per jam Masuk Angin tepat sebelum 17.30, karena gelombang dari Kerupuk mungkin masih berjalan dan bisa disangka efek Blitzkrieg.
