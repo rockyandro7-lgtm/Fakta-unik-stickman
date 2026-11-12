@@ -120,3 +120,20 @@ Per jam: puncak gelombang pertama 356 views (11-11 19.00), hampir nol semalam, m
 **Koreksi tafsiran:** gelombang kedua hampir seluruhnya dari **Shorts feed**. Penonton yang datang lewat halaman channel hanya 10, jadi "penonton Kerupuk mampir ke video lama" bukan pendorong utama. Yang terjadi adalah algoritma menguji ulang Masuk Angin ke batch penonton baru. Upload Kerupuk mungkin ikut memicunya secara tidak langsung (sinyal channel), tapi bisa juga kebetulan. Untuk memastikan: bandingkan jam upload Kerupuk dengan jam mulai naiknya grafik.
 
 **Temuan sampingan:** 81 views dari YouTube search. "Masuk angin" adalah kata yang memang dicari orang, jadi topik keluhan sehari-hari punya umur panjang lewat pencarian. Judul dan tag sebaiknya memakai kata yang orang ketik.
+
+### Update: jam upload Kerupuk = 12-11 11.30 WIB
+
+Pembacaan batang per jam Masuk Angin (perkiraan dari grafik, 1 batang = 1 jam):
+
+| Jam (12-11) | Views/jam |
+|---|---|
+| 04.00-09.00 | ~25-45 (sudah ada kebangkitan kecil sebelum Kerupuk) |
+| 10.00 | ~15 |
+| 11.00 (Kerupuk tayang 11.30) | ~80 |
+| 12.00 | ~110 |
+| 13.00 | ~255 |
+| 14.00 (baru 41 menit) | ~215 (laju ~300/jam) |
+
+**Kesimpulan:** lonjakan besar (5-10x dari laju pagi) dimulai tepat setelah Kerupuk tayang. Waktunya **mendukung dugaan efek upload baru**. Mekanismenya bukan klik ke halaman channel (hanya 10 views), melainkan lewat **Shorts feed**: penonton yang menonton/menyukai Kerupuk disodori Short lain dari channel yang sama di feed mereka, dan itu tercatat sebagai "Shorts feed". Masih korelasi, belum bukti: cek apakah video lama lain (AC, Tidak Tidur) ikut naik sejak 11.30 di Realtime channel.
+
+**Pelajaran:** setiap upload baru bisa menghidupkan video lama yang retensinya bagus. Upload rutin = video lama ikut kerja.
