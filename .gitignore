@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+stills/
+seg/
+
+# hasil render episode (tidak di-commit)
+episodes/*/*.mp4
+episodes/*/silent.mp4
+episodes/*/audio/*.wav
