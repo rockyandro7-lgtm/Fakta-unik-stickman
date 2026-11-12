@@ -25,6 +25,20 @@ Berlaku bersama `teknik-visual-v5.md` dan `konsistensi-sinkron-v6.md`.
 - **Scribe telat 40-110 ms di awal kalimat**. Jalankan `tools/sync/snaponset.py scribe_words.json` sebelum `align_scribe.py`, lalu verifikasi dengan silencedetect (target <= 60 ms; kerupuk: maks 10 ms).
 - Nama fungsi aset jangan bentrok dengan `env.js` (contoh: `drawSun` sudah ada, jadi aset baru memakai `drawMatahari`). Cek dengan grep `^function nama` di `template*/web/*.js`.
 - `make.sh` membagi shot ke worker secara bergiliran. Shot mikro yang berat (`drawPores`) bisa menumpuk di satu worker. Render 58 dtk di 4 core sekitar 21 menit.
+- **Mata setengah (`half`/`smug`)** dulu ditutup dengan cat warna kulit (`HEAD`): di wajah benda jadi kotak krem, dan pupil yang melirik menyisakan titik di bawah garis kelopak. Sejak v7 `drawFace` memotong bola mata di garis kelopak dan pupil selalu menempel penuh di bawahnya; kedip >= 0,8 = satu garis bersih.
+- **Isi wajan** dipotong oleh `drawWok` (hanya di atas bibir atau di dalam lingkar wajan). Benda di wajan tetap harus muat (lebar <= 250 px x skala) dan mengapung di permukaan minyak.
+- **Latar blur**: `ctx.filter = 'blur()'` diterapkan ke SETIAP goresan. Pada latar datar yang lebar (ratusan goresan) satu shot bisa memakan > 20 menit. Pakai `blurLayer(ctx, c => dapurBack(c, t, cam), 8)` (contoh di `episodes/kerupuk/web/shots.js`): gambar sekali ke kanvas terpisah, lalu blur sebagai gambar.
+- **Latar parallax** (`kitchenBG` lama: lapisan depth .12-.55) membuat keramik, jendela, dan rak berubah ukuran relatif terhadap counter saat zoom. Sejak v7 `dapurBack` memakai `flat: true` dan `halamanBG` datar. Latar baru WAJIB satu skala (depth 1).
+
+## E. Mikroekspresi: kapan dipakai, kapan tidak (permintaan pemilik 12-11-2026)
+Mikroekspresi bagus kalau langka dan bermakna. Kalau semua wajah bergerak terus, tidak ada yang menonjol dan terasa gelisah.
+1. **Tokoh fokus** (yang sedang diikuti kamera/cerita) bereaksi di **ketukan cerita**: aksi, bahaya/gagal, terungkap, berhasil. Pola busur: usaha -> reaksi -> tenang. Maks sekitar 4 keadaan di hook yang padat, biasanya 2-3 per shot.
+2. **Tokoh latar** memegang 1 ekspresi dan berganti **sekali**, serempak dengan ketukan utama shot (offset 0,05-0,1 dtk).
+3. **Wajah benda** maks 2 keadaan (sebelum/sesudah kejadian), tanpa lirik/kedip acak. Pengecualian: benda yang jadi fokus busur cerita (contoh gumpalan gagal: netral -> ngeden -> X).
+4. **Lirik pupil acak (saccade) dan kedip acak** hanya untuk close-up tokoh yang diam > sekitar 1,5 dtk; fungsinya membuat tokoh terasa hidup saat tidak ada aksi.
+5. **Jarak antar-ganti >= 0,55 dtk** supaya tiap ekspresi terbaca. Perubahan arah lirik (look) boleh untuk memimpin kamera.
+6. Helper di `shots.js` (contoh `episodes/kerupuk`): `EF` (benda + latar: tanpa acak), `EM` (fokus sedang: kedip saja), `EC` (close-up: kedip + lirik). Ketiganya memberi PERINGATAN di log render bila jarak ganti < 0,55 dtk.
+Hasil di episode kerupuk: pergantian ekspresi 84 -> 45 dalam 58 dtk; lirik acak dari semua wajah -> 4 wajah close-up.
 
 ## D. Aset (`web/env_kerupuk.js`, ada di kedua template)
 `drawKerupuk`, `drawStove`, `drawWok` (callback isi), `drawSack`, `drawJug`, `drawBasin`, `drawDoughLump`, `drawLog`, `drawDandang`, `drawTampah`,

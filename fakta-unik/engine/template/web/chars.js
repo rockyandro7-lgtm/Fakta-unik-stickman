@@ -156,15 +156,24 @@ function drawFace(ctx, hx, hy, hr, f, o, sil) {
     if (k === 'x') { const xc = glow ? '#fff' : INK; line(ctx, x - .03, y - .03, x + .03, y + .03, .018, xc); line(ctx, x + .03, y - .03, x - .03, y + .03, .018, xc); continue; }
     let r = k === 'wide' ? er * 1.3 : er;
     const pr = k === 'wide' ? r * .3 : (f.pupil || .45) * r;
+    // v7: mata tertutup (kedip >= .8) = satu garis bersih, tanpa sisa pupil/putih mata
+    if (blink >= .8 && k !== 'half' && k !== 'smug') { line(ctx, x - r, y, x + r, y, .015, glow ? '#fff' : INK); continue; }
+    const lidded = k === 'half' || k === 'smug';
+    // v7: kelopak setengah = bola mata DIPOTONG di garis kelopak (bukan ditimpa cat warna kulit), pupil menempel penuh di bawahnya
+    const lidY = lidded ? y - r * (k === 'half' ? .1 : -.05) + blink * r * .9 : null;
+    const ry = lidded ? r : r * (1 - blink * .92);
+    if (lidded && blink >= .8) { line(ctx, x - r, lidY, x + r, lidY, .015, INK); continue; }
     ctx.save();
-    ellipse(ctx, x, y, r, r * (1 - blink * .92)); ctx.fillStyle = glow ? '#fff' : '#fff'; ctx.fill();
+    if (lidded) { ctx.beginPath(); ctx.rect(x - r - .02, lidY, r * 2 + .04, r + .04); ctx.clip(); }
+    ellipse(ctx, x, y, r, ry); ctx.fillStyle = '#fff'; ctx.fill();
     if (!glow) { ctx.lineWidth = .013; ctx.strokeStyle = INK; ctx.stroke(); }
-    ellipse(ctx, x, y, r, r * (1 - blink * .92)); ctx.clip();
-    const px = x + look[0] * r * .45, py = y + look[1] * r * .45;
+    ellipse(ctx, x, y, r, ry); ctx.clip();
+    let px = x + look[0] * r * .45, py = y + look[1] * r * .45;
+    if (lidded) py = clamp(py, lidY + pr * .55, y + r - pr * 1.05);
     circle(ctx, px, py, pr); ctx.fillStyle = INK; ctx.fill();
     if (pr > .012) { circle(ctx, px - pr * .35, py - pr * .35, pr * .3); ctx.fillStyle = '#fff'; ctx.fill(); }
-    if (k === 'smug' || k === 'half') { ctx.fillStyle = sil || HEAD; ctx.fillRect(x - r - .01, y - r - .01, r * 2 + .02, r * (k === 'half' ? .9 : 1.05)); line(ctx, x - r, y - r * (k === 'half' ? .1 : -.05), x + r, y - r * (k === 'half' ? .1 : -.05), .014); }
     ctx.restore();
+    if (lidded) line(ctx, x - r, lidY, x + r, lidY, .014, INK);
   }
   if (glow) return;
   // brows

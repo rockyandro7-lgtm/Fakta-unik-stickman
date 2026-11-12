@@ -86,7 +86,8 @@ function drawWok(ctx, x, y, s = 1, o = {}, inside) {
   ellipse(ctx, 0, 14, 226, 40); const g = ctx.createLinearGradient(0, -30, 0, 50); g.addColorStop(0, KRP.oilHi); g.addColorStop(1, KRP.oil); ctx.fillStyle = g; ctx.fill();
   if (hot > 0) { const r = rng(9); for (let i = 0; i < 18; i++) { const bx = (r() - .5) * 380, by = 14 + (r() - .5) * 52, ph = (t * (1.5 + r()) + r()) % 1; circle(ctx, bx, by, (3 + 7 * ph) * hot); ctx.lineWidth = 3; ctx.strokeStyle = `rgba(255,255,255,${.8 * (1 - ph) * hot})`; ctx.stroke(); } }
   ctx.restore();
-  if (inside) inside(ctx);
+  // v7: isi wajan hanya terlihat di atas bibir wajan atau di dalam lingkar wajan (tidak menembus badan wajan)
+  if (inside) { ctx.save(); ctx.beginPath(); ctx.rect(-3000, -4000, 6000, 4000); ctx.ellipse(0, 0, 250, 50, 0, 0, TAU); ctx.clip(); inside(ctx); ctx.restore(); }
   // bibir depan (menutupi bagian bawah benda di dalam)
   ctx.beginPath(); ctx.ellipse(0, 0, 260, 58, 0, .05, Math.PI - .05); ctx.lineWidth = 16; ctx.strokeStyle = KRP.wok; ctx.stroke();
   ctx.beginPath(); ctx.ellipse(0, 0, 268, 64, 0, .05, Math.PI - .05); ctx.lineWidth = 6; ctx.strokeStyle = INK; ctx.stroke();
@@ -201,16 +202,14 @@ function drawMatahari(ctx, x, y, r, t) {
 }
 // Halaman jemur: langit, matahari, pagar, rumput. sunP 0..1 = posisi matahari (pagi -> sore).
 function halamanBG(ctx, t, cam, o = {}) {
-  applyCam(ctx, cam, .15);
-  const g = ctx.createLinearGradient(0, -600, 0, 1300); g.addColorStop(0, '#3ea6ee'); g.addColorStop(1, '#c9ecfb'); ctx.fillStyle = g; ctx.fillRect(-1500, -1500, 4100, 3000);
+  applyCam(ctx, cam, 1);   // v7: datar, satu skala (tidak ada parallax zoom)
+  const g = ctx.createLinearGradient(0, -600, 0, 1300); g.addColorStop(0, '#3ea6ee'); g.addColorStop(1, '#c9ecfb'); ctx.fillStyle = g; ctx.fillRect(-3000, -3000, 7000, 4500);
   drawCloud(ctx, 200 + t * 12, 300, 90, 3); drawCloud(ctx, 820 - t * 8, 520, 70, 5);
   const sp = o.sunP == null ? .4 : o.sunP; drawMatahari(ctx, lerp(-60, 1140, sp), 420 - Math.sin(sp * Math.PI) * 220, 100, t);
-  applyCam(ctx, cam, .55);
-  for (let x = -600; x < 1700; x += 110) { rrect(ctx, x, 880, 70, 320, [30, 30, 0, 0]); fillStroke(ctx, '#fff3dc', 6); }
-  rrect(ctx, -640, 960, 2400, 30, 6); fillStroke(ctx, '#e7d3ae', 5); rrect(ctx, -640, 1110, 2400, 30, 6); fillStroke(ctx, '#e7d3ae', 5);
-  applyCam(ctx, cam, 1);
-  ctx.fillStyle = '#7cc95a'; ctx.fillRect(-1500, 1200, 4100, 2500);
-  ctx.fillStyle = '#69b74a'; for (let x = -1400; x < 2600; x += 90) { path(ctx, [[x, 1210], [x + 18, 1160], [x + 30, 1210]]); ctx.fill(); }
+  for (let x = -2000; x < 3000; x += 110) { rrect(ctx, x, 880, 70, 320, [30, 30, 0, 0]); fillStroke(ctx, '#fff3dc', 6); }
+  rrect(ctx, -2040, 960, 5100, 30, 6); fillStroke(ctx, '#e7d3ae', 5); rrect(ctx, -2040, 1110, 5100, 30, 6); fillStroke(ctx, '#e7d3ae', 5);
+  ctx.fillStyle = '#7cc95a'; ctx.fillRect(-3000, 1200, 7000, 3000);
+  ctx.fillStyle = '#69b74a'; for (let x = -2900; x < 3900; x += 90) { path(ctx, [[x, 1210], [x + 18, 1160], [x + 30, 1210]]); ctx.fill(); }
   // meja jemur (kaki kayu)
   rrect(ctx, 180, 1330, 30, 300, 6); fillStroke(ctx, '#8a5a34', 6); rrect(ctx, 870, 1330, 30, 300, 6); fillStroke(ctx, '#8a5a34', 6);
 }

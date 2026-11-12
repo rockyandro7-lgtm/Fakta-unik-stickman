@@ -9,7 +9,7 @@ Contoh lengkap yang bisa dirender: `examples/demo-v5-teknik/shots.js`.
    masuk dengan push-in melambat (ease-out, sekitar ×1,7–2 dalam 0,7 dtk) → drift atau ikuti lirikan → percepat (ease-in) ke transisi berikutnya.
 2. **Maksimal 1 hard cut per 10 dtk.** Perpindahan adegan memakai `portal`, `spin`, `match`, atau `dissolve` (lihat C).
 3. **Ikuti BENDA yang jadi fakta** (makanan, virus, listrik, air), bukan orangnya. Tokoh hanya bereaksi di sekitarnya.
-4. **Ekspresi berganti pada ketukan kata** dengan `exprTrack`. Setiap tokoh yang terlihat lebih dari 1 dtk minimal punya 2 keadaan.
+4. **Ekspresi berganti pada ketukan CERITA** dengan `exprTrack` (bukan tiap kata). **Direvisi v7:** lihat `format-kenapa-v7.md` bagian E. Tokoh latar dan wajah benda cukup 1-2 keadaan per shot, lirik/kedip acak hanya untuk close-up.
 5. **Satu aksi = busur 3 langkah**: usaha → bahaya/kaget (+keringat) → hasil (lega/bangga atau meringis).
 6. **Reaksi kelompok serentak** (offset 0,05–0,1 dtk antar tokoh), boleh satu tokoh kontras (tetap santai) untuk komedi.
 7. **Lirikan memimpin kamera**: ubah `look` tokoh 0,1–0,15 dtk sebelum kamera pan ke arah itu.

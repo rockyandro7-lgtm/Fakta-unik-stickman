@@ -49,7 +49,7 @@ Jika unduhan audio ElevenLabs ditolak proxy (403), host `elevenlabsusercontent.c
 7. **Cek gambar:** `node "$ENGINE/tools/render.js" stills 0.4,5.6,10,...` di folder episode, lihat `stills/` dan perbaiki yang tabrakan.
 8. **Suara efek dan musik:** edit cue di `audio.py` (waktu diambil dari kata lewat `W(baris,'kata')`).
 9. **Build:** `bash "$ENGINE/make.sh" <folder-episode>` (`WORKERS=4`). Hasil: `<folder>/<nama>.mp4`. `AUDIO_ONLY=1` hanya mix ulang suara.
-10. **QA dan serah:** pastikan durasi 30-45 detik, caption sinkron, tidak ada kata "follow", angka sesuai sumber. Kirim file ke pengguna dan sebutkan sumber fakta. Simpan naskah dan sumber di `topik_bank.md` (tandai topik sudah dipakai).
+10. **QA dan serah** (wajib juga: paket upload di pesan balasan, siap salin: judul rekomendasi + 2 alternatif, deskripsi, hashtag, tag, komentar pin, jadwal 18.30-19.30 WIB, file cover; sama dengan `YOUTUBE_METADATA.md`, ikut dikirim ulang setiap revisi): pastikan durasi 30-45 detik, caption sinkron, tidak ada kata "follow", angka sesuai sumber. Kirim file ke pengguna dan sebutkan sumber fakta. Simpan naskah dan sumber di `topik_bank.md` (tandai topik sudah dipakai).
 
 ## Tambahan v6 (konsistensi + sinkron) — wajib
 - **Baca `reference/konsistensi-sinkron-v6.md`.** Ringkas: satu fungsi per aset dan per latar, palet + tata letak terkunci;
@@ -62,7 +62,7 @@ Jika unduhan audio ElevenLabs ditolak proxy (403), host `elevenlabsusercontent.c
   lampu WARM, tutup = mulut), `drawPowerStrip`, `drawPlug`, `drawCord`, `drawNote`, `drawRpCoin`, `drawBill` (tagihan bisa menggembung),
   `drawWallClock`, `dapurBack`/`dapurMeja`, `spotlight`, `pcbBG`, `drawChip`, `drawCap`, `drawZzz`, `drawLed`, `drawBowl`.
 - **Aset dapur kerupuk** (`web/env_kerupuk.js`, palet `KRP`, tata letak `KR`): `drawKerupuk` (SATU fungsi untuk irisan gel basah -> kerupuk mentah kaca -> mengembang: opsi `dry`, `p`, `tilt`, `wet`, `crack`), `drawStove`, `drawWok` (callback isi wajan di antara minyak dan bibir depan), `drawSack`, `drawJug`, `drawBasin`, `drawDoughLump`, `drawLog` (gelondong adonan: `cook`, `stretch` karet, `core` inti mentah, `cut`), `drawDandang`, `drawTampah`, `drawKnife`, `drawSerok`, `drawMatahari`, `halamanBG` (halaman jemur + matahari), dunia mikro `microBG`, `drawDrop`, `drawSteamBall`, `drawPores`, `pushArrow`, `sfxText` (TOK/KRIUK di dalam dunia), `mixC` (campur warna hex bertingkat; `lerpC` mengembalikan rgb() jadi tidak bisa dicampur ulang).
-- **v7:** baca `reference/format-kenapa-v7.md` untuk format "Kenapa X?". Ringkas (contoh: `episodes/kerupuk/`): pertanyaan di kalimat 1, re-hook misteri di kalimat 2 yang dijawab di tengah, rantai masalah -> solusi, momen mekanisme di dunia mikro, akhir kembali ke frame 0 (loop). Durasi video = akhir suara + 0,6 dtk (`main.js`), jadi shot terakhir berakhir di `WORDS[last].e + .6`.
+- **v7:** baca `reference/format-kenapa-v7.md` (format "Kenapa X?", aturan MIKROEKSPRESI bagian E, latar datar satu skala, mata setengah bersih, isi wajan terpotong). Ringkas (contoh: `episodes/kerupuk/`): pertanyaan di kalimat 1, re-hook misteri di kalimat 2 yang dijawab di tengah, rantai masalah -> solusi, momen mekanisme di dunia mikro, akhir kembali ke frame 0 (loop). Durasi video = akhir suara + 0,6 dtk (`main.js`), jadi shot terakhir berakhir di `WORDS[last].e + .6`.
 - Contoh episode lengkap v5+v6: `episodes/charger-nyolok/` di repo Duru (shots.js, audio.py, script.json, merge.json, SUMBER.md, metadata).
 - Caption mempertahankan koma desimal ("0,1").
 
