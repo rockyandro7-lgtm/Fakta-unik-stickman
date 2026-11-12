@@ -182,7 +182,8 @@ function drawWallClock(ctx, x, y, r, hours = 7, fast = 0) {
 }
 // ===== DAPUR: latar (kitchenBG + jam dinding) lalu meja depan. Urutan: dapurBack -> tokoh -> dapurMeja -> benda di meja =====
 function dapurBack(ctx, t, cam, o = {}) {
-  kitchenBG(ctx, t, cam, o); drawWallClock(ctx, DAPUR.clock[0], DAPUR.clock[1], 110, o.jam == null ? 7 : o.jam, o.fast || 0);
+  // v7: dapur datar (flat), ukuran konsisten saat kamera bergerak
+  kitchenBG(ctx, t, cam, Object.assign({ flat: true }, o)); drawWallClock(ctx, DAPUR.clock[0], DAPUR.clock[1], 110, o.jam == null ? 7 : o.jam, o.fast || 0);
 }
 function dapurMeja(ctx) {
   const P = LISTRIK, y = DAPUR.top; rrect(ctx, -1400, y, 3900, 60, 14); fillStroke(ctx, P.table, 8);

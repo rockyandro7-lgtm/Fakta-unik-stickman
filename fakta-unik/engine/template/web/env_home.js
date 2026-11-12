@@ -2,39 +2,44 @@
 const MINT = '#dff6f1', MINT2 = '#b6e6dc', STEEL = '#cfd7e6', STEEL2 = '#9aa6bf';
 
 function kitchenBG(ctx, t, cam, o = {}) {
-  const floorY = o.floor || 1150;
-  applyCam(ctx, cam, .12);
+  // v7: o.flat = semua lapisan satu skala (depth 1). Tanpa flat, lapisan belakang ber-parallax dan UKURANNYA berubah relatif saat zoom.
+  const floorY = o.floor || 1150, D = d => o.flat ? 1 : d, X0 = o.flat ? -3000 : -600, X1 = o.flat ? 3700 : 1700;
+  applyCam(ctx, cam, D(.12));
   let g = ctx.createLinearGradient(0, -500, 0, floorY); g.addColorStop(0, o.wallTop || '#ffe9ad'); g.addColorStop(1, o.wallBot || '#ffd27a');
-  ctx.fillStyle = g; ctx.fillRect(-1500, -1500, 4100, floorY + 1500);
+  ctx.fillStyle = g; ctx.fillRect(-3000, -3000, 7000, floorY + 3000);
   ctx.fillStyle = 'rgba(255,255,255,.22)';
-  for (let y = -300; y < floorY; y += 120) for (let x = -400 + ((y / 120) % 2) * 60; x < 1500; x += 120) { circle(ctx, x, y, 7); ctx.fill(); }
-  // window
-  applyCam(ctx, cam, .2);
-  rrect(ctx, 70, 150, 330, 400, 20); const wg = ctx.createLinearGradient(0, 150, 0, 550); wg.addColorStop(0, '#6cc4f2'); wg.addColorStop(1, '#d3f2fb'); ctx.fillStyle = wg; ctx.fill();
-  ctx.save(); rrect(ctx, 70, 150, 330, 400, 20); ctx.clip(); drawCloud(ctx, 200 + Math.sin(t * .2) * 20, 300, 70, 2); circle(ctx, 330, 230, 44); ctx.fillStyle = '#fff3a8'; ctx.fill(); ctx.restore();
-  rrect(ctx, 70, 150, 330, 400, 20); fillStroke(ctx, null, 9, '#8a5a34');
-  line(ctx, 235, 150, 235, 550, 8, '#8a5a34'); line(ctx, 70, 350, 400, 350, 8, '#8a5a34');
-  rrect(ctx, 50, 540, 370, 30, 10); fillStroke(ctx, '#c68a55', 6);
+  for (let y = -300; y < floorY; y += 120) for (let x = (o.flat ? -3000 : -400) + ((y / 120) % 2) * 60; x < (o.flat ? 3700 : 1500); x += 120) { circle(ctx, x, y, 7); ctx.fill(); }
+  // window (versi datar: jendela kedua di area kiri supaya dinding tidak kosong)
+  applyCam(ctx, cam, D(.2));
+  const win = wx => {
+    rrect(ctx, wx, 150, 330, 400, 20); const wg = ctx.createLinearGradient(0, 150, 0, 550); wg.addColorStop(0, '#6cc4f2'); wg.addColorStop(1, '#d3f2fb'); ctx.fillStyle = wg; ctx.fill();
+    ctx.save(); rrect(ctx, wx, 150, 330, 400, 20); ctx.clip(); drawCloud(ctx, wx + 130 + Math.sin(t * .2) * 20, 300, 70, 2); circle(ctx, wx + 260, 230, 44); ctx.fillStyle = '#fff3a8'; ctx.fill(); ctx.restore();
+    rrect(ctx, wx, 150, 330, 400, 20); fillStroke(ctx, null, 9, '#8a5a34');
+    line(ctx, wx + 165, 150, wx + 165, 550, 8, '#8a5a34'); line(ctx, wx, 350, wx + 330, 350, 8, '#8a5a34');
+    rrect(ctx, wx - 20, 540, 370, 30, 10); fillStroke(ctx, '#c68a55', 6);
+  };
+  win(70); if (o.flat) win(-800);
   // shelf with jars
-  applyCam(ctx, cam, .3);
+  applyCam(ctx, cam, D(.3));
   rrect(ctx, 650, 330, 420, 24, 8); fillStroke(ctx, '#b4693a', 6);
   [[700, '#ff8a5b'], [790, '#6bc46d'], [880, '#ffd34e'], [970, '#6aa8f0']].forEach(([x, c], i) => { rrect(ctx, x, 250 + (i % 2) * 8, 70, 80 - (i % 2) * 8, 14); fillStroke(ctx, c, 5); rrect(ctx, x + 6, 232 + (i % 2) * 8, 58, 20, 6); fillStroke(ctx, '#fff', 5); });
   // backsplash tiles
-  applyCam(ctx, cam, .55);
+  applyCam(ctx, cam, D(.55));
   const ty0 = floorY - 520, ty1 = floorY - 215;
-  ctx.fillStyle = '#f4fbff'; ctx.fillRect(-600, ty0, 2300, ty1 - ty0);
+  ctx.fillStyle = '#f4fbff'; ctx.fillRect(X0, ty0, X1 - X0, ty1 - ty0);
   ctx.strokeStyle = '#b8d9e8'; ctx.lineWidth = 4;
-  for (let y = ty0; y <= ty1; y += 76) { ctx.beginPath(); ctx.moveTo(-600, y); ctx.lineTo(1700, y); ctx.stroke(); }
-  for (let r = 0; r < 4; r++) for (let x = -600 + (r % 2) * 60; x < 1700; x += 120) { ctx.beginPath(); ctx.moveTo(x, ty0 + r * 76); ctx.lineTo(x, ty0 + r * 76 + 76); ctx.stroke(); }
-  ctx.fillStyle = 'rgba(80,120,160,.14)'; ctx.fillRect(-600, ty0, 2300, 14);
+  for (let y = ty0; y <= ty1; y += 76) { ctx.beginPath(); ctx.moveTo(X0, y); ctx.lineTo(X1, y); ctx.stroke(); }
+  for (let r = 0; r < 4; r++) for (let x = X0 + (r % 2) * 60; x < X1; x += 120) { ctx.beginPath(); ctx.moveTo(x, ty0 + r * 76); ctx.lineTo(x, ty0 + r * 76 + 76); ctx.stroke(); }
+  ctx.fillStyle = 'rgba(80,120,160,.14)'; ctx.fillRect(X0, ty0, X1 - X0, 14);
   // counter + cabinets
   applyCam(ctx, cam, 1);
-  rrect(ctx, -300, floorY - 215, 1700, 215, 0); fillStroke(ctx, '#27a5a0', 7);
-  for (let x = -260; x < 1400; x += 340) { rrect(ctx, x, floorY - 190, 300, 170, 14); fillStroke(ctx, '#34c0b9', 6); rrect(ctx, x + 120, floorY - 176, 60, 14, 7); fillStroke(ctx, '#f3f0e6', 4); }
-  ctx.fillStyle = 'rgba(0,50,60,.18)'; ctx.fillRect(-300, floorY - 40, 1700, 40);
-  rrect(ctx, -320, floorY - 250, 1740, 44, 10); fillStroke(ctx, '#d9a56b', 7);
-  ctx.fillStyle = 'rgba(255,255,255,.3)'; ctx.fillRect(-310, floorY - 244, 1720, 8);
-  drawDeckFloor(ctx, floorY, 540, -1100, -700, 1780, 2500, 0);
+  const C0 = o.flat ? -3000 : -300, C1 = o.flat ? 3700 : 1400;
+  rrect(ctx, C0, floorY - 215, C1 - C0, 215, 0); fillStroke(ctx, '#27a5a0', 7);
+  for (let x = C0 + 40; x < C1; x += 340) { rrect(ctx, x, floorY - 190, 300, 170, 14); fillStroke(ctx, '#34c0b9', 6); rrect(ctx, x + 120, floorY - 176, 60, 14, 7); fillStroke(ctx, '#f3f0e6', 4); }
+  ctx.fillStyle = 'rgba(0,50,60,.18)'; ctx.fillRect(C0, floorY - 40, C1 - C0, 40);
+  rrect(ctx, C0 - 20, floorY - 250, C1 - C0 + 40, 44, 10); fillStroke(ctx, '#d9a56b', 7);
+  ctx.fillStyle = 'rgba(255,255,255,.3)'; ctx.fillRect(C0 - 10, floorY - 244, C1 - C0 + 20, 8);
+  drawDeckFloor(ctx, floorY, 540, -1100, o.flat ? -3000 : -700, o.flat ? 3700 : 1780, 2500, 0);
   // light shaft from window
   ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.fillStyle = 'rgba(255,245,200,.16)'; path(ctx, [[70, 150], [400, 150], [820, floorY + 420], [380, floorY + 420]]); ctx.fill(); ctx.restore();
 }
