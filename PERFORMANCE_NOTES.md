@@ -86,3 +86,20 @@ Masuk Angin mendapat gelombang distribusi kedua (grafik engaged views: naik, dat
 - **Jadikan Masuk Angin template**: topik keluhan sehari-hari, karakter stickman langsung terlihat di frame pertama.
 - Dugaan masalah AC: frame pembuka padat teks/infografis sehingga orang swipe sebelum tertarik. Perlu dicek di 2-3 detik pertama.
 - Audience Retention kedua video belum tersedia (diproses hingga 2 hari).
+
+## 2026-11-12 14:38: Masuk Angin naik lagi setelah upload Kerupuk
+
+| Metrik | Masuk Angin (umur ~21 jam) |
+|---|---|
+| Views sejak tayang | 2.296 (11-11 18:39: 437) |
+| Subscribers dari video ini | +6 |
+| Sumber traffic | Shorts feed 2,1K (~93%) |
+| Audience Retention | belum tersedia (diproses hingga 2 hari) |
+
+Pola grafik: lonjakan awal sampai ~1,5K, datar berjam-jam, lalu naik curam lagi di jam-jam terakhir, bersamaan dengan tayangnya Kerupuk.
+
+### Tafsiran
+
+- Ini gelombang distribusi lanjutan yang **kemungkinan dipicu** upload baru: penonton Kerupuk membuka channel/video lain, dan sistem Shorts menguji ulang video lama ke audiens yang mirip. Hampir semua traffic tetap dari Shorts feed, jadi dorongan utamanya dari algoritma, bukan dari halaman channel.
+- Belum bisa dipastikan sebab-akibat (bisa juga gelombang yang kebetulan bersamaan). Cara cek: tab Reach Masuk Angin untuk jam-jam terakhir (porsi "Channel pages"/"Other YouTube features" naik?) dan apakah video lama lain (AC, Tidak Tidur) ikut naik di Realtime.
+- Implikasi: upload rutin menghidupkan video lama. Jadwal konsisten (18.30-19.30 WIB) lebih penting daripada mengejar satu video viral.
