@@ -168,3 +168,28 @@ Tujuan: menguji apakah upload baru mengangkat video lama (seperti Kerupuk mengan
 | besok pagi | | | | | | |
 
 Pembanding: setelah Kerupuk, Masuk Angin naik ~1.300 ke ~2.400 dalam ~3¼ jam (laju pagi ~25-45/jam naik ke ~340/jam). Catat juga laju per jam Masuk Angin tepat sebelum 17.30, karena gelombang dari Kerupuk mungkin masih berjalan dan bisa disangka efek Blitzkrieg.
+
+## 2026-11-12 malam: Pola "gelombang ~300" (laporan pemilik)
+
+Pola yang selalu berulang di setiap video (dari pengamatan pemilik):
+- Setelah upload: 20-30 menit naik ~300 views, lalu jeda ~1 jam.
+- Gelombang ke-2: 20-30 menit naik ~300-400, lalu jeda lagi.
+- Sampai ~3 gelombang, lalu datar.
+- Blitzkrieg: sedang di gelombang ke-2, ~450 views, stayed to watch 71%.
+
+### Tafsiran (cara kerja internal YouTube tidak dipublikasikan)
+
+- Ini cocok dengan **distribusi bertahap**: video dikirim ke satu kelompok kecil penonton (~300 untuk channel sebesar ini), sistem menunggu hasilnya (jeda ~1 jam), lalu memutuskan kirim batch berikutnya atau berhenti.
+- Datar setelah ~3 gelombang = video belum melewati ambang untuk naik ke kelompok yang lebih besar. Bukan dihukum; Masuk Angin datar lalu hidup lagi keesokan harinya (1.300 ke 2.400+).
+- **Stayed to watch hanya mengukur "tidak swipe di awal".** 71% berarti hook Blitzkrieg bagus, tetapi keputusan naik level kemungkinan juga memakai sinyal setelahnya: persentase rata-rata yang ditonton, tonton ulang (loop), like/share/subscribe per view, dibandingkan dengan Short lain yang disodorkan ke penonton yang sama.
+- Dugaan untuk Blitzkrieg: durasi ~90 dtk membuat persentase tontonan rata-rata lebih rendah daripada video 45-60 dtk.
+
+### Yang dicek di tiap video saat datar
+
+| Metrik | Lokasi | Gunanya |
+|---|---|---|
+| Stayed to watch | Engagement | Kekuatan hook (sudah dicatat) |
+| Average percentage viewed / kurva retensi | Engagement > Audience retention | Apakah penonton bertahan sampai akhir; di detik berapa turun |
+| Like, share, subscriber per video | Overview | Sinyal "suka" selain menonton |
+
+Kalau video yang lolos >1.000 views ternyata punya persentase tonton lebih tinggi daripada yang berhenti di ~900-1.000, berarti penghambatnya ada di tengah/akhir video, bukan di hook.
