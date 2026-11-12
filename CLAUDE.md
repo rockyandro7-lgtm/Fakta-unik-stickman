@@ -1,5 +1,46 @@
-# Repo Duru
+# Fakta-unik-stickman: BACA INI DULU
 
+Satu repo untuk semuanya. Semua branch lama sudah digabung ke `main`. Kerjakan di `main` (atau branch kerja yang diminta), jangan bikin repo/branch terpisah per video.
+
+## Ini apa
+Channel YouTube Shorts **Mitos Rumahan & Fakta Unik** (@MitosRumahan): video stickman vertikal 45 detik, membongkar mitos sehari-hari (Bahasa Indonesia). Pemilik akun: Leandro & Karunia.
+
+## Peta repo
+| Path | Isi |
+|---|---|
+| `fakta-unik/` | **Skill + engine pembuat video.** Mulai dari `fakta-unik/SKILL.md` |
+| `fakta-unik/reference/topik_bank.md` | **Bank topik** + status (SUDAH / Perlu cek) |
+| `episodes/<nama>/` | Satu folder per episode (naskah, audio, metadata, thumbnail). MP4 tidak di-commit |
+| `PERFORMANCE_NOTES.md` | **Catatan analitik channel.** Tambah snapshot baru di bagian bawah (jangan timpa) |
+| `blitzkrieg-shorts/` | Eksperimen terpisah: Short sejarah PD II (peta vektor, render Python). Bukan format utama channel |
+
+## Pelajaran dari data (lihat PERFORMANCE_NOTES.md, sampel masih kecil)
+- Pola yang menang: **topik keluhan sehari-hari + karakter stickman terlihat di frame pertama** (Masuk Angin: stayed-to-watch 67%).
+- Pola yang kalah: **pembuka padat teks/infografis** (AC "Freon Habis": 88% swipe away).
+- Hook: klaim mitos di kalimat pertama, suara dan gerakan mulai di frame 0.
+- Shorts datang bergelombang. Jangan hapus atau upload ulang video yang sepi.
+
+## Alur membuat episode baru
+1. Pilih topik dari `topik_bank.md` (prioritaskan keluhan sehari-hari). Verifikasi fakta ke sumber primer, simpan di `episodes/<nama>/SUMBER.md`.
+2. Ikuti `fakta-unik/SKILL.md` (wajib baca `reference/teknik-visual-v5.md` dan `konsistensi-sinkron-v6.md` untuk shot).
+3. Hasilkan: naskah, audio, thumbnail 1080x1920 dan 1280x720, `YOUTUBE_METADATA.md`.
+4. Update `topik_bank.md` (tandai SUDAH) dan commit + push.
+5. Jadwal upload: 18.30-19.30 WIB.
+
+## Status saat ini (update tiap session)
+- Sudah rilis: Masuk Angin (#3), Freon Habis, Tidak Tidur 11 Hari, Charger Nyolok (episode di `episodes/charger-nyolok`).
+- Antrean berikutnya: Tidur rambut basah bikin flu (#3 bank), Mandi malam bikin rematik (#4), Cas HP semalaman (#2).
+- Belum diisi: checklist analitik di `PERFORMANCE_NOTES.md` (retention per detik, sumber traffic, data 7 hari).
+- Kalau pengguna hanya bilang "ide topik" atau "lanjut", mulai dari antrean di atas, cek `PERFORMANCE_NOTES.md`, lalu usulkan.
+
+## Aturan
+- Topik kesehatan: tambahkan "bukan pengganti saran dokter". Mitos budaya ditandai sebagai kepercayaan, bukan sains.
+- Ambil teknik dari video referensi, jangan salin aset atau naskah.
+- Jangan commit MP4 atau hasil render besar (lihat `.gitignore`).
+
+---
+
+# Detail skill (dari CLAUDE.md lama)
 Isi utama: skill **`fakta-unik/`** untuk channel YouTube "Mitos Rumahan & Fakta Unik" (@MitosRumahan).
 Repo ini adalah sumber kebenaran skill. Zip di Google Drive (`Mitos Rumahan & Fakta Unik - YouTube / 00 - Panduan & Skill`)
 hanya salinan rilis yang diupload bila pengguna setuju.
