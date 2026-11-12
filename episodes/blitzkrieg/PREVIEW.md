@@ -27,3 +27,13 @@ python3 audio.py                       # musik + efek (preview tanpa narator)
 node ../../fakta-unik/engine/tools/render.js segments 0,1,2,3,4   # lalu concat + mux (lihat make.sh)
 node sheet_render.js aset_preview.jpg  # lembar aset
 ```
+
+---
+# Preview 2: PETA PENGEPUNGAN (12-11-2026)
+Naskah v2 baris 6-14 (`NASKAH.md`), ~44 dtk, tanpa narator. `web/shots.js` (preview 1 dipindah ke `web/shots_preview_aset.js`).
+1. Analogi tinju: KANAN memancing ke atas, lawan menangkis, KIRI menghantam rusuk dari bawah (arah = peta: atas = utara, bawah = selatan).
+2. Peta: "10 MEI 1940", panah bersarung tinju KANAN masuk Belgia, Sekutu bergegas ke utara, wajah Jerman menyeringai.
+3. Panah KIRI menyelinap di bawah pohon Ardennes, tembus Sedan, melaju ke barat sampai laut (BYUR).
+4. "10 HARI", BRAK, kantong merah menyempit + cincin tank + detak jantung, Sekutu terdesak ke laut.
+5. Dunkirk: perahu bolak-balik ke Inggris, "338 RIBU+", tank Sekutu ditinggal.
+Aset peta: `web/env_peta.js` (proj, TEMPAT, RUTE, drawMapBase, drawArrow, drawGlove, hatBrodie, mapSoldier, drawBoat, drawPocket, ringScene) + `web/map_data.js` (dari `tools/make_map.py`, Natural Earth 1:50m).

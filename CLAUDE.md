@@ -44,7 +44,8 @@ Channel YouTube Shorts **Mitos Rumahan & Fakta Unik** (@MitosRumahan): video sti
 ## Status saat ini (update tiap session)
 - Sudah rilis: Masuk Angin (#3), Freon Habis, Tidak Tidur 11 Hari, Charger Nyolok (episode di `episodes/charger-nyolok`).
 - **Siap upload (12-11-2026): Kerupuk** (`episodes/kerupuk`, format "Kenapa X?" pertama, 58 dtk). MP4 dikirim terpisah; render ulang: `bash fakta-unik/engine/make.sh episodes/kerupuk`. Setelah tayang, bandingkan retensinya dengan Masuk Angin di `PERFORMANCE_NOTES.md`.
-- **Preview aset (12-11-2026): Blitzkrieg versi stickman** (`episodes/blitzkrieg/`, lihat `PREVIEW.md`). Menggantikan video peta di `blitzkrieg-shorts/` (pembuka peta+teks = pola kalah). Aset baru `web/env_perang.js` (masih di folder episode; pindahkan ke `engine/template*` setelah disetujui). Menunggu masukan pemilik sebelum naskah penuh + suara.
+- **Dikerjakan (12-11-2026): Blitzkrieg versi stickman + peta** (`episodes/blitzkrieg/`). Naskah v2 di `NASKAH.md` (~95 dtk, tanpa Rusia, tanpa Budi), fakta di `SUMBER.md`. Sudah ada 2 preview tanpa narator: aset (`web/shots_preview_aset.js`) dan peta pengepungan (`web/shots.js`, baris 6-14). Aset baru `web/env_perang.js` + `web/env_peta.js` + `web/map_data.js` (masih di folder episode; pindahkan ke `engine/template*` setelah disetujui). Berikutnya: masukan pemilik -> suara ElevenLabs -> semua adegan. Menggantikan video peta lama di `blitzkrieg-shorts/`.
+- CTA sekarang: "Subscribe Mitos Rumahan dan Fakta Unik, besok ada lagi!" (nama channel lengkap).
 - Antrean berikutnya: sesuai arahan pemilik, utamakan format "Kenapa X?" (ide di bagian bawah `topik_bank.md`). Topik kesehatan lama (#2, #3, #4) hanya bila diminta.
 - Belum diisi: checklist analitik di `PERFORMANCE_NOTES.md` (retention per detik, sumber traffic, data 7 hari).
 - Kalau pengguna hanya bilang "ide topik" atau "lanjut", mulai dari antrean di atas, cek `PERFORMANCE_NOTES.md`, lalu usulkan.

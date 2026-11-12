@@ -13,7 +13,7 @@ Video explainer stickman vertikal (1080x1920, 30 fps) untuk channel YouTube **Mi
 - **Topik umum untuk orang Indonesia.** Pilih mitos/salah kaprah yang banyak dipercaya, bukan yang niche. Sumber ide: `topik_bank.md` di folder kerja pengguna, atau cari lagi (Halodoc, Klikdokter, Detik, Kompas, media lokal).
 - **Fakta harus dicek ke sumber kuat** (WHO, Kemenkes, USDA/FSIS, produsen resmi, jurnal). Beri nuansa ("sebagian mitos"), jangan menyederhanakan berlebihan. Angka ditulis persis sesuai sumber. Topik kesehatan: tambahkan di deskripsi "Bukan pengganti saran dokter."
 - **Branding:** nama channel "Mitos Rumahan & Fakta Unik", handle @MitosRumahan, avatar kuning dengan papan MITOS dan dua tokoh (`drawChannelAvatar`). Banner penutup memakai `drawSubBanner` (sudah berisi nama dan handle ini).
-- **CTA penutup selalu "Subscribe Mitos Rumahan, besok ada lagi!"**. Jangan pakai kata "follow".
+- **CTA penutup selalu "Subscribe Mitos Rumahan dan Fakta Unik, besok ada lagi!"** (nama channel lengkap, permintaan pemilik 12-11-2026). Jangan pakai kata "follow".
 - **Hook di 0,1 detik:** suara dan gerakan mulai di frame pertama; klaim mitos ada di kalimat pertama.
 - Durasi target **30-40 detik**, sekitar 90-100 kata. Tulis angka sebagai digit ("4 sampai 60 derajat", "2 jam").
 - Tidak ada tanda pisah panjang (em dash) di layar.
@@ -31,7 +31,7 @@ Jika unduhan audio ElevenLabs ditolak proxy (403), host `elevenlabsusercontent.c
 ## Alur kerja
 1. **Topik + cek fakta.** Cari 2-3 sumber, catat angka dan nuansa. Tentukan satu kalimat "jawaban".
 2. **Naskah** di `script.json` (satu kalimat per entri, maksimal sekitar 11 entri):
-   1. Hook: "Katanya, <klaim>."  2. "Benar nggak sih?"  3. "Ternyata ini mitos." / "Ternyata benar."  4-8. Fakta dan penjelasan (satu ide per kalimat, ada satu bagian "mekanisme" yang bisa digambar)  9. Langkah praktis  10. "Mitos apa lagi yang mau dibongkar?"  11. "Subscribe Mitos Rumahan, besok ada lagi!"
+   1. Hook: "Katanya, <klaim>."  2. "Benar nggak sih?"  3. "Ternyata ini mitos." / "Ternyata benar."  4-8. Fakta dan penjelasan (satu ide per kalimat, ada satu bagian "mekanisme" yang bisa digambar)  9. Langkah praktis  10. "Mitos apa lagi yang mau dibongkar?"  11. "Subscribe Mitos Rumahan dan Fakta Unik, besok ada lagi!"
    Jika pengguna sedang online, tampilkan naskah dulu. Pada eksekusi terjadwal/otomatis, lanjut tanpa menunggu.
 3. **Folder episode:** `cp -r "$ENGINE/template" ~/reels/<nama-episode>` lalu ganti `script.json`; kosongkan `audio/`.
 4. **Suara (ElevenLabs lewat konektor).** Satu take utuh untuk seluruh naskah:
