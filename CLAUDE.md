@@ -24,6 +24,7 @@ Channel YouTube Shorts **Mitos Rumahan & Fakta Unik** (@MitosRumahan): video sti
 1. Pilih topik dari `topik_bank.md` (prioritaskan keluhan sehari-hari). Verifikasi fakta ke sumber primer, simpan di `episodes/<nama>/SUMBER.md`.
 2. Ikuti `fakta-unik/SKILL.md` (wajib baca `reference/teknik-visual-v5.md` dan `konsistensi-sinkron-v6.md` untuk shot).
 3. Hasilkan: naskah, audio, thumbnail 1080x1920 dan 1280x720, `YOUTUBE_METADATA.md`.
+   **Wajib (permintaan pemilik 12-11-2026): setiap kali mengirim video (termasuk revisi), tulis juga paket upload langsung di pesan balasan, siap salin:** judul (1 rekomendasi + 2 alternatif), deskripsi, hashtag, tag, komentar pin, jadwal upload, dan file cover. Isinya sama dengan `YOUTUBE_METADATA.md`. Jangan hanya menyebut nama filenya.
 4. Update `topik_bank.md` (tandai SUDAH) dan commit + push.
 5. Jadwal upload: 18.30-19.30 WIB.
 
