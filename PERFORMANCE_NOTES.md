@@ -103,3 +103,20 @@ Pola grafik: lonjakan awal sampai ~1,5K, datar berjam-jam, lalu naik curam lagi 
 - Ini gelombang distribusi lanjutan yang **kemungkinan dipicu** upload baru: penonton Kerupuk membuka channel/video lain, dan sistem Shorts menguji ulang video lama ke audiens yang mirip. Hampir semua traffic tetap dari Shorts feed, jadi dorongan utamanya dari algoritma, bukan dari halaman channel.
 - Belum bisa dipastikan sebab-akibat (bisa juga gelombang yang kebetulan bersamaan). Cara cek: tab Reach Masuk Angin untuk jam-jam terakhir (porsi "Channel pages"/"Other YouTube features" naik?) dan apakah video lama lain (AC, Tidak Tidur) ikut naik di Realtime.
 - Implikasi: upload rutin menghidupkan video lama. Jadwal konsisten (18.30-19.30 WIB) lebih penting daripada mengejar satu video viral.
+
+### Update 14:41: sumber traffic Masuk Angin (Realtime 48 jam, 2.313 views)
+
+| Sumber | Views | Porsi |
+|---|---|---|
+| Shorts feed | 2,1K | ~91% |
+| YouTube search | 81 | ~3,5% |
+| Other YouTube features | 50 | ~2% (sedikit naik di jam terakhir) |
+| Channel pages | 10 | <0,5% |
+| External | 3 | - |
+| Browse features | 0 | - |
+
+Per jam: puncak gelombang pertama 356 views (11-11 19.00), hampir nol semalam, mulai pagi 12-11 naik pelan (~30-45/jam), lalu ~80, ~110, ~255 per jam.
+
+**Koreksi tafsiran:** gelombang kedua hampir seluruhnya dari **Shorts feed**. Penonton yang datang lewat halaman channel hanya 10, jadi "penonton Kerupuk mampir ke video lama" bukan pendorong utama. Yang terjadi adalah algoritma menguji ulang Masuk Angin ke batch penonton baru. Upload Kerupuk mungkin ikut memicunya secara tidak langsung (sinyal channel), tapi bisa juga kebetulan. Untuk memastikan: bandingkan jam upload Kerupuk dengan jam mulai naiknya grafik.
+
+**Temuan sampingan:** 81 views dari YouTube search. "Masuk angin" adalah kata yang memang dicari orang, jadi topik keluhan sehari-hari punya umur panjang lewat pencarian. Judul dan tag sebaiknya memakai kata yang orang ketik.
