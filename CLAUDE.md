@@ -33,6 +33,12 @@ Channel YouTube Shorts **Mitos Rumahan & Fakta Unik** (@MitosRumahan): video sti
 - Belum diisi: checklist analitik di `PERFORMANCE_NOTES.md` (retention per detik, sumber traffic, data 7 hari).
 - Kalau pengguna hanya bilang "ide topik" atau "lanjut", mulai dari antrean di atas, cek `PERFORMANCE_NOTES.md`, lalu usulkan.
 
+## Aturan arah konten (update 12-11-2026, dari pemilik)
+- **HOOK wajib kuat untuk calon penonton yang swipe**: stickman terlihat + gerak + suara di frame 0, klaim/pertanyaan di 3 detik pertama, bukan infografis padat.
+- Kurangi topik kesehatan dan hindari kemasan "setengah mitos". Format utama sekarang: **"Kenapa X begitu?"** (fakta unik: benda, makanan, alam, teknologi, sejarah), dijelaskan bertahap lewat rantai masalah-solusi dalam satu adegan bersambung.
+- Fakta **wajib diverifikasi**, simpan di `SUMBER.md`, tetapi **jangan sebut riset/sumber di video**; bawakan dengan percaya diri.
+- Durasi **tidak kaku 45 detik**; boleh lebih panjang (kisaran 55-75 detik) untuk watch time, asal tiap beat menambah rasa penasaran.
+
 ## Aturan
 - Topik kesehatan: tambahkan "bukan pengganti saran dokter". Mitos budaya ditandai sebagai kepercayaan, bukan sains.
 - Ambil teknik dari video referensi, jangan salin aset atau naskah.
