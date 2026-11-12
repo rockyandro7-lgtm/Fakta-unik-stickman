@@ -89,6 +89,8 @@ function drawStick(ctx, o) {
     else if (hat === 'tuft') drawTuft(ctx, hx, hy, hr, lw, o.hatCol || INK);
   }
   if (!sil) { circle(ctx, hx, hy, hr); fillStroke(ctx, null, lw); }
+  // topi kustom: o.hat = fungsi (ctx, hx, hy, hr, lw, o), digambar SETELAH garis kepala supaya helm menutup ubun-ubun
+  if (!sil && typeof hat === 'function') hat(ctx, hx, hy, hr, lw, o);
   // face
   drawFace(ctx, hx, hy, hr, o.face || {}, o, sil);
   ctx.restore();
