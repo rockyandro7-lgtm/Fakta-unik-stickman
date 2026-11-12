@@ -1,4 +1,7 @@
 # Mitos Rumahan: kenapa kerupuk mengembang. Semua cue diambil dari waktu kata (audio/words_new.json), aturan v6.
+# Suara (audio/vo_raw.mp3): ElevenLabs model eleven_v4, voice Jonathan Wiratama (QC3gSHMyKh8m20lGyUNZ), generations_count 1,
+#   prompt = script.json digabung (satu take, 59,1 dtk mentah). Timing: Scribe eleven_scribe_v1 -> scribe_raw.json (130/130 kata).
+# Sinkron: tools/sync/tighten.py --keep 0.3 (57,3 dtk) -> mapwords.py -> snaponset.py -> engine/tools/align_scribe.py.
 from audio_lib import *
 import json
 WD = json.load(open('audio/words_new.json'))

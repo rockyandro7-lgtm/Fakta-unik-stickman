@@ -194,7 +194,7 @@ function drawSerok(ctx, x, y, s = 1, rot = 0) {
   ctx.save(); ellipse(ctx, 0, 0, 100, 34); ctx.clip(); ctx.strokeStyle = 'rgba(34,28,34,.35)'; ctx.lineWidth = 3; for (let i = -6; i <= 6; i++) { line(ctx, i * 16, -40, i * 16, 40, 3, 'rgba(34,28,34,.35)'); line(ctx, -110, i * 8, 110, i * 8, 3, 'rgba(34,28,34,.35)'); } ctx.restore();
   ctx.restore();
 }
-function drawSun(ctx, x, y, r, t) {
+function drawMatahari(ctx, x, y, r, t) {
   ctx.save(); ctx.translate(x, y); ctx.rotate(t * .3);
   for (let i = 0; i < 12; i++) { ctx.rotate(TAU / 12); path(ctx, [[r * 1.15, -r * .14], [r * 1.6, 0], [r * 1.15, r * .14]]); fillStroke(ctx, '#ffb43a', r * .06); }
   ctx.restore(); circle(ctx, x, y, r); fillStroke(ctx, '#ffd84a', r * .08);
@@ -204,7 +204,7 @@ function halamanBG(ctx, t, cam, o = {}) {
   applyCam(ctx, cam, .15);
   const g = ctx.createLinearGradient(0, -600, 0, 1300); g.addColorStop(0, '#3ea6ee'); g.addColorStop(1, '#c9ecfb'); ctx.fillStyle = g; ctx.fillRect(-1500, -1500, 4100, 3000);
   drawCloud(ctx, 200 + t * 12, 300, 90, 3); drawCloud(ctx, 820 - t * 8, 520, 70, 5);
-  const sp = o.sunP == null ? .4 : o.sunP; drawSun(ctx, lerp(-60, 1140, sp), 420 - Math.sin(sp * Math.PI) * 220, 100, t);
+  const sp = o.sunP == null ? .4 : o.sunP; drawMatahari(ctx, lerp(-60, 1140, sp), 420 - Math.sin(sp * Math.PI) * 220, 100, t);
   applyCam(ctx, cam, .55);
   for (let x = -600; x < 1700; x += 110) { rrect(ctx, x, 880, 70, 320, [30, 30, 0, 0]); fillStroke(ctx, '#fff3dc', 6); }
   rrect(ctx, -640, 960, 2400, 30, 6); fillStroke(ctx, '#e7d3ae', 5); rrect(ctx, -640, 1110, 2400, 30, 6); fillStroke(ctx, '#e7d3ae', 5);
