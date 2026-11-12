@@ -137,3 +137,14 @@ Pembacaan batang per jam Masuk Angin (perkiraan dari grafik, 1 batang = 1 jam):
 **Kesimpulan:** lonjakan besar (5-10x dari laju pagi) dimulai tepat setelah Kerupuk tayang. Waktunya **mendukung dugaan efek upload baru**. Mekanismenya bukan klik ke halaman channel (hanya 10 views), melainkan lewat **Shorts feed**: penonton yang menonton/menyukai Kerupuk disodori Short lain dari channel yang sama di feed mereka, dan itu tercatat sebagai "Shorts feed". Masih korelasi, belum bukti: cek apakah video lama lain (AC, Tidak Tidur) ikut naik sejak 11.30 di Realtime channel.
 
 **Pelajaran:** setiap upload baru bisa menghidupkan video lama yang retensinya bagus. Upload rutin = video lama ikut kerja.
+
+### Koreksi angka (dari pemilik)
+
+Total views Masuk Angin: ~1.300 tepat sebelum Kerupuk tayang (11.30) menjadi ~2.400 (~14.45). Total naik ~85% (+1.100 dalam ~3¼ jam, rata-rata ~340/jam). Angka "5-10x" di atas adalah **laju per jam** (pagi ~25-45/jam), bukan total views.
+
+Dugaan mekanisme (cara kerja internal YouTube tidak dipublikasikan, jadi ini tafsiran):
+1. Kerupuk dibagikan ke batch tes (subscriber + penonton mirip). Penonton yang menonton sampai habis memberi sinyal "suka channel ini".
+2. Rekomendasi Shorts bersifat per penonton: orang yang baru menikmati satu Short dari sebuah channel cenderung disodori Short lain dari channel itu. Yang dipilih adalah video dengan retensi terbaik (Masuk Angin, stayed-to-watch 67%).
+3. Hasilnya tercatat sebagai "Shorts feed", bukan "Channel pages".
+
+Data pembanding yang dibutuhkan: views Kerupuk sejak 11.30 dan stayed-to-watch-nya. Kalau Masuk Angin mendapat tambahan views setara atau lebih besar dari Kerupuk, berarti Masuk Angin sedang dijadikan "video andalan" channel.
