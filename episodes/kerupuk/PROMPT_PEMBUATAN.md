@@ -11,6 +11,13 @@ Kamu bekerja di repo Fakta-unik-stickman (channel YouTube Shorts @MitosRumahan, 
 6. Episode referensi yang sudah jadi: `episodes/charger-nyolok`
 Kerjakan di branch kerja yang diberikan, bukan branch baru. Jangan bertanya balik kecuali buntu; ambil keputusan terbaik dan laporkan.
 
+## 0a. Pakai skill stickman TERBARU (wajib, urutan kerja)
+1. Sebelum apa pun: `git fetch origin main` lalu bandingkan `fakta-unik/` di branch kerja dengan `origin/main` (`git diff --stat HEAD origin/main -- fakta-unik`). Jika `main` lebih baru, gabungkan/rebase dulu agar memakai versi skill TERBARU. Jangan memakai salinan skill di Drive atau `~/.claude/skills` yang bisa usang; sumber kebenaran adalah repo ini.
+2. Ikuti `SKILL.md` secara penuh, termasuk toolkit v5 (kamera tidak pernah diam, transisi `portal/spin/match/dissolve`, `exprTrack`, `propFace`, ikuti benda yang jadi fakta) dan aturan v6 (satu fungsi per aset dan per latar, palet + tata letak terkunci, alur suara + sinkron di `tools/sync/`). Cek apakah ada reference atau versi yang lebih baru dari v5/v6 dan pakai itu.
+3. Alur suara: `creative_create_flow`, lalu `creative_generate_speech` dengan `model_id: eleven_v4`, voice Jonathan Wiratama (`voice_id: QC3gSHMyKh8m20lGyUNZ`), `generations_count: 1`. JANGAN memanggil ulang untuk "mencoba lagi" (menagih kredit). Poll `creative_get_flow_run_status` sampai selesai, lalu pewaktuan kata dari Scribe, dirapatkan dengan `tools/sync/`.
+4. Format file episode mengikuti `episodes/charger-nyolok/` (`shots.js`, `audio.py`, `script.json`, `merge.json`, `SUMBER.md`, metadata). Properti baru (dapur, wajan, minyak, kerupuk, adonan, uap) ditambahkan di `env_home.js` atau file env baru: satu fungsi per benda, garis tepi tinta `INK`, warna jenuh, bayangan sel.
+5. Di akhir: tulis teknik/aset baru yang berguna kembali ke skill (`reference/` + engine, disalin ke `engine/template_landscape/web/`), supaya episode berikutnya ikut memakainya. Tambahkan catatan versi di `CLAUDE.md` (mis. v7) bila ada tambahan berarti.
+
 ## 1. Aturan emas (tidak boleh dilanggar)
 A. **HOOK ADALAH PRIORITAS #1.** Calon penonton sedang men-swipe Shorts. Tiga detik pertama menentukan semuanya. Data channel: pembuka padat teks/infografis = 88% swipe away; stickman terlihat + topik keluhan sehari-hari = 67% stayed-to-watch.
 B. **Riset TIDAK ditampilkan.** Jangan sebut "menurut penelitian", "sumber", "studi", nama jurnal, atau BPOM di video. Ceritakan dengan percaya diri, karena faktanya sudah diverifikasi. Detail sumber hanya di `SUMBER.md`.
