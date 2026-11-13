@@ -27,7 +27,7 @@ Topik kesehatan: tambahkan keterangan "bukan pengganti saran dokter" di deskrips
 ## Ide format "Kenapa X?" (arah konten 12-11-2026, bukan kesehatan)
 Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masalah-solusi yang bisa digambar.
 - Kenapa es batu mengapung, padahal batu tenggelam? (air memuai saat membeku)
-- Kenapa iris bawang merah bikin mata perih? (senyawa sulfur yang menguap)
+- **Kenapa iris bawang bikin mata perih?** (NASKAH SIAP 13-11-2026: `episodes/bawang/`, fakta terverifikasi di `SUMBER.md`; dipilih dari data: topik dapur sehari-hari, cocok dengan penonton perempuan 25-34, bukan kesehatan)
 - Kenapa kopi/teh panas "berasap" di pagi hari tapi tidak di siang hari? (uap mengembun di udara dingin)
 - Kenapa nasi yang didinginkan jadi keras? (retrogradasi pati; nyambung dengan episode kerupuk)
 - Kenapa jangkrik bunyi makin cepat saat panas? (perlu cek kuat)
