@@ -32,7 +32,8 @@ Channel YouTube Shorts **Mitos Rumahan & Fakta Unik** (@MitosRumahan): video sti
 - Pola yang kalah: **pembuka padat teks/infografis** (AC "Freon Habis": 82,8% swipe away, padahal yang bertahan menonton 85% durasinya; masalahnya murni hook).
 - Hook: klaim mitos di kalimat pertama, suara dan gerakan mulai di frame 0. 95% traffic dari Shorts feed, jadi 1-2 detik pertama menentukan.
 - Durasi 90 dtk aman bila ada analogi kuat (Blitzkrieg: 73,6% ditonton, like dan watch time tertinggi). Topik sejarah diterima penonton.
-- **Komentar masih 0 di semua video.** Penutup pakai pertanyaan dua pilihan ("Tim A atau tim B?") + komentar pin yang sama.
+- **Komentar masih 0 di semua video.** Ajakan berkomentar lewat komentar pin dua pilihan ("Tim A atau tim B?"), bukan di suara.
+- **Tanpa CTA (keputusan pemilik 13-11-2026):** tidak ada ajakan subscribe/pertanyaan di suara maupun banner. Alasan pemilik: CTA menurunkan retensi dan jarang dilihat. Video berakhir dengan kalimat yang menyambung ke kalimat pertama (loop), pola dari `fakta-unik/reference/analisis/ref-02-ricksclips-naskah.md`.
 - Shorts datang bergelombang. Jangan hapus atau upload ulang video yang sepi.
 
 ## Alur membuat episode baru
@@ -44,13 +45,14 @@ Channel YouTube Shorts **Mitos Rumahan & Fakta Unik** (@MitosRumahan): video sti
 5. Jadwal upload: 18.30-19.30 WIB.
 
 ## Status saat ini (update tiap session)
-- Sudah rilis: Masuk Angin (#3), Freon Habis, Tidak Tidur 11 Hari (long-form), Kerupuk, Blitzkrieg. **Charger Nyolok terjadwal 13-11-2026** (belum tayang per 13-11 10.30; episode di `episodes/charger-nyolok`).
+- Sudah rilis: Masuk Angin (#3), Freon Habis, Tidak Tidur 11 Hari (long-form), Kerupuk, Blitzkrieg. **Charger Nyolok terjadwal 13-11-2026** (belum tayang per 13-11 10.30; episode di `episodes/charger-nyolok`). Pemilik (13-11) mempertimbangkan untuk scrap/revamp episode ini (format lama + CTA).
+- **Bawang v2 SUDAH DIRENDER (13-11-2026), menunggu review pemilik**: `episodes/bawang/` (66,4 dtk, versi cerita lomba Ibu vs Budi, tanpa CTA, loop ke frame 0). MP4 tidak di-commit; render ulang di Windows: `powershell -File fakta-unik/engine/tools/win/build.ps1 -Dir episodes/bawang` (di Linux cloud: `make.sh` biasa). Aset baru `web/env_bawang.js` (bawang berwajah, talenan, batu asah, pisau tumpul/tajam, air mata, semprotan, stik glow, dunia sel). Thumbnail dari `thumb.js`.
 - **Snapshot analitik lengkap 13-11-2026** ada di bagian bawah `PERFORMANCE_NOTES.md` (tabel semua Short + cek dugaan).
-- **Episode berikutnya: `episodes/bawang/`, naskah v2 versi cerita** (disetujui pemilik 13-11-2026; lomba iris bawang Ibu vs Budi, ~170 kata, ~60 dtk). Pola naskah dari `fakta-unik/reference/analisis/ref-02-ricksclips-naskah.md`. Naskah + sumber siap (`NASKAH.md`, `SUMBER.md`, `script.json`); belum ada audio/shot/render. Pakai ulang dapur `KR` + dunia mikro dari `env_kerupuk.js`; aset baru: bawang merah berwajah, batu asah, sel bawang, stik glow, butiran semprotan, penghitung iris.
-- **Uji A/B penutup:** episode bawang **tanpa CTA suara** (kalimat terakhir menyambung ke kalimat pertama; subscribe hanya banner visual + komentar pin). Episode lain tetap pakai CTA sampai hasil uji dicatat di `PERFORMANCE_NOTES.md`.
+- Naskah bawang v2 memakai pola `fakta-unik/reference/analisis/ref-02-ricksclips-naskah.md` (aksi aneh di frame 0, pengejek + taruhan, gagal palsu, mekanisme di akhir, loop). Setelah tayang, bandingkan % ditonton dan stayed-to-watch dengan Kerupuk/Masuk Angin di `PERFORMANCE_NOTES.md`.
+- **Render di PC Windows pemilik (13-11-2026):** Python 3.12, Node.js LTS, FFmpeg, Git terpasang; Playwright memakai Chrome terpasang. Skrip `fakta-unik/engine/tools/win/` (`build.ps1` pengganti `make.sh`, `render_win.js` pengganti `render.js`). Lihat README di folder itu.
 - **Kerupuk sudah tayang (12-11-2026)** (`episodes/kerupuk`, format "Kenapa X?" pertama, 58 dtk). Kesan awal pemilik: views per jam lebih tinggi dari Masuk Angin; catat angkanya di `PERFORMANCE_NOTES.md` saat tersedia.
 - **Siap upload (12-11-2026, jadwal 17.30 WIB): Blitzkrieg** (uji efek upload ke video lama, lihat rencana di `PERFORMANCE_NOTES.md`) (`episodes/blitzkrieg`, format "Kenapa X?" sejarah + peta pengepungan, ~90 dtk). Naskah `NASKAH.md`, sumber `SUMBER.md`, metadata `YOUTUBE_METADATA.md`. MP4 dikirim terpisah; render ulang: `bash fakta-unik/engine/make.sh episodes/blitzkrieg`. Aset baru `web/env_perang.js`, `web/env_peta.js`, `web/map_data.js` (masih di folder episode; pindahkan ke `engine/template*` bila dipakai lagi). Setelah tayang, bandingkan retensinya dengan Kerupuk dan Masuk Angin (apakah topik sejarah cocok untuk channel). Video peta lama `blitzkrieg-shorts/` tidak dipakai.
-- CTA sekarang: "Subscribe Mitos Rumahan dan Fakta Unik, besok ada lagi!" (nama channel lengkap).
+- CTA: **tidak dipakai lagi** sejak 13-11-2026 (lihat "Pelajaran dari data"). Episode lama yang sudah memakai CTA tidak perlu diubah.
 - Antrean berikutnya: sesuai arahan pemilik, utamakan format "Kenapa X?" (ide di bagian bawah `topik_bank.md`). Topik kesehatan lama (#2, #3, #4) hanya bila diminta.
 - Belum diisi: checklist analitik di `PERFORMANCE_NOTES.md` (retention per detik, sumber traffic, data 7 hari).
 - Kalau pengguna hanya bilang "ide topik" atau "lanjut", mulai dari antrean di atas, cek `PERFORMANCE_NOTES.md`, lalu usulkan.

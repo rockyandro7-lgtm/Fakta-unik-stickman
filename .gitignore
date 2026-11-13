@@ -7,3 +7,7 @@ seg/
 episodes/*/*.mp4
 episodes/*/silent.mp4
 episodes/*/audio/*.wav
+
+# tool lokal (Windows)
+node_modules/
+.tools/
