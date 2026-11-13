@@ -3,11 +3,16 @@
 Disetujui pemilik 13-11-2026 menggantikan v1 ("Kenapa iris bawang bikin mata perih?", ada di riwayat git).
 Pola naskah dari `fakta-unik/reference/analisis/ref-02-ricksclips-naskah.md`: aksi aneh di kalimat 1, tokoh pengejek + taruhan,
 gagal palsu di tengah, mekanisme di akhir, kalimat terakhir menyambung ke kalimat pertama.
-Sekitar 170 kata, perkiraan 60-63 dtk (~2,8 kata/dtk). Belum ada audio/shot/render.
+162 kata. **Durasi final 66,4 dtk** (suara 65,75 dtk + 0,6 dtk loop), 17 shot. Dirender 13-11-2026 di PC Windows pemilik.
 
-**Uji A/B penutup (disetujui 13-11-2026):** episode ini **tanpa CTA suara dan tanpa pertanyaan ke penonton**. Ajakan subscribe hanya lewat
-banner visual kecil di baris 16 + komentar pin. Bandingkan % ditonton, like, subs, dan komentar dengan Kerupuk/Masuk Angin.
-Episode lain tetap pakai CTA "Subscribe Mitos Rumahan dan Fakta Unik, besok ada lagi!" sampai hasil uji ini ada.
+**Tanpa CTA (keputusan pemilik 13-11-2026):** tidak ada ajakan subscribe, pertanyaan ke penonton, atau banner di video.
+Ajakan berkomentar hanya lewat komentar pin. Setelah tayang, bandingkan % ditonton, stayed-to-watch, like, subs, dan komentar dengan Kerupuk/Masuk Angin.
+
+## Produksi
+- Suara: ElevenLabs eleven_v4, "Jonathan Wiratama" (QC3gSHMyKh8m20lGyUNZ), satu take 78,96 dtk mentah (`audio/vo_raw.mp3`).
+- Timing: Scribe 162/162 kata cocok (`scribe_raw.json`). `tighten.py --target 62 --keep 0.26 --max-tempo 1.12` -> 65,75 dtk, lalu `mapwords.py`, `snaponset.py` (9 awal kalimat ditempel), `align_scribe.py`.
+- Gerak asah Ibu memakai frekuensi `SHF` dengan jumlah siklus bulat sampai akhir video, jadi frame terakhir identik dengan frame 0 (loop mulus). Fade audio akhir dipendekkan ke 0,08 dtk (`audio_lib.py` episode ini).
+- Penghitung irisan dan tumpukan memakai jadwal global `cntB`/`cntI` di `shots.js` supaya konsisten antar shot.
 
 ## Naskah (`script.json`)
 0. Ibu mengasah pisaunya lima menit penuh, cuma buat ngiris bawang.
@@ -49,7 +54,7 @@ Episode lain tetap pakai CTA "Subscribe Mitos Rumahan dan Fakta Unik, besok ada 
 | 13 | | Slow-motion: pisau tumpul menekan bawang sampai gepeng, butiran menyembur ke atas | lanjut |
 | 14 | | Versi ngebut: semprotan makin tinggi, menembus garis "TINGGI MATA" | whip |
 | 15 | TAJAM + PELAN | Pisau tajam membelah bersih; butiran rendah, garis "TINGGI MATA" tidak tersentuh | dissolve |
-| 16 | banner kecil channel (visual saja) | Budi di bak cuci piring, tumpukan piring berwajah; 0,6 dtk terakhir: kembali ke Ibu mengasah pisau (komposisi frame 0) untuk **loop** | (akhir) |
+| 16 | SIKAT | Budi di bak cuci piring, tumpukan piring berwajah; lalu kamera menyapu kembali ke Ibu mengasah pisau (komposisi frame 0) untuk **loop** | (akhir) |
 
 ## Pemeriksaan aturan
 - Fakta sama dengan `SUMBER.md` (tidak ada klaim baru). Lomba dan taruhan adalah cerita fiksi sebagai wadah.
@@ -57,4 +62,4 @@ Episode lain tetap pakai CTA "Subscribe Mitos Rumahan dan Fakta Unik, besok ada 
 - Tidak ada klaim "asam sulfat di mata" dan tidak ada tips yang buktinya campur (mendinginkan/merendam bawang).
 - Hook: stickman + gerak + suara di frame 0, aksi aneh selesai diucapkan sekitar detik 3.
 - Bukan topik kesehatan; tidak perlu disclaimer dokter.
-- Tanpa CTA suara (uji A/B, lihat di atas).
+- Tanpa CTA (suara maupun visual).
