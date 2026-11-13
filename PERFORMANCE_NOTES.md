@@ -193,3 +193,46 @@ Pola yang selalu berulang di setiap video (dari pengamatan pemilik):
 | Like, share, subscriber per video | Overview | Sinyal "suka" selain menonton |
 
 Kalau video yang lolos >1.000 views ternyata punya persentase tonton lebih tinggi daripada yang berhenti di ~900-1.000, berarti penghambatnya ada di tengah/akhir video, bukan di hook.
+
+## 2026-11-13 10:30: Snapshot lengkap semua Short (YouTube Studio, sejak tayang)
+
+Channel: 19 subscriber (+11 dalam 28 hari), 4,9K views 28 hari, watch time 32,1 jam. Shorts: Shorts feed 95,2%, YouTube search 4,0%, channel pages 0,6%. Penonton Indonesia 94-95%, Malaysia 3-5%, demografi teratas **perempuan 25-34**. **Komentar: 0 di semua video.**
+
+| Short | Tayang | Durasi | Views | Engaged | Stayed to watch | Avg view dur. | % ditonton | Like | Subs | Watch time |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Masuk Angin | 11-11 17.30 | 0:43 | 3.448 | 2,5K | **81,7%** | 0:39 | ~91% | 42 | **+9** | 28,6 j |
+| Kerupuk ("Kenapa X?") | 12-11 11.30 | 0:58 | 2.617 | 1,8K | 74,9% | 0:42 | ~72% | 40 | +3 | 22,5 j |
+| Blitzkrieg ("Kenapa X?" sejarah) | 12-11 17.45 | 1:31 | 2.375 (16 jam) | 1,8K | 80,8% | 1:07 | 73,6% | **50** | +5 | **35,4 j** |
+| AC "Freon Habis" | 10-11 23.39 | 0:43 | 1.159 | 214 | 17,2% | 0:34 | ~85% | 14 | 0 | 2,3 j |
+| Charger Nyolok | **terjadwal 13-11** (belum tayang) | 0:46 | - | - | - | - | - | - | - | - |
+| Tidak Tidur 11 Hari (long-form 16:9) | - | 8:07 | 57 | - | - | - | - | 0 | - | - |
+
+Rasio per 1.000 views: subscriber Masuk Angin 2,6 / Blitzkrieg 2,1 / Kerupuk 1,1 / AC 0. Like Blitzkrieg 2,1% / Kerupuk 1,5% / Masuk Angin 1,2% / AC 1,2%.
+Kurva retensi per detik: baru tersedia untuk AC (85% rata-rata ditonton); tiga lainnya masih diproses.
+
+### Cek dugaan sebelumnya
+
+| Dugaan | Hasil |
+|---|---|
+| Blitzkrieg ~90 dtk akan punya % ditonton lebih rendah dari video 45-60 dtk | **Tidak terbukti.** 73,6%, setara Kerupuk (~72%, 58 dtk), dengan watch time dan like tertinggi. Stayed naik dari 71% (gelombang 2) ke 80,8%. Durasi panjang aman selama tiap beat menambah penasaran. |
+| Topik sejarah mungkin tidak cocok dengan penonton channel | **Tidak terbukti.** 2,4K views dalam 16 jam (peringkat 2 dari 4 di jam yang sama), konversi subscriber kedua terbaik. |
+| Masuk Angin jadi "video andalan" | **Masih benar.** Views, stayed, % ditonton, dan konversi subscriber tertinggi. Stayed naik dari 67% ke 81,7% saat batch penonton berikutnya lebih cocok. |
+| AC gagal karena hook | **Makin kuat.** Yang bertahan menonton 85% durasinya (isi tidak bermasalah), tapi 82,8% swipe di awal. |
+
+### Pelajaran baru
+1. **Hook menentukan segalanya** (95% traffic dari Shorts feed). Isi AC bagus, hook-nya gagal; selisih views 3x hampir seluruhnya dari 1-2 detik pertama.
+2. **"Kenapa X?" setara, belum lebih unggul.** Kerupuk dan Blitzkrieg views-nya mirip Masuk Angin, tapi stayed dan konversi subscriber Kerupuk paling rendah di antara tiga video yang lolos. Pertahankan format "Kenapa X?" sesuai arahan pemilik, tetapi pilih benda yang **dialami penonton setiap hari** (keluhan kecil sehari-hari) supaya kekuatan Masuk Angin ikut terbawa.
+3. **Analogi menahan penonton di video panjang.** Petinju di Blitzkrieg menjaga 73,6% walau 1:31.
+4. **Komentar nol.** Penutup "Mitos/Benda apa lagi...?" terlalu terbuka. Coba pertanyaan **dua pilihan** yang bisa dijawab satu kata ("Tim A atau tim B?") + komentar pin dengan pertanyaan yang sama.
+5. **Jam upload:** tiga video yang lolos tayang 11.30-17.45; satu-satunya upload malam (23.39) yang paling lemah. Belum ada data untuk slot 18.30-19.30.
+6. **Long-form (Tidak Tidur) 57 views.** Channel belum punya basis subscriber untuk long-form; fokus Shorts dulu.
+
+### Checklist lama (update)
+- [x] Sumber traffic (Shorts feed 95,2%, search 4,0%)
+- [x] Stayed to watch + average view duration video AC (17,2%, 0:34, ~85% ditonton)
+- [x] Nilai ulang "Tidak Tidur" (57 views, belum jalan)
+- [ ] Audience retention per detik Masuk Angin, Kerupuk, Blitzkrieg (cek lagi 14-11)
+- [ ] Bandingkan 3 detik pertama AC vs Masuk Angin (frame by frame)
+- [ ] Update angka setelah 7 hari (17-11 sampai 19-11)
+- [ ] Hasil Charger Nyolok (uji format mitos listrik rumah, 0:46)
+- [ ] Episode berikut (`episodes/bawang`): uji pertanyaan dua pilihan untuk komentar
