@@ -236,3 +236,26 @@ Kurva retensi per detik: baru tersedia untuk AC (85% rata-rata ditonton); tiga l
 - [ ] Update angka setelah 7 hari (17-11 sampai 19-11)
 - [ ] Hasil Charger Nyolok (uji format mitos listrik rumah, 0:46)
 - [ ] Episode berikut (`episodes/bawang`): uji pertanyaan dua pilihan untuk komentar
+
+## Snapshot 13-11-2026 malam: kurva retensi per detik + Bawang v2
+
+Sumber: YouTube Studio (diambil lewat Chrome, 13-11 ~22.00 WIB). Kurva dibaca dari grafik "Audience retention" (since published).
+
+| Short | Stayed | Views | Catatan |
+|---|---|---|---|
+| **Bawang v2 (pola Ricks Clips, tanpa CTA)** | **83,8%** | 5,0K dalam ~8 jam | +7 subs, 80 like, APV 88,9%. Kurva per detik belum tersedia |
+| Blitzkrieg | 83,6% | ~4,5K | kurva belum tersedia |
+| Masuk Angin | 82,3% | ~3,8K | |
+| Kerupuk | 75,8% | 2,8K | mati setelah hari 1 |
+| AC "Freon Habis" | 17,3% | ~1,2K | |
+
+Kurva retensi (dtk: %):
+- **Kerupuk (58 dtk):** 0: 105 / 3,5: 103 / **6,9: 77 / 8: 72** / 20: 50 / 30: 43 / 46: 37 / 53: 29 / **55: 12 / 56: 8**.
+  Kehilangan terbesar di **3,5-8 dtk**, tepat setelah hook. Hook sudah *menunjukkan* kerupuk mengembang (jawaban visual), lalu "Rahasianya ada di..." + "Awalnya cuma tepung" = pengantar. Penurunan kedua di 53 dtk = awal CTA ("Benda apa lagi...", "Subscribe").
+- **Masuk Angin (42 dtk):** 0: 135 / 10: 107 / 20: 91 / 30: 82 / 38: 70 / **39: 54 / 41: 24**. Sangat landai; satu-satunya tebing di 3-4 dtk terakhir.
+- **AC (42 dtk):** 0: 151 / 10: 102 / 20: 80 / 30: 64 / 41: 55. Penonton yang lolos hook bertahan paling baik di antara semua video; masalah murni di 1-2 detik pertama.
+
+### Pelajaran
+1. **Jangan bocorkan hasil di hook.** Kerupuk menunjukkan payoff di frame 0 lalu masuk pengantar, sehingga ~30% penonton pergi di detik 3-8. Bawang v2 menyimpan mekanisme di akhir (stayed tertinggi sejauh ini). Cek kurva Bawang 14-11 untuk konfirmasi.
+2. **Tebing di akhir Kerupuk dan Masuk Angin** bertepatan dengan penutup/CTA. Bawang (tanpa CTA, loop) adalah ujinya: lihat apakah ekor kurvanya tetap landai.
+3. **Grafis bukan pembeda antar video** (engine dan gaya sama di semua video), jadi data belum bisa mengukur dampaknya. Yang terukur hanya komposisi frame 0 (AC: infografis padat, gagal).
