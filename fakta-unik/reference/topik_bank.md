@@ -32,6 +32,14 @@ Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masala
 - Kenapa nasi yang didinginkan jadi keras? (retrogradasi pati; nyambung dengan episode kerupuk)
 - Kenapa jangkrik bunyi makin cepat saat panas? (perlu cek kuat)
 
+## Seri sejarah perang Indonesia (13-11-2026, sudut pandang: taktik)
+Semua [Perlu cek]. Hindari topik sensitif (1965, Timor Timur, konflik Aceh/GAM modern).
+- **Palagan Ambarawa (1945), taktik supit urang Soedirman** (DIKERJAKAN: `episodes/ambarawa/`, tayang sekitar 15-12, Hari Juang Kartika)
+- Invasi Mongol ke Jawa (1293): Raden Wijaya memakai lalu menyerang balik pasukan Mongol, lahirnya Majapahit
+- Serangan Umum 1 Maret 1949: 6 jam menguasai Yogyakarta untuk membuktikan ke dunia Indonesia masih ada (tayang sekitar 1 Maret)
+- Perang Aceh (1873-1904): perang terlama dan termahal Belanda
+- Bandung Lautan Api (1946), Puputan Badung (1906), Laut Aru (1962, tayang sekitar 15 Januari), Sultan Agung menyerbu Batavia (1628-1629, kalah karena logistik), Pertempuran Laut Jawa (1942)
+
 Ide format lain (non-fakta-check, ringan): "masak keasinan tanda mau nikah", "jangan kasih cabai rawit ke teman" (mitos budaya – tandai sebagai kepercayaan, bukan sains).
 
 Sumber-sumber di atas adalah artikel media/layanan kesehatan, bukan jurnal. Verifikasi ke Kemenkes/WHO/panduan produsen sebelum produksi.
