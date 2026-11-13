@@ -8,7 +8,7 @@ Berlaku bersama `teknik-visual-v5.md` dan `konsistensi-sinkron-v6.md`.
 2. **Kalimat 2 = re-hook misteri** ("Rahasianya ada di sesuatu yang tidak kelihatan."). Tampilkan siluet samar, lalu **jawab di tengah video** (sekitar detik 25-30). Ini menahan penonton melewati bagian proses.
 3. **Rantai masalah -> solusi**: tiap langkah punya kegagalan yang tersumber ("langsung digoreng? gagal", "kukus kurang? bantat", "terlalu basah/kering? gagal"). Kegagalan = momen lucu (wajah X, stempel) + alasan untuk lanjut menonton.
 4. **Momen mekanisme di dunia mikro**: masuk ke dalam benda (match/portal), tokoh kecil berwajah (tetes air -> gelembung uap), panah dorong, getaran. Lalu kembali ke dunia nyata untuk momen WOW.
-5. **Penutup**: hasil (KRIUK), pertanyaan ke penonton, CTA wajib, lalu **0,6 dtk terakhir kamera kembali ke komposisi frame 0** (loop replay).
+5. **Penutup**: hasil (KRIUK), lalu **0,6 dtk terakhir kamera kembali ke komposisi frame 0** (loop replay). Sejak 13-11-2026 **tanpa CTA dan tanpa pertanyaan ke penonton** (keputusan pemilik); kalimat terakhir sebaiknya menyambung ke kalimat pertama.
 6. Jangan sebut riset/sumber, jangan pakai kata ragu. Angka yang lemah diganti kata ("jauh lebih besar").
 
 ## B. Visual
