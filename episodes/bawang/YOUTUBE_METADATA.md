@@ -16,7 +16,11 @@ Ibu mengasah pisau lima menit cuma buat ngiris bawang, dan Budi menertawakannya.
 bawang merah, kenapa iris bawang bikin nangis, mata perih bawang, cara iris bawang tidak perih, pisau tajam, tips dapur, fakta unik, sains dapur
 
 ## Komentar pin
-"Kamu tim Ibu (pelan + pisau tajam) atau tim Budi (ngebut)? Jawab satu kata aja 👇"
+**Dipasang 13-11-2026 (komentar pertama video, ID video `8dFKESl747A`):**
+"Ada yang pernah coba gigit sendok atau nyalain lilin biar nggak nangis pas ngiris bawang? Beneran ngaruh nggak? 🤔"
+Dipilih pemilik karena memancing debat mitos dan jawabannya bisa jadi bahan topik berikutnya.
+**Belum tersemat:** YouTube minta verifikasi satu kali di YouTube Studio sebelum fitur pin aktif (harus dilakukan pemilik).
+Draf lama (tidak dipakai): "Kamu tim Ibu (pelan + pisau tajam) atau tim Budi (ngebut)? Jawab satu kata aja 👇"
 
 ## Thumbnail
 - `thumbnail_shorts_1080x1920.jpg`: cover Shorts. Teks "IBU vs BUDI" + "siapa yang nangis?".
