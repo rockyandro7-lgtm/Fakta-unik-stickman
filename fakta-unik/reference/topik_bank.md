@@ -29,7 +29,7 @@ Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masala
 - Kenapa es batu mengapung, padahal batu tenggelam? (air memuai saat membeku)
 - **Kenapa iris bawang bikin mata perih?** (NASKAH SIAP 13-11-2026: `episodes/bawang/`, fakta terverifikasi di `SUMBER.md`; dipilih dari data: topik dapur sehari-hari, cocok dengan penonton perempuan 25-34, bukan kesehatan)
 - Kenapa kopi/teh panas "berasap" di pagi hari tapi tidak di siang hari? (uap mengembun di udara dingin)
-- Kenapa nasi yang didinginkan jadi keras? (retrogradasi pati; nyambung dengan episode kerupuk)
+- **Kenapa nasi goreng harus pakai nasi kemarin?** (SUDAH 14-11-2026: `episodes/nasi-goreng/`, cerita calon mertua, tokoh baru Rani; fakta di `SUMBER.md`)
 - Kenapa jangkrik bunyi makin cepat saat panas? (perlu cek kuat)
 
 ## Seri sejarah perang Indonesia (13-11-2026, sudut pandang: taktik)
