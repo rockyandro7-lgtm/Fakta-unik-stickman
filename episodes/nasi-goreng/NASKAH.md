@@ -39,3 +39,8 @@ Penjelasan dipendekkan atas arahan pemilik: mekanisme diucapkan Ibu dalam 2 kali
 ## Catatan teknis
 - Scribe menulis angka sebagai digit ("40"), jadi naskah memakai digit (aturan SKILL). `merge.json`: "gak" -> "Nggak".
 - Render ulang di Windows: `powershell -ExecutionPolicy Bypass -File fakta-unik/engine/tools/win/build.ps1 -Dir episodes/nasi-goreng -Workers 8`.
+
+## Revisi 14-11-2026 (masukan pemilik)
+- Suara masak (desis minyak, sutil, gelembung, lengket) dikecilkan sekitar 2-3x.
+- Minyak wajan jadi lapisan tipis (`drawWok` opsi `oil`, episode ini 0,15); wajan Kerupuk tetap minyak banyak (deep fry).
+- Kulkas dipindah ke dinding belakang, berdiri di lantai sederet lemari belakang (`FY`/`FS` di shots.js), dan digambar di SEMUA shot (aturan konsistensi v6).

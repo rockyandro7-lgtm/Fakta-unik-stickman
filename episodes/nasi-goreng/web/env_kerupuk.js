@@ -83,8 +83,10 @@ function drawWok(ctx, x, y, s = 1, o = {}, inside) {
   // dalam wajan + minyak
   ellipse(ctx, 0, 0, 260, 58); fillStroke(ctx, '#23242c', 8);
   ctx.save(); ellipse(ctx, 0, 0, 252, 52); ctx.clip();
-  ellipse(ctx, 0, 14, 226, 40); const g = ctx.createLinearGradient(0, -30, 0, 50); g.addColorStop(0, KRP.oilHi); g.addColorStop(1, KRP.oil); ctx.fillStyle = g; ctx.fill();
-  if (hot > 0) { const r = rng(9); for (let i = 0; i < 18; i++) { const bx = (r() - .5) * 380, by = 14 + (r() - .5) * 52, ph = (t * (1.5 + r()) + r()) % 1; circle(ctx, bx, by, (3 + 7 * ph) * hot); ctx.lineWidth = 3; ctx.strokeStyle = `rgba(255,255,255,${.8 * (1 - ph) * hot})`; ctx.stroke(); } }
+  const oil = o.oil == null ? 1 : o.oil;
+  if (oil >= 1) { ellipse(ctx, 0, 14, 226, 40); const g = ctx.createLinearGradient(0, -30, 0, 50); g.addColorStop(0, KRP.oilHi); g.addColorStop(1, KRP.oil); ctx.fillStyle = g; ctx.fill(); }
+  else { const g = ctx.createRadialGradient(0, 20, 10, 0, 20, 230); g.addColorStop(0, '#4a4b56'); g.addColorStop(1, '#23242c'); ctx.fillStyle = g; ctx.fillRect(-260, -60, 520, 130); ctx.globalAlpha = .55 * oil + .1; ellipse(ctx, 0, 22, 150, 22); ctx.fillStyle = KRP.oilHi; ctx.fill(); ctx.globalAlpha = 1; ctx.fillStyle = 'rgba(255,255,255,.18)'; ellipse(ctx, -90, -6, 70, 8, -.15); ctx.fill(); }
+  if (hot > 0) { const r = rng(9); for (let i = 0; i < Math.round(18 * Math.min(1, oil)); i++) { const bx = (r() - .5) * 380, by = 14 + (r() - .5) * 52, ph = (t * (1.5 + r()) + r()) % 1; circle(ctx, bx, by, (3 + 7 * ph) * hot); ctx.lineWidth = 3; ctx.strokeStyle = `rgba(255,255,255,${.8 * (1 - ph) * hot})`; ctx.stroke(); } }
   ctx.restore();
   // v7: isi wajan hanya terlihat di atas bibir wajan atau di dalam lingkar wajan (tidak menembus badan wajan)
   if (inside) { ctx.save(); ctx.beginPath(); ctx.rect(-3000, -4000, 6000, 4000); ctx.ellipse(0, 0, 250, 50, 0, 0, TAU); ctx.clip(); inside(ctx); ctx.restore(); }

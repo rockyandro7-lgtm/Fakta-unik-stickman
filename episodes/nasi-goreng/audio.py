@@ -14,18 +14,18 @@ END = WD[-1]['e'] + .6
 noise = lambda dur, f=900, dec=22: hp(rng.standard_normal(int(dur * SR)), f) * np.exp(-T(int(dur * SR)) * dec)
 def sizzle(dur, g=1.0):          # minyak panas: desis berbutir
     n = int(dur * SR); t = T(n); x = bp(rng.standard_normal(n), 2500, 9000) * (0.55 + .45 * (rng.random(n) > .985))
-    return x * np.minimum(1, t / .08) * np.minimum(1, (dur - t) / .2) * .4 * g
+    return x * np.minimum(1, t / .08) * np.minimum(1, (dur - t) / .2) * .4 * g * .3
 def scrape(dur=.22):             # sutil menggesek wajan
-    n = int(dur * SR); t = T(n); return bp(rng.standard_normal(n), 1800, 6000) * np.sin(np.pi * np.clip(t / dur, 0, 1)) * .6
+    n = int(dur * SR); t = T(n); return bp(rng.standard_normal(n), 1800, 6000) * np.sin(np.pi * np.clip(t / dur, 0, 1)) * .25
 def blup(f=180):                 # gelembung bubur kental
-    n = int(.18 * SR); t = T(n); fr = f * (1 + 2.5 * t); return np.sin(2 * np.pi * np.cumsum(fr) / SR) * np.exp(-t * 18) * .7
+    n = int(.18 * SR); t = T(n); fr = f * (1 + 2.5 * t); return np.sin(2 * np.pi * np.cumsum(fr) / SR) * np.exp(-t * 18) * .35
 def squelch():                   # lengket
-    n = int(.3 * SR); t = T(n); return lp(rng.standard_normal(n), 900) * np.exp(-t * 9) * (0.6 + .4 * np.sin(2 * np.pi * 30 * t)) * .8
+    n = int(.3 * SR); t = T(n); return lp(rng.standard_normal(n), 900) * np.exp(-t * 9) * (0.6 + .4 * np.sin(2 * np.pi * 30 * t)) * .45
 def knock(f=900):
     n = int(.08 * SR); t = T(n); return (np.sin(2 * np.pi * f * t) * .7 + lp(rng.standard_normal(n), 3000) * .5) * np.exp(-t * 70)
 def stirs(t0, t1, sp):           # satu gesekan tiap setengah putaran aduk (sama dengan stirG di shots.js)
     P = np.pi / sp; k = 0
-    while t0 + k * P < t1: place(sfx, scrape(min(.22, P * .8)), t0 + k * P, .35); k += 1
+    while t0 + k * P < t1: place(sfx, scrape(min(.22, P * .8)), t0 + k * P, .3) if k % 2 == 0 else None; k += 1
 def ticks(t0, t1, every=.5, g=.3):
     k = 0
     while t0 + k * every < t1: place(sfx, tick(), t0 + k * every, g); k += 1

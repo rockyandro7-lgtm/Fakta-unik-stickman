@@ -26,6 +26,7 @@ function blurLayer(ctx, draw, px) {
   _bctx.setTransform(1, 0, 0, 1, 0, 0); _bctx.filter = 'none'; _bctx.globalAlpha = 1; _bctx.clearRect(0, 0, W, H); draw(_bctx);
   ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.filter = `blur(${px}px)`; ctx.drawImage(_blurBuf, -W * .02, -H * .02, W * 1.04, H * 1.04); ctx.restore();
 }
+const FY = 1160, FS = 1.0;          // kulkas berdiri di lantai, menempel dinding belakang (sederet lemari belakang)
 const BK = NG.back, TOP = NG.top, RX = NG.rani, WK = NG.wok, ST = NG.stove, FX = NG.fridge, CKR = NG.cooker;
 const armTo = (px, flip, wx, wy, bend = 1) => reach(px, BK, 600, flip, wx, wy, bend);
 function tokoh(ctx, t, P, x, face, arms, flip = 1, extra = {}) { drawStick(ctx, C(P, Object.assign({ x, y: BK, s: 600, flip, armLen: 1.3, legs: standL, arms: arms || idleArms(t, x * .01), face, headTilt: -(face.pop || 0) * .05 }, extra))); }
@@ -39,6 +40,7 @@ const SUT = .85;
 // o: { fR, armsR, rx, flipR, fB, armsB, bx, fI, armsI, ix, ibuExtra, rExtra, wok:{...state} | null, wokFace, wok1:{state}, fire, cooker:{lid,steam,face}, fridge:{door,face}, jam, fast, sutil:[g,rot], extra(ctx), front(ctx), mertua:{n,fB,fI} }
 function kitchen(ctx, t, cam, o) {
   dapurBack(ctx, t, cam, { jam: o.jam == null ? jamAt(40) : o.jam, fast: o.fast || 0 });
+  drawFridge(ctx, FX, FY, FS, Object.assign({ t, mood: 'happy' }, o.fridge || {}));
   if (o.mertua) { tokoh(ctx, t, BAPAK_M, NG.mertua[0], o.mertua.fB, o.mertua.armsB, -1); tokoh(ctx, t, IBU_M, NG.mertua[1], o.mertua.fI, o.mertua.armsI, -1); }
   if (o.fI) tokoh(ctx, t, IBU, o.ix == null ? NG.ibuIn : o.ix, o.fI, o.armsI, o.flipI || 1, o.ibuExtra || {});
   if (o.fB) tokoh(ctx, t, BUDI, o.bx == null ? NG.budi : o.bx, o.fB, o.armsB, -1, o.budiExtra || {});
@@ -47,10 +49,9 @@ function kitchen(ctx, t, cam, o) {
   drawStove(ctx, ST[0], ST[1], .9, { fire: o.fire == null ? 1 : o.fire, t });
   if (o.cooker !== false) drawRiceCooker(ctx, CKR[0], CKR[1], .55, Object.assign({ t, warm: 1 }, o.cooker || {}));
   if (o.under) o.under(ctx);
-  if (o.wok1) drawWok(ctx, NG.wok1[0], NG.wok1[1] - 60, .6, { t, heat: 0 }, c => drawNasiWok(c, Object.assign({ t }, o.wok1)));
-  if (o.wok !== null) drawWok(ctx, WK[0], WK[1], .8, { t, heat: o.heat == null ? .8 : o.heat }, c => drawNasiWok(c, Object.assign({ t }, o.wok || {})));
+  if (o.wok1) drawWok(ctx, NG.wok1[0], NG.wok1[1] - 60, .6, { t, heat: 0, oil: .15 }, c => drawNasiWok(c, Object.assign({ t }, o.wok1)));
+  if (o.wok !== null) drawWok(ctx, WK[0], WK[1], .8, { t, heat: (o.heat == null ? .8 : o.heat) * .5, oil: .15 }, c => drawNasiWok(c, Object.assign({ t }, o.wok || {})));
   if (o.sutil) drawSutil(ctx, o.sutil[0][0], o.sutil[0][1], SUT, o.sutil[1]);
-  if (o.fridge) drawFridge(ctx, FX, 1560, .95, Object.assign({ t, mood: 'happy' }, o.fridge));
   if (o.extra) o.extra(ctx);
 }
 const armsStir = (t, sp, amp, rx = RX) => { const g = stirG(t, sp, amp); g[0] += rx - RX; return { g, arms: { L: armTo(rx, 1, rx + 150, 1150, -1), R: armTo(rx, 1, g[0], g[1], -1) } }; };
@@ -102,7 +103,7 @@ const RXF = FX + 300;                             // Rani berdiri di samping kul
 SH(ls(2), ls(3), { tr: 'whip' }, (ctx, lt, t) => {
   const cam = CK(t, [[ls(2), { x: -260, y: 1060, z: 1.45 }], [T2.bk + .3, { x: -250, y: 1100, z: 1.6 }, easeOut], [T2.di, { x: -170, y: 1110, z: 1.85 }, ease], [T2.ki, { x: -150, y: 1100, z: 2.0 }, ease], [ls(3), { x: -150, y: 1100, z: 2.05 }]], 2);
   const door = easeOut(inv(T2.bk - .1, T2.bk + .4, t)), hold = inv(T2.di - .5, T2.di - .1, t);
-  const wad = [lerp(FX, RXF - 190, easeOut(hold)), lerp(1300, 1300, easeOut(hold))];
+  const wad = [lerp(FX, RXF - 190, easeOut(hold)), lerp(980, 1300, easeOut(hold))];
   const knock = [T2.ke, T2.ke + .25].some(h => t > h && t < h + .12);
   kitchen(ctx, t, cam, {
     fR: EM(t, [[ls(2), 'netral', { look: [-.8, .3] }], [T2.di, 'curiga', { look: [-.7, .5] }], [T2.ke + .1, 'meringis'], [T2.ki, 'sombong', { look: [-.7, .5] }]], 5), rx: RXF,
@@ -257,7 +258,7 @@ SH(ls(11), ls(12), { tr: 'whip' }, (ctx, lt, t) => {
     fridge: { door: 1 - inv(T11.ku, T11.ku + .4, t), cold: 1, mood: 'happy', look: .8 },
     wok: { block: dump >= 1 ? 1 : 0 }, heat: 1, wok1: { mush: 1, burn: 1 },
     extra: c => {
-      if (hold > 0 && dump < 1) { const p = hold < 1 ? [lerp(FX, wad[0], easeOut(hold)), lerp(1300, wad[1], easeOut(hold))] : (dump > 0 ? [lerp(wad[0], WK[0], easeIn(dump)), lerp(wad[1], WK[1] - 60, easeIn(dump))] : wad); drawWadahNasi(c, p[0], p[1], .9, { t, lid: 1 - dump, frost: 1, face: EF(t, [[ls(11), 'sombong']], 21) }); }
+      if (hold > 0 && dump < 1) { const p = hold < 1 ? [lerp(FX, wad[0], easeOut(hold)), lerp(980, wad[1], easeOut(hold))] : (dump > 0 ? [lerp(wad[0], WK[0], easeIn(dump)), lerp(wad[1], WK[1] - 60, easeIn(dump))] : wad); drawWadahNasi(c, p[0], p[1], .9, { t, lid: 1 - dump, frost: 1, face: EF(t, [[ls(11), 'sombong']], 21) }); }
       panicSmoke(c, t, .6, NG.wok1[0], NG.wok1[1] - 90);
     }
   });
@@ -327,7 +328,7 @@ SH(ls(15), ls(16), { tr: 'whip' }, (ctx, lt, t) => {
   const hard = inv(T15.me - .2, T15.me + .3, t), oil = inv(T15.ja, T15.go, t), two = inv(T15.bu - .1, T15.bu + .2, t);
   drawLup(ctx, 660, 500, 300, 1, c => {
     c.fillStyle = mixC('#2f4a6a', '#3a2a12', oil); c.fillRect(-400, -400, 800, 800);
-    if (oil > 0) { c.fillStyle = `rgba(255,190,60,${.5 * oil})`; c.fillRect(-400, 60, 800, 400); }
+    if (oil > 0) { c.fillStyle = `rgba(255,190,60,${.22 * oil})`; c.fillRect(-400, 90, 800, 400); }
     const gx = lerp(0, -130, two);
     drawButir(c, gx, 10, 170 - 40 * two, { hard, t, sizzle: oil, face: EF(t, [[ls(15), 'netral'], [T15.me, 'bangga'], [T15.go, 'takjub']], 30) });
     if (two > 0) drawButir(c, 150, 10, 130 * backOut(two), { wet: 1, t, steam: 1, face: EF(t, [[T15.bu, 'meringis']], 31) });
