@@ -34,7 +34,7 @@ Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masala
 
 ## Seri sejarah perang Indonesia (13-11-2026, sudut pandang: taktik)
 Semua [Perlu cek]. Hindari topik sensitif (1965, Timor Timur, konflik Aceh/GAM modern).
-- **Palagan Ambarawa (1945), taktik supit urang Soedirman** (DIKERJAKAN: `episodes/ambarawa/`, tayang sekitar 15-12, Hari Juang Kartika)
+- **Palagan Ambarawa (1945), taktik supit urang Soedirman** (SUDAH DIRENDER 16-11-2026: `episodes/ambarawa/`, 60,6 dtk, jadwal upload 16-11 18.30-19.30 WIB; rencana 15-12 dibatalkan pemilik)
 - Invasi Mongol ke Jawa (1293): Raden Wijaya memakai lalu menyerang balik pasukan Mongol, lahirnya Majapahit
 - Serangan Umum 1 Maret 1949: 6 jam menguasai Yogyakarta untuk membuktikan ke dunia Indonesia masih ada (tayang sekitar 1 Maret)
 - Perang Aceh (1873-1904): perang terlama dan termahal Belanda

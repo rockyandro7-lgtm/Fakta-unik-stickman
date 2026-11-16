@@ -84,3 +84,89 @@ function tagKuning(ctx, str, x, y, size, rot = -.1, k = 1) {
   rrect(ctx, -w / 2, -size * .7, w, size * 1.4, size * .25); fillStroke(ctx, '#ffd23a', 8);
   text(ctx, str, 0, 3, size, INK, INK, 0); ctx.restore();
 }
+
+// ===================== Aset produksi (16-11-2026) =====================
+// Peci hitam (TKR / Isdiman).
+function hatPeci(ctx, hx, hy, hr, lw) {
+  ctx.beginPath(); ctx.moveTo(hx - hr * .92, hy - hr * .42); ctx.lineTo(hx - hr * .8, hy - hr * 1.08); ctx.quadraticCurveTo(hx, hy - hr * 1.22, hx + hr * .8, hy - hr * 1.08);
+  ctx.lineTo(hx + hr * .92, hy - hr * .42); ctx.quadraticCurveTo(hx, hy - hr * .58, hx - hr * .92, hy - hr * .42); ctx.closePath(); fillStroke(ctx, '#1d1c22', lw);
+  ctx.save(); ctx.globalAlpha = .35; line(ctx, hx - hr * .6, hy - hr * .95, hx + hr * .1, hy - hr * 1.02, lw * .7, '#ffffff'); ctx.restore();
+}
+// Pet Belanda (KNIL/NICA): topi lapangan dengan pinggiran depan.
+function hatPet(ctx, hx, hy, hr, lw) {
+  ctx.beginPath(); ctx.ellipse(hx, hy - hr * .7, hr * .95, hr * .5, 0, Math.PI, TAU); ctx.closePath(); fillStroke(ctx, AMB.nl, lw);
+  ellipse(ctx, hx + hr * .55, hy - hr * .66, hr * .6, hr * .14, .1); fillStroke(ctx, AMB.nlDk, lw);
+  circle(ctx, hx, hy - hr * .92, hr * .12); fillStroke(ctx, '#f39a2e', lw * .7);
+}
+AMB.nl = '#6f7f8f'; AMB.nlDk = '#55626e'; AMB.red = '#e5262a';
+const TKR = { cols: [AMB.tkr, AMB.tkr], hat: hatPeci, belt: true };
+// Token peta umum: side 'tkr' (hijau + peci) | 'nl' (abu-biru + pet Belanda) | lainnya -> mapSoldier asli ('uk' = Sekutu).
+function token(ctx, x, y, s, side, face, o = {}) {
+  if (side !== 'tkr' && side !== 'nl') return mapSoldier(ctx, x, y, s, side, face, o);
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  ctx.beginPath(); ctx.roundRect(-.2, -.02, .4, .26, [.14, .14, .04, .04]); fillStroke(ctx, side === 'tkr' ? AMB.tkr : AMB.nl, .03);
+  if (side === 'nl') { ctx.fillStyle = '#f39a2e'; ctx.fillRect(-.2, .06, .4, .045); }
+  circle(ctx, 0, -.17, .19); fillStroke(ctx, HEAD, .025);
+  (side === 'tkr' ? hatPeci : hatPet)(ctx, 0, -.17, .19, .025);
+  drawFace(ctx, 0, -.17, .19, face || EXPR.netral, { t: o.t || 0 }, null);
+  if (o.rifle) drawRifle(ctx, .26, .02, .55, -.5);
+  ctx.restore();
+}
+// Senapan kartun (koordinat lokal, s = panjang relatif). rot rad.
+function drawRifle(ctx, x, y, s, rot = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(s, s); const lw = .03;
+  path(ctx, [[-.32, -.03], [.0, -.04], [.02, .06], [-.3, .08]]); fillStroke(ctx, '#8a5a2b', lw);
+  rrect(ctx, 0, -.035, .55, .05, .02); fillStroke(ctx, '#4a4d55', lw);
+  line(ctx, .08, .015, .1, .07, lw, INK);
+  ctx.restore();
+}
+// Penjara kayu di peta. open 0..1 = jeruji naik.
+function drawJail(ctx, x, y, s, open = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  rrect(ctx, -120, -170, 240, 170, 10); fillStroke(ctx, '#d9c9a0', 7);
+  path(ctx, [[-140, -165], [0, -235], [140, -165]]); fillStroke(ctx, '#b0583a', 7);
+  ctx.save(); rrect(ctx, -90, -140, 180, 140, 6); ctx.clip(); ctx.fillStyle = '#3a3340'; ctx.fillRect(-90, -140, 180, 140);
+  const dy = -open * 150; for (let i = 0; i < 6; i++) line(ctx, -75 + i * 30, -140 + dy, -75 + i * 30, dy, 9, '#7d8590');
+  line(ctx, -90, -70 + dy, 90, -70 + dy, 9, '#7d8590'); ctx.restore();
+  rrect(ctx, -90, -140, 180, 140, 6); fillStroke(ctx, null, 7);
+  text(ctx, 'PENJARA', 0, -190, 30, '#fff', INK, 7);
+  ctx.restore();
+}
+// Udang kartun bercapit (supit urang). (x,y) = pusat badan. o: { t, snap 0..1 (capit menutup), face }
+function drawUdang(ctx, x, y, s, o = {}) {
+  const t = o.t || 0, sn = o.snap || 0, col = '#f2754b', dk = '#c9502e', hi = '#ffb08f';
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  // ekor + ruas badan melengkung (badan di bawah, kepala atas)
+  for (let i = 5; i >= 0; i--) { const a = -.3 + i * .32, r = 210 + i * 0, cx = Math.sin(a) * 120 - 40, cy = 120 + i * 62, w = 120 - i * 10;
+    ellipse(ctx, cx, cy, w, 46, a * .3); fillStroke(ctx, i % 2 ? col : hi, 7); }
+  path(ctx, [[-30, 470], [-130, 560], [-10, 520], [60, 580], [40, 470]]); fillStroke(ctx, col, 7);
+  // kaki kecil
+  for (let i = 0; i < 4; i++) line(ctx, 40 + i * 6, 150 + i * 60, 120 + i * 6, 180 + i * 60 + Math.sin(t * 12 + i) * 8, 8);
+  // kepala
+  ctx.beginPath(); ctx.ellipse(0, 0, 150, 120, 0, 0, TAU); fillStroke(ctx, col, 8);
+  ctx.save(); ctx.beginPath(); ctx.ellipse(0, 0, 150, 120, 0, 0, TAU); ctx.clip(); ctx.fillStyle = dk; ctx.globalAlpha = .4; ctx.fillRect(40, -130, 150, 260); ctx.restore();
+  // antena
+  for (const sd of [-1, 1]) { ctx.beginPath(); ctx.moveTo(sd * 40, -100); ctx.quadraticCurveTo(sd * 160, -330 + Math.sin(t * 4 + sd) * 20, sd * 330, -300 + Math.sin(t * 3 + sd) * 30); ctx.lineWidth = 9; ctx.strokeStyle = INK; ctx.stroke(); }
+  // dua capit (kiri/kanan) di depan kepala, capit menutup saat snap
+  for (const sd of [-1, 1]) {
+    ctx.save(); ctx.translate(sd * 120, -40); ctx.rotate(sd * (.55 - sn * .35));
+    line(ctx, 0, 0, sd * 140, -150, 34, INK); line(ctx, 0, 0, sd * 140, -150, 20, col);
+    ctx.translate(sd * 150, -170); const op = .5 * (1 - sn);
+    for (const j of [-1, 1]) { ctx.save(); ctx.rotate(j * op); ctx.beginPath(); ctx.moveTo(0, 0); ctx.quadraticCurveTo(j * 90 + sd * 20, -40, sd * 30, -230); ctx.quadraticCurveTo(j * 20, -110, 0, 0); ctx.closePath(); fillStroke(ctx, j === 1 ? col : hi, 8); ctx.restore(); }
+    ctx.restore();
+  }
+  ctx.restore();
+  if (o.face) propFace(ctx, x, y + 10 * s, 210 * s, o.face, { t });
+}
+// Bendera merah putih (garis horizontal) berkibar. (x,y) = dasar tiang. k 0..1 = naik ke puncak.
+function bendera(ctx, x, y, s, t, k = 1) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
+  const h = 420, fw = 230, fh = 150, top = -h + 10 - (1 - k) * 0, y0 = lerp(-150, top, k);
+  line(ctx, 0, 0, 0, -h, 10); circle(ctx, 0, -h - 6, 12); fillStroke(ctx, '#e8c04a', 5);
+  const pt = (u, v) => [u * fw, y0 + v * fh + Math.sin(t * 6 - u * 5) * 14 * u];
+  const band = (v0, v1) => { ctx.beginPath(); for (let i = 0; i <= 16; i++) ctx.lineTo(...pt(i / 16, v0)); for (let i = 16; i >= 0; i--) ctx.lineTo(...pt(i / 16, v1)); ctx.closePath(); };
+  band(0, .5); ctx.fillStyle = AMB.red; ctx.fill(); band(.5, 1); ctx.fillStyle = '#ffffff'; ctx.fill(); band(0, 1); fillStroke(ctx, null, 6);
+  ctx.restore();
+}
+// Bintang emas (lencana Panglima Besar)
+function lencana(ctx, x, y, r, t, k = 1) { if (k <= 0) return; ctx.save(); ctx.translate(x, y); const sc = backOut(clamp(k)); ctx.scale(sc, sc); circle(ctx, 0, 0, r * 1.25); fillStroke(ctx, '#c8102e', 6); star5(ctx, 0, 0, r, Math.sin(t * 2) * .1, '#ffd23a'); ctx.restore(); }

@@ -1,7 +1,7 @@
 # Palagan Ambarawa: PREVIEW (13-11-2026)
 
-Status: **ide + 1 frame preview**. Belum ada naskah final, suara, atau cek fakta lengkap (`SUMBER.md` belum dibuat).
-Rencana tayang: sekitar **15 Desember** (Hari Juang Kartika = peringatan kemenangan Ambarawa 15-12-1945).
+Status 16-11-2026: **SUDAH DIRENDER** (60,6 dtk). Naskah final `script.json`/`NASKAH.md`, fakta `SUMBER.md`, metadata `YOUTUBE_METADATA.md`.
+Rencana awal tayang 15 Desember dibatalkan pemilik (16-11: "produksi secepatnya"). Isi file ini = catatan preview awal.
 Seri baru: perang/pertempuran dalam sejarah Indonesia, menyambung keberhasilan Blitzkrieg (sudut pandang: **taktik**).
 
 ## Frame preview
