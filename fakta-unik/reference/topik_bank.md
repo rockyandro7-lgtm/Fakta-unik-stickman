@@ -31,6 +31,7 @@ Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masala
 - Kenapa kopi/teh panas "berasap" di pagi hari tapi tidak di siang hari? (uap mengembun di udara dingin)
 - **Kenapa nasi goreng harus pakai nasi kemarin?** (SUDAH 14-11-2026: `episodes/nasi-goreng/`, cerita calon mertua, tokoh baru Rani; fakta di `SUMBER.md`)
 - Kenapa jangkrik bunyi makin cepat saat panas? (perlu cek kuat)
+- **Kenapa telur segar justru susah dikupas?** (SUDAH DIRENDER 17-11-2026: `episodes/telur/`, cerita "trik viral gagal", Budi jualan telur balado, pengejek Rani; fakta di `SUMBER.md`)
 
 ## Seri sejarah perang Indonesia (13-11-2026, sudut pandang: taktik)
 Semua [Perlu cek]. Hindari topik sensitif (1965, Timor Timur, konflik Aceh/GAM modern).
