@@ -2,7 +2,7 @@
 
 Pola naskah ref-02 dengan bentuk cerita keempat **"cari tersangka"** (rotasi bentuk: Bawang = lomba, Nasi goreng = tamu mendadak, Telur = trik viral gagal).
 Korban kali ini Rani (di episode sebelumnya dia pengejek); Budi gantian mengejek. Topik dipilih dari keberhasilan Telur: keluhan rumah tangga + jawaban berlawanan dengan dugaan + "solusi populer" yang gagal, dan pas dengan musim hujan.
-189 kata, suara final 74,12 dtk, video 74,7 dtk, 21 shot. Tanpa CTA; kalimat terakhir menyambung ke kalimat 0 (loop).
+189 kata, suara final 74,12 dtk, video 74,7 dtk, 23 shot. Tanpa CTA; kalimat terakhir menyambung ke kalimat 0 (loop).
 
 ## Naskah (`script.json`)
 0. Rani nyium kemeja buat wawancara besok pagi, dan mukanya langsung kayak nyium kain pel.
