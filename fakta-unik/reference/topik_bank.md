@@ -32,6 +32,10 @@ Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masala
 - **Kenapa nasi goreng harus pakai nasi kemarin?** (SUDAH 14-11-2026: `episodes/nasi-goreng/`, cerita calon mertua, tokoh baru Rani; fakta di `SUMBER.md`)
 - Kenapa jangkrik bunyi makin cepat saat panas? (perlu cek kuat)
 - **Kenapa telur segar justru susah dikupas?** (SUDAH DIRENDER 17-11-2026: `episodes/telur/`, cerita "trik viral gagal", Budi jualan telur balado, pengejek Rani; fakta di `SUMBER.md`)
+- **Kenapa jemuran pas hujan bau apek, padahal sudah pakai pewangi?** (SUDAH DIRENDER 21-11-2026: `episodes/jemuran/`, cerita "cari tersangka", korban Rani, ejekan Budi, dunia mikro bakteri Moraxella; fakta di `SUMBER.md`)
+- Kenapa es batu di rumah keruh, tapi es di kafe bening? (udara + mineral terdorong ke tengah saat air membeku dari semua sisi; trik air matang/direbus dua kali hanya sedikit membantu; cerita: Budi jualan es teh)
+- Kenapa pisang masuk kulkas malah cepat hitam? (kulit rusak karena dingin, isi tetap bagus)
+- Cadangan: tutup toples macet (vakum), gelas bertumpuk lengket (air dingin di dalam, air panas di luar), memeram mangga dengan koran (gas etilen)
 
 ## Seri sejarah perang Indonesia (13-11-2026, sudut pandang: taktik)
 Semua [Perlu cek]. Hindari topik sensitif (1965, Timor Timur, konflik Aceh/GAM modern).

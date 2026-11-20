@@ -259,3 +259,16 @@ Kurva retensi (dtk: %):
 1. **Jangan bocorkan hasil di hook.** Kerupuk menunjukkan payoff di frame 0 lalu masuk pengantar, sehingga ~30% penonton pergi di detik 3-8. Bawang v2 menyimpan mekanisme di akhir (stayed tertinggi sejauh ini). Cek kurva Bawang 14-11 untuk konfirmasi.
 2. **Tebing di akhir Kerupuk dan Masuk Angin** bertepatan dengan penutup/CTA. Bawang (tanpa CTA, loop) adalah ujinya: lihat apakah ekor kurvanya tetap landai.
 3. **Grafis bukan pembeda antar video** (engine dan gaya sama di semua video), jadi data belum bisa mengukur dampaknya. Yang terukur hanya komposisi frame 0 (AC: infografis padat, gagal).
+
+## 2026-11-20: Telur bopeng "membludak" (laporan pemilik, angka belum dicatat)
+
+Pemilik melaporkan Telur (tayang 17-11 18.00 WIB) jauh di atas ekspektasi. Angka (views, stayed to watch, % ditonton, subs, komentar) belum dikirim; minta dan catat di sini bersama Nasi goreng dan Ambarawa sebagai pembanding.
+
+Dugaan faktor (ditulis sebelum melihat angka, supaya tidak menyesuaikan tafsiran):
+1. Masalah yang dialami hampir semua orang (telur bopeng).
+2. Jawaban berlawanan dengan dugaan ("telur segar justru susah dikupas").
+3. Trik viral yang gagal: penonton kemungkinan pernah melihat trik itu, jadi ikut penasaran.
+4. Dapur, cocok dengan penonton inti (perempuan 25-34).
+
+Uji berikutnya: `episodes/jemuran/` (21-11) memakai rumus yang sama (keluhan rumah tangga + jawaban berlawanan dugaan + "solusi populer" gagal) tetapi bukan dapur dan bentuk cerita berbeda ("cari tersangka"). Kalau Jemuran juga tinggi, rumusnya yang bekerja, bukan sekadar topik dapur.
+
