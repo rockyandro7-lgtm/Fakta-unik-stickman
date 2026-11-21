@@ -42,6 +42,7 @@ Channel YouTube Shorts **Mitos Rumahan & Fakta Unik** (@MitosRumahan): video sti
 3. Hasilkan: naskah, audio, thumbnail 1080x1920 dan 1280x720, `YOUTUBE_METADATA.md`.
    **Wajib (permintaan pemilik 12-11-2026): setiap kali mengirim video (termasuk revisi), tulis juga paket upload langsung di pesan balasan, siap salin:** judul (1 rekomendasi + 2 alternatif), deskripsi, hashtag, tag, komentar pin, jadwal upload, dan file cover. Isinya sama dengan `YOUTUBE_METADATA.md`. Jangan hanya menyebut nama filenya.
 4. Update `topik_bank.md` (tandai SUDAH) dan commit + push.
+   **Kirim video versi kecil** (pemilik 21-11-2026, "kurangi size seperti biasa"): `ffmpeg -i <nama>.mp4 -c:v libx264 -preset slow -crf 24 -pix_fmt yuv420p -c:a aac -b:a 160k -ar 48000 -movflags +faststart <nama>_kecil.mp4` (pedas: 109 MB jadi 20,6 MB, SSIM 0,986).
 5. Jadwal upload: 18.30-19.30 WIB.
 
 ## Status saat ini (update tiap session)
