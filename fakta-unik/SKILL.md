@@ -49,7 +49,7 @@ Jika unduhan audio ElevenLabs ditolak proxy (403), host `elevenlabsusercontent.c
    - Tokoh tetap: **Ibu** (`IBU`, topi chef, baju pink) dan **Budi** (`BUDI`, jambul, baju hijau). Ekspresi: `eyes` normal/wide/happy/squint/half/smug/x/spiral/flinch(> <), `mouth` smile/grin/teeth/o/frown/flat/smirk/wobble, `sweat` 0..1. Lebih baik pakai preset `EXPR` lewat `exprTrack(lt, [[t,'kaget'],...])`: netral, sombong, licik, datar, kaget, takjub, lega, bangga, ngeden, meringis, cemas, curiga, sadar.
 7. **Cek gambar:** `node "$ENGINE/tools/render.js" stills 0.4,5.6,10,...` di folder episode, lihat `stills/` dan perbaiki yang tabrakan.
 8. **Suara efek dan musik:** edit cue di `audio.py` (waktu diambil dari kata lewat `W(baris,'kata')`).
-9. **Build:** `bash "$ENGINE/make.sh" <folder-episode>` (`WORKERS=4`). Hasil: `<folder>/<nama>.mp4`. `AUDIO_ONLY=1` hanya mix ulang suara.
+9. **Build:** `bash "$ENGINE/make.sh" <folder-episode>` (`WORKERS=4`). Hasil: `<folder>/<nama>.mp4` + versi kecil `<folder>/<nama>_kecil.mp4` (x264 CRF 24, sekitar 1/5 ukuran). **Selalu kirim keduanya ke pemilik secara otomatis** (permintaan pemilik 21-11-2026), termasuk setiap revisi. `AUDIO_ONLY=1` hanya mix ulang suara.
 10. **QA dan serah** (wajib juga: paket upload di pesan balasan, siap salin: judul rekomendasi + 2 alternatif, deskripsi, hashtag, tag, komentar pin, jadwal 18.30-19.30 WIB, file cover; sama dengan `YOUTUBE_METADATA.md`, ikut dikirim ulang setiap revisi): pastikan durasi 30-45 detik, caption sinkron, tidak ada kata "follow", angka sesuai sumber. Kirim file ke pengguna dan sebutkan sumber fakta. Simpan naskah dan sumber di `topik_bank.md` (tandai topik sudah dipakai).
 
 ## Tambahan v6 (konsistensi + sinkron) — wajib

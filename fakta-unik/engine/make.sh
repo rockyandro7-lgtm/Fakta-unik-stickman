@@ -30,3 +30,7 @@ ffmpeg -v error -y -i silent.mp4 -i audio/mix.wav -map 0:v -map 1:a -c:v copy \
   -af "alimiter=limit=0.8:attack=2:release=60,loudnorm=I=-14:TP=-1.5:LRA=9" \
   -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "$NAME.part.mp4"
 mv "$NAME.part.mp4" "$NAME.mp4"; echo "done: $DIR/$NAME.mp4"
+# versi kecil untuk dikirim ke pemilik (wajib dilampirkan otomatis bersama MP4 asli, permintaan pemilik 21-11-2026)
+echo "== versi kecil"
+ffmpeg -v error -y -i "$NAME.mp4" -c:v libx264 -preset slow -crf 24 -pix_fmt yuv420p -c:a aac -b:a 160k -ar 48000 -movflags +faststart "${NAME}_kecil.part.mp4"
+mv "${NAME}_kecil.part.mp4" "${NAME}_kecil.mp4"; echo "kecil: $DIR/${NAME}_kecil.mp4 ($(du -h "${NAME}_kecil.mp4" | cut -f1))"

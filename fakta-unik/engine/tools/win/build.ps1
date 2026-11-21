@@ -27,4 +27,9 @@ Write-Host '== final mux'
 ffmpeg -v error -y -i silent.mp4 -i audio\mix.wav -map 0:v -map 1:a -c:v copy -af 'alimiter=limit=0.8:attack=2:release=60,loudnorm=I=-14:TP=-1.5:LRA=9' -c:a aac -b:a 192k -ar 48000 -shortest -movflags +faststart "$name.part.mp4"
 if ($LASTEXITCODE) { throw 'mux gagal' }
 Move-Item -Force "$name.part.mp4" "$name.mp4"; Write-Host "done: $(Join-Path $Dir "$name.mp4")"
+# versi kecil untuk dikirim (permintaan pemilik 21-11-2026)
+Write-Host '== versi kecil'
+ffmpeg -v error -y -i "$name.mp4" -c:v libx264 -preset slow -crf 24 -pix_fmt yuv420p -c:a aac -b:a 160k -ar 48000 -movflags +faststart "${name}_kecil.part.mp4"
+if ($LASTEXITCODE) { throw 'kompres gagal' }
+Move-Item -Force "${name}_kecil.part.mp4" "${name}_kecil.mp4"; Write-Host "kecil: $(Join-Path $Dir "${name}_kecil.mp4")"
 
