@@ -48,6 +48,7 @@ Perbaikan dari kritik naskah Telur:
 
 ## Catatan teknis
 - Scribe mengeja angka dan logat ("tiga", "lima", "enggak", "pedes"): `merge.json` menggabungkan ke "3", "5", "Nggak", "Pedas".
+- Verifikasi render final (21-11): durasi 61,4 dtk, awal kalimat vs suara maks 13 ms, frame terakhir identik dengan frame 0.
 - Loop: foto profil grup = komposisi frame 0 yang dirender sekali ke kanvas (`hookImage`). Zoom akhir harus selesai sebelum frame terakhir (`ENDT - .14`), karena frame terakhir video = DUR - 1/30 dtk.
 - Lingkaran foto diisi salinan gambar yang diperbesar dulu (lapisan bawah), supaya saat zoom tidak terlihat sisi kosong.
 - Render ulang di Windows: `powershell -ExecutionPolicy Bypass -File fakta-unik/engine/tools/win/build.ps1 -Dir episodes/pedas -Workers 8`; thumbnail `node thumb.js`.
