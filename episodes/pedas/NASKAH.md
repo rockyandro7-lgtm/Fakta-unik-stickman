@@ -1,8 +1,8 @@
-# Naskah: Kepedasan (DRAF 20-11-2026, menunggu persetujuan pemilik sebelum suara dibuat)
+# Naskah: Kepedasan (disetujui 21-11-2026, dirender 21-11-2026)
 
-Bentuk cerita keempat: **"taruhan dengan pengejek, pengejek ternyata pemegang rahasia"** (Bawang = lomba, Nasi goreng = tamu mendadak, Telur = trik viral gagal).
+Bentuk cerita kelima: **"taruhan dengan pengejek, pengejek ternyata pemegang rahasia"** (Bawang = lomba, Nasi goreng = tamu mendadak, Telur = trik viral gagal).
 Yang menjelaskan mekanisme: **Rani** (bukan Ibu). Ibu tidak muncul.
-138 kata, perkiraan 56-60 dtk. Tanpa CTA; kalimat terakhir menyambung ke kalimat 0 (loop).
+138 kata, suara final 60,80 dtk, video 61,4 dtk, 19 shot. Tanpa CTA; kalimat terakhir menyambung ke kalimat 0 (loop).
 
 Perbaikan dari kritik naskah Telur:
 - Paradoks ada di kalimat 0 ("habis 3 gelas air, masih kebakar"), bukan di detik 9.
@@ -38,3 +38,16 @@ Perbaikan dari kritik naskah Telur:
 - Kalimat 9: HP dengan grup "KELUARGA" dan bingkai foto profil kosong.
 - Kalimat 14-15: dunia mikro lagi: air meluncur di atas tetes minyak (tidak menyatu), lalu butir susu putih memeluk tetes pedas dan membawanya pergi; alarm mati.
 - Akhir: HP grup keluarga dengan foto Budi menangis, whip-pan ke komposisi frame 0.
+
+## Aset baru (`web/env_pedas.js`)
+`warungBG` (warung seblak datar: papan menu LV0-5, lampu untai, poster LEVEL 5 = NANGIS, rak kerupuk), `mejaWarung` (meja + taplak kotak merah, digambar setelah tokoh),
+`drawSeblak` (mangkuk berangka level, isi kuah/kerupuk/ceker/cabai, uap, glow), `drawGelas` (air es / susu, `sleeve` 0..1 untuk sarung gelas Rani yang melorot, `rot` untuk minum),
+`drawApi` (api dari mulut), `drawCabai`, `drawHPGrup` (grup KELUARGA BESAR, foto profil = fungsi), `drawAturan` (kertas aturan taruhan + baris "MINUM: ?"),
+`drawPiringMinyak` (analogi piring berminyak disiram air), dunia mikro `lidahBG` + `SURF` (permukaan lidah, saraf ke bawah dengan denyut sinyal), `drawSensor` (alarm panas),
+`drawKapsaisin` (tetes pedas berminyak berwajah), `drawProtein` (butir susu berlengan). Tata letak `PD`, palet `PDP`. Tokoh: Budi, Rani (`env_nasi.js`).
+
+## Catatan teknis
+- Scribe mengeja angka dan logat ("tiga", "lima", "enggak", "pedes"): `merge.json` menggabungkan ke "3", "5", "Nggak", "Pedas".
+- Loop: foto profil grup = komposisi frame 0 yang dirender sekali ke kanvas (`hookImage`). Zoom akhir harus selesai sebelum frame terakhir (`ENDT - .14`), karena frame terakhir video = DUR - 1/30 dtk.
+- Lingkaran foto diisi salinan gambar yang diperbesar dulu (lapisan bawah), supaya saat zoom tidak terlihat sisi kosong.
+- Render ulang di Windows: `powershell -ExecutionPolicy Bypass -File fakta-unik/engine/tools/win/build.ps1 -Dir episodes/pedas -Workers 8`; thumbnail `node thumb.js`.
