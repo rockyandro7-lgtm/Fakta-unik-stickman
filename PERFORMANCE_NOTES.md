@@ -272,3 +272,23 @@ Dugaan faktor (ditulis sebelum melihat angka, supaya tidak menyesuaikan tafsiran
 
 Uji berikutnya: `episodes/jemuran/` (21-11) memakai rumus yang sama (keluhan rumah tangga + jawaban berlawanan dugaan + "solusi populer" gagal) tetapi bukan dapur dan bentuk cerita berbeda ("cari tersangka"). Kalau Jemuran juga tinggi, rumusnya yang bekerja, bukan sekadar topik dapur.
 
+
+## 2026-11-21 17.44: Telur 227K views (screenshot pemilik)
+
+Telur (tayang 17-11 18.00 WIB): **227.406 views** dalam ~4 hari. Metrik lain (stayed, % ditonton, traffic source, subs) belum dikirim.
+
+Bentuk kurva views kumulatif (dibaca dari grafik Overview, perkiraan):
+- Hari 0 sampai ~2,8: naik pelan, sampai ~50K (sudah jauh di atas video lain, yang semuanya di bawah 6K).
+- Sekitar hari ke-3: **lonjakan ~50K ke ~150K dalam setengah hari**.
+- Datar sebentar (~150-160K), lalu naik lagi dengan laju tinggi sampai 227K, belum melambat di ujung grafik.
+
+Tafsiran (cara kerja internal YouTube tidak dipublikasikan):
+- Pola tangga (naik, datar, lonjak, datar, naik) = distribusi bertahap yang sama dengan "gelombang ~300", hanya saja Telur terus lolos ambang dan naik ke kelompok penonton yang makin besar. Lonjakan hari ke-3 = masuk kelompok yang jauh lebih luas (kemungkinan penonton di luar ceruk channel, minat masak/tips dapur).
+- Yang dinilai per video dan dibandingkan dengan Short lain yang disodorkan ke penonton yang sama, bukan ukuran channel. Channel 19 subscriber pun bisa meledak.
+- Dugaan faktor 20-11 tetap berlaku; tambahan: topik telur rebus punya kelompok penonton sangat besar (semua orang pernah merebus telur), dan isinya tips praktis yang mudah dibagikan (share/simpan).
+
+Data yang perlu diminta untuk memastikan (Reach, Engagement, Audience):
+- Traffic source (Shorts feed vs search vs lainnya) sebelum dan sesudah lonjakan.
+- Stayed to watch, average percentage viewed, kurva retensi (bandingkan dengan Bawang 83,8% / 88,9%).
+- Share, like, subs dari video ini; penonton baru vs kembali; negara (Malaysia ikut naik?).
+- Apakah video lain ikut naik setelah lonjakan (efek ke channel).
