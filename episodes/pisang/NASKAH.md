@@ -41,4 +41,5 @@ Tata letak `PS`, palet `PSP`. Tokoh: Budi, Rani (`env_nasi.js`), Ibu (preset di 
 ## Catatan teknis
 - Scribe: "tiga belas", "dapat", "lemes", "coklat" -> `merge.json` jadi "13", "dapet", "lemas", "cokelat".
 - Loop: shot terakhir memutar `hookScene` dengan waktu negatif (tangan Budi bergerak dari posisi istirahat), sehingga frame terakhir = frame 0.
+- Verifikasi render final (23-11): durasi 66,6 dtk, awal kalimat vs onset suara maks 14 ms, offset suara di MP4 2 ms, frame terakhir vs frame 0 beda rata-rata 1,2/255 (praktis identik).
 - Render ulang di Windows: `powershell -ExecutionPolicy Bypass -File fakta-unik/engine/tools/win/build.ps1 -Dir episodes/pisang -Workers 8`; thumbnail `node thumb.js`.
