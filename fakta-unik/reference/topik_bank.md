@@ -36,10 +36,9 @@ Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masala
 - **Kepedasan, kenapa minum air nggak mempan tapi susu ampuh?** (SUDAH DIRENDER 21-11-2026: `episodes/pedas/`, cerita "taruhan seblak level 5", pengejek Rani ternyata pemegang rahasia (minum susu), dunia mikro lidah: sensor panas + tetes kapsaisin + protein susu; fakta di `SUMBER.md`. Catatan: klaim "air bikin makin pedas" TIDAK didukung data, jangan dipakai)
 - Kenapa listrik rumah "jeglek" kalau rice cooker + setrika nyala bareng? (MCB dan daya VA; perlu cek)
 - Kenapa suara kita aneh di rekaman sendiri? (konduksi tulang; perlu cek)
-- Kenapa pisang malah cepat hitam di kulkas? (kulit rusak kena dingin; perlu cek)
 - Kenapa es batu rumah keruh, es warung bening? (udara/mineral terdorong ke tengah saat membeku; perlu cek)
 - Kenapa es batu di rumah keruh, tapi es di kafe bening? (udara + mineral terdorong ke tengah saat air membeku dari semua sisi; trik air matang/direbus dua kali hanya sedikit membantu; cerita: Budi jualan es teh)
-- Kenapa pisang masuk kulkas malah cepat hitam? (kulit rusak karena dingin, isi tetap bagus)
+- **Kenapa pisang masuk kulkas malah cepat hitam?** (SUDAH DIRENDER 23-11-2026: `episodes/pisang/`, cerita "pilihan yang ditertawakan", Budi pilih pisang hitam, Rani mengejek + taruhan cuci piring, dunia mikro sel kulit di bawah 13 derajat + apel digigit; fakta di `SUMBER.md`. Nuansa: hanya pisang yang sudah matang; pisang hijau gagal matang)
 - Cadangan: tutup toples macet (vakum), gelas bertumpuk lengket (air dingin di dalam, air panas di luar), memeram mangga dengan koran (gas etilen)
 
 ## Seri sejarah perang Indonesia (13-11-2026, sudut pandang: taktik)
