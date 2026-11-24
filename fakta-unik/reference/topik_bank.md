@@ -39,6 +39,8 @@ Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masala
 - Kenapa es batu rumah keruh, es warung bening? (udara/mineral terdorong ke tengah saat membeku; perlu cek)
 - Kenapa es batu di rumah keruh, tapi es di kafe bening? (udara + mineral terdorong ke tengah saat air membeku dari semua sisi; trik air matang/direbus dua kali hanya sedikit membantu; cerita: Budi jualan es teh)
 - **Kenapa pisang masuk kulkas malah cepat hitam?** (SUDAH DIRENDER 23-11-2026: `episodes/pisang/`, cerita "pilihan yang ditertawakan", Budi pilih pisang hitam, Rani mengejek + taruhan cuci piring, dunia mikro sel kulit di bawah 13 derajat + apel digigit; fakta di `SUMBER.md`. Nuansa: hanya pisang yang sudah matang; pisang hijau gagal matang)
+- **Digigit nyamuk terus, darahnya kemanisan?** (SUDAH DIRENDER 24-11-2026: `episodes/nyamuk/`, cerita "diet konyol seminggu" (tanpa gula + bawang putih mentah), Rani yang paling manis justru aman, dunia mikro bakteri kulit + toples racikan per orang, gag "WARTEG BUDI"; fakta di `SUMBER.md`. Jangan klaim golongan darah O)
+- Antrean ide berikut (24-11-2026, rumus Telur/Pisang): kuning telur rebus jadi hijau (direbus kelamaan, bukan busuk), gelas es teh "berkeringat" (embun dari udara; bukti: sirup merah, embun bening), mangga diperam koran (gas etilen, bukan panas), goreng ikan meletup (air, bukan minyak; ikan dicuci malah tambah meletup), lalat gosok tangan (mencicipi pakai kaki), roti tawar di kulkas cepat keras (jangan berurutan dengan Pisang)
 - Cadangan: tutup toples macet (vakum), gelas bertumpuk lengket (air dingin di dalam, air panas di luar), memeram mangga dengan koran (gas etilen)
 
 ## Seri sejarah perang Indonesia (13-11-2026, sudut pandang: taktik)
