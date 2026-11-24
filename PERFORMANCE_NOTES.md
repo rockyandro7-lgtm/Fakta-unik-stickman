@@ -292,3 +292,30 @@ Data yang perlu diminta untuk memastikan (Reach, Engagement, Audience):
 - Stayed to watch, average percentage viewed, kurva retensi (bandingkan dengan Bawang 83,8% / 88,9%).
 - Share, like, subs dari video ini; penonton baru vs kembali; negara (Malaysia ikut naik?).
 - Apakah video lain ikut naik setelah lonjakan (efek ke channel).
+
+## 2026-11-24 20.51: Pisang di kulkas meledak (screenshot pemilik)
+
+Pisang (tayang 23-11 malam, 66,6 dtk). Angka setelah ~24 jam:
+
+| Metrik | Pisang | Pembanding |
+|---|---|---|
+| Views | **321.448** dalam ~24 jam | Telur 227K dalam ~4 hari; video lain < 6K |
+| Engaged views | 175,1K (54% dari views) | - |
+| Stayed to watch | **88,6%** (swipe 11,4%) | Bawang 83,8%, Masuk Angin 82,3%, AC 17,3% |
+| Average % viewed | **91,4%** (~61 dari 66,6 dtk) | Bawang 88,9%, Blitzkrieg 73,6% |
+| Like | 2,9K (~0,9% views; ~1,7% engaged views) | - |
+| Komentar | **11** | sebelumnya 0 di semua video |
+| Subs | +26x (angka terpotong; sumbu grafik sampai 270) | Masuk Angin +9 |
+| Traffic | Shorts feed 313,8K (97,6%) | 95% di snapshot 13-11 |
+
+Bentuk kurva: datar ~8 jam pertama, lalu naik dan **makin cepat di ujung** (belum melambat). Telur butuh ~3 hari untuk lonjakan besar; Pisang hanya ~8 jam.
+
+Tafsiran (cara kerja algoritme tidak dipublikasikan; ini dugaan dari data):
+1. **Hook mengajak penonton ikut menilai.** Frame 0 = dua pisang + "Budi malah ngambil yang hitam legam". Penonton langsung punya pendapat ("itu busuk"), tanpa jawaban dibocorkan. Stayed 88,6% = tertinggi sejauh ini.
+2. **Rumus Telur terulang:** benda yang ada di semua dapur + keyakinan umum yang salah (hitam = busuk) + jawaban berlawanan dugaan. Dua kali berturut-turut meledak, jadi rumusnya yang bekerja, bukan kebetulan satu topik.
+3. **Dua pembalikan:** gagal palsu (kulit dingin, lemas, hitam) lalu daging putih mulus, lalu punya Rani yang justru lembek. Taruhan cuci piring memberi alasan menunggu hasil.
+4. **Penjelasan pendek (4 kalimat) di akhir** + loop mulus (frame terakhir = frame 0). APV 91,4%, dan pemutaran ulang ikut dihitung sebagai view (views 321K vs engaged 175K).
+5. **Efek Telur:** setelah Telur, sistem sudah tahu kelompok penonton "tips dapur" yang cocok dengan channel ini, jadi Pisang langsung disodorkan ke kelompok yang tepat (lonjakan 8 jam, bukan 3 hari).
+6. **Komentar pertama kali muncul (11).** Topik memancing pengalaman pribadi ("pisangku juga hitam di kulkas") + komentar pin dua pilihan (tim meja / tim kulkas).
+
+Yang perlu diminta berikutnya: kurva retensi per detik (cek apakah ada titik turun di kalimat 11-14 = penjelasan), share/simpan, penonton baru vs kembali, negara, dan apakah video lama ikut naik.
