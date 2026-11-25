@@ -1,0 +1,15 @@
+# Sumber: Kenapa semut balik lagi padahal sudah disapu (dicek 25-11-2026)
+
+| # | Klaim di naskah | Temuan sumber | Sumber |
+|---|---|---|---|
+| 1 | "Semut nggak ngeliat jalan. Dia nyium jalan." | Semut pekerja mengikuti jejak kimia (feromon jejak) di permukaan; antena dipakai untuk mendeteksinya. Wilson (1962) termasuk studi pertama yang membuktikan jejak feromon pada semut api. Catatan: sebagian spesies (misalnya semut gurun) juga memakai penglihatan; semut rumah yang berbaris ke makanan terutama mengikuti jejak kimia. | Wilson 1962, Animal Behaviour 10: "Chemical communication among workers of the fire ant Solenopsis saevissima"; ringkasan: https://en.wikipedia.org/wiki/Trail_pheromone ; Hölldobler & Wilson, The Ants bab 7: https://antwiki.org/wiki/The_Ants_Chapter_7 |
+| 2 | "Semut pertama yang nemu gula ninggalin jejak bau sampai ke sarang." | Pengintai (scout) yang menemukan makanan meletakkan jejak kimia dalam perjalanan pulang ke sarang. | Hölldobler & Wilson, The Ants bab 7 (antwiki, lihat atas); PMC4267257: https://pmc.ncbi.nlm.nih.gov/articles/PMC4267257 |
+| 3 | "Tiap semut yang lewat nambahin baunya, jadi jalannya makin tebal." | Semut rekrutan yang berhasil mendapat makanan ikut menambahkan feromon saat pulang, sehingga jejak makin kuat (umpan balik positif). Kalau makanan habis, jejak tidak diperkuat dan menguap. | Sumber #2; ringkasan https://en.wikipedia.org/wiki/Trail_pheromone |
+| 4 | "Disapu, semutnya hilang, tapi jalannya tetap ada." "Air sabun ngapus baunya." | NPIC (Oregon State University, didanai US EPA): "Wipe up ant trails with soapy water to remove any pheromone trails." Oregon State Solve Pest Problems: air sabun memutus jejak bau dari makanan ke sarang. Penn State Extension: lap jejak dengan air sabun atau campuran cuka dan air. Sapu tidak disebut menghapus jejak; yang disebut efektif adalah mengelap/mengepel dengan air sabun. | https://www.npic.orst.edu/pest/ant.html ; https://solvepestproblems.oregonstate.edu/insects-spiders/ants ; https://extension.psu.edu/got-ants-eliminate-them-with-ipm ; UC IPM: https://ipm.ucanr.edu/PMG/PESTNOTES/pn7411.html |
+| 5 | Ibu juga "nutup toples gula" | Semua sumber penanganan semut di atas menekankan menyimpan makanan tertutup dan membersihkan sisa makanan; mengelap jejak saja hanya menghentikan semut sementara. | NPIC, UC IPM, Utah State Extension (pavement ants: lap air sabun 1-2 kali sehari selama 1-7 hari): https://extension.usu.edu/pests/research/pavement-ants.php |
+
+## Catatan nuansa
+- Mengelap jejak **sementara** menghentikan barisan; koloni tetap ada. Karena itu di naskah Ibu juga menutup toples gula. Jangan klaim "air sabun mengusir semut selamanya" di deskripsi atau balasan komentar.
+- Klaim "semut yang dipencet memanggil teman" (feromon alarm) memang ada pada beberapa spesies, tetapi tidak dipakai di naskah karena bergantung spesies.
+- "Kayak jalan tol" = analogi (jejak yang makin kuat menarik makin banyak semut), bukan klaim bahwa jejaknya terlihat.
+- Cerita (sapu tiga kali, tepok, kipas angin, Rani mengejek) adalah fiksi sebagai wadah. Mode "hidung semut" (jejak ungu menyala) adalah visualisasi; feromon tidak terlihat mata.

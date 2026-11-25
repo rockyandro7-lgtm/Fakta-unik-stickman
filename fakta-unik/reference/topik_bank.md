@@ -43,6 +43,8 @@ Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masala
 - Antrean ide berikut (24-11-2026, rumus Telur/Pisang): kuning telur rebus jadi hijau (direbus kelamaan, bukan busuk), gelas es teh "berkeringat" (embun dari udara; bukti: sirup merah, embun bening), mangga diperam koran (gas etilen, bukan panas), goreng ikan meletup (air, bukan minyak; ikan dicuci malah tambah meletup), lalat gosok tangan (mencicipi pakai kaki), roti tawar di kulkas cepat keras (jangan berurutan dengan Pisang)
 - Cadangan: tutup toples macet (vakum), gelas bertumpuk lengket (air dingin di dalam, air panas di luar), memeram mangga dengan koran (gas etilen)
 
+- **Semut balik lagi padahal sudah disapu** (SUDAH DIRENDER 25-11-2026, dimajukan pemilik ke 25-11 15.30 WIB: `episodes/semut/`, cerita "perang naik level" sapu/tepok/kipas gagal, Ibu lap air sabun + tutup toples, mode "hidung semut" jejak ungu menyala jadi jalan tol; fakta di `SUMBER.md`. Nuansa: lap hanya menghentikan sementara, makanan harus ditutup)
+
 ## Rencana 2 minggu: 2 Short per hari (26-11 s.d. 9-12-2026, jadwal pemilik 05.30 dan 15.30 WIB)
 Permintaan pemilik 25-11-2026 (target 10 juta views). Semua memakai rumus Telur/Pisang: benda/keluhan yang dialami semua orang + keyakinan umum yang salah + solusi populer gagal + jawaban berlawanan dugaan, disimpan di akhir.
 Dapur dan non-dapur diselang-seling antar slot supaya data bisa membedakan efek topik dan efek jam.
@@ -55,7 +57,7 @@ Semua [Perlu cek] ke sumber primer sebelum naskah; yang bertanda (!) paling perl
 | 27-11 | 05.30 | Ekor cicak putus masih joget, cicaknya kabur | Sengaja diputus (autotomi) untuk mengalihkan pemangsa; ekor baru tumbuh tapi isinya tulang rawan | `rumahBG` |
 | 27-11 | 15.30 | Gelas es teh "bocor", meja basah | Embun dari udara, bukan rembesan. Bukti: isi sirup merah, embunnya bening | `warungBG` (pedas) |
 | 28-11 | 05.30 | Bawang goreng "tiba-tiba" gosong; Ibu angkat saat masih pucat | Minyak panas terus memasak setelah diangkat; angkat saat kuning muda | dapur (`env_pisang`/`env_kerupuk`) |
-| 28-11 | 15.30 | Semut balik lagi padahal sudah disapu | Jalan mengikuti jejak feromon; disapu tidak menghapus jejak, dilap sabun/cuka memutusnya | `rumahBG` |
+| 28-11 | 15.30 | Kilat dulu baru guntur (dari cadangan; Semut sudah tayang 25-11) | Cahaya jauh lebih cepat dari suara; hitung detik antara kilat dan guntur, sekitar 3 detik = 1 km (!) | `terasBG` (nyamuk) |
 | 29-11 | 05.30 | Ayam berkokok sebelum terang | Jam biologis di dalam tubuh ayam, bukan cahaya (studi Jepang 2013, ayam di ruang gelap tetap berkokok jelang pagi) | `terasBG` (nyamuk) |
 | 29-11 | 15.30 | Goreng ikan meletup; Budi pakai helm | Penyebabnya air, bukan minyak; ikan dicuci basah justru makin meletup. Keringkan dulu | dapur |
 | 30-11 | 05.30 | Trik viral biji alpukat gagal, guacamole cokelat | Enzim + oksigen; biji cuma melindungi bagian yang ditutupinya. Jeruk nipis / plastik rapat menang | dapur |
@@ -79,7 +81,7 @@ Semua [Perlu cek] ke sumber primer sebelum naskah; yang bertanda (!) paling perl
 | 9-12 | 05.30 | Es batu rumah keruh, es kafe bening | Udara dan mineral terdorong ke tengah saat air membeku dari semua sisi; air direbus hanya sedikit membantu | dapur / warung |
 | 9-12 | 15.30 | Durian satu biji, bau satu rumah (musim durian) | Puluhan senyawa belerang yang mudah menguap (!) | rumah |
 
-Cadangan: kilat dulu baru guntur (hitung detik), gelas bertumpuk lengket, kucing jatuh selalu kaki dulu, tomat di kulkas hambar, brain freeze, kecoak mati telentang.
+Cadangan: gelas bertumpuk lengket, kucing jatuh selalu kaki dulu, tomat di kulkas hambar, brain freeze, kecoak mati telentang.
 
 ## Seri sejarah perang Indonesia (13-11-2026, sudut pandang: taktik)
 Semua [Perlu cek]. Hindari topik sensitif (1965, Timor Timur, konflik Aceh/GAM modern).
