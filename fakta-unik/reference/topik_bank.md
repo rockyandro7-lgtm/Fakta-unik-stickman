@@ -43,6 +43,44 @@ Semua [Perlu cek] ke sumber primer sebelum dibuat. Cari yang punya rantai masala
 - Antrean ide berikut (24-11-2026, rumus Telur/Pisang): kuning telur rebus jadi hijau (direbus kelamaan, bukan busuk), gelas es teh "berkeringat" (embun dari udara; bukti: sirup merah, embun bening), mangga diperam koran (gas etilen, bukan panas), goreng ikan meletup (air, bukan minyak; ikan dicuci malah tambah meletup), lalat gosok tangan (mencicipi pakai kaki), roti tawar di kulkas cepat keras (jangan berurutan dengan Pisang)
 - Cadangan: tutup toples macet (vakum), gelas bertumpuk lengket (air dingin di dalam, air panas di luar), memeram mangga dengan koran (gas etilen)
 
+## Rencana 2 minggu: 2 Short per hari (26-11 s.d. 9-12-2026, jadwal pemilik 05.30 dan 15.30 WIB)
+Permintaan pemilik 25-11-2026 (target 10 juta views). Semua memakai rumus Telur/Pisang: benda/keluhan yang dialami semua orang + keyakinan umum yang salah + solusi populer gagal + jawaban berlawanan dugaan, disimpan di akhir.
+Dapur dan non-dapur diselang-seling antar slot supaya data bisa membedakan efek topik dan efek jam.
+Semua [Perlu cek] ke sumber primer sebelum naskah; yang bertanda (!) paling perlu dicek.
+
+| Tgl | Jam | Topik (hook frame 0) | Fakta inti | Set yang bisa dipakai ulang |
+|---|---|---|---|---|
+| 26-11 | 05.30 | Kuning telur rebus hijau: Budi mau buang 30 telur, "busuk!" | Direbus kelamaan: belerang putih telur + besi kuning telur = lapisan hijau, aman. Solusi: jangan kelamaan + rendam air es | `env_telur.js` |
+| 26-11 | 15.30 | Laron menyerbu lampu habis hujan | Laron = rayap bersayap yang keluar bikin koloni baru saat tanah lembap; cahaya bikin bingung. Baskom air di bawah lampu | `rumahBG` (jemuran) |
+| 27-11 | 05.30 | Ekor cicak putus masih joget, cicaknya kabur | Sengaja diputus (autotomi) untuk mengalihkan pemangsa; ekor baru tumbuh tapi isinya tulang rawan | `rumahBG` |
+| 27-11 | 15.30 | Gelas es teh "bocor", meja basah | Embun dari udara, bukan rembesan. Bukti: isi sirup merah, embunnya bening | `warungBG` (pedas) |
+| 28-11 | 05.30 | Bawang goreng "tiba-tiba" gosong; Ibu angkat saat masih pucat | Minyak panas terus memasak setelah diangkat; angkat saat kuning muda | dapur (`env_pisang`/`env_kerupuk`) |
+| 28-11 | 15.30 | Semut balik lagi padahal sudah disapu | Jalan mengikuti jejak feromon; disapu tidak menghapus jejak, dilap sabun/cuka memutusnya | `rumahBG` |
+| 29-11 | 05.30 | Ayam berkokok sebelum terang | Jam biologis di dalam tubuh ayam, bukan cahaya (studi Jepang 2013, ayam di ruang gelap tetap berkokok jelang pagi) | `terasBG` (nyamuk) |
+| 29-11 | 15.30 | Goreng ikan meletup; Budi pakai helm | Penyebabnya air, bukan minyak; ikan dicuci basah justru makin meletup. Keringkan dulu | dapur |
+| 30-11 | 05.30 | Trik viral biji alpukat gagal, guacamole cokelat | Enzim + oksigen; biji cuma melindungi bagian yang ditutupinya. Jeruk nipis / plastik rapat menang | dapur |
+| 30-11 | 15.30 | Jari keriput setelah mandi lama | Bukan kemasukan air: perintah saraf (pembuluh menyempit); jari dengan saraf putus tidak keriput | rumah |
+| 1-12 | 05.30 | AC diset 16 derajat biar cepat dingin | Kecepatan mendinginkan sama; 16 cuma membuat kompresor tidak berhenti = boros. (Uji ulang topik AC dengan hook stickman, bukan infografis) | `rumahBG` |
+| 1-12 | 15.30 | Noda kunyit digosok sabun malah jadi MERAH (!) | Kurkumin berubah warna di sabun basa; pudar kena sinar matahari | `env_jemur.js` |
+| 2-12 | 05.30 | Es teh gula 5 sendok tetap tawar | Gula sulit larut di air dingin, mengendap; warung melarutkan di teh panas / air gula dulu | `warungBG` |
+| 2-12 | 15.30 | Bau tanah habis hujan | Dibuat bakteri tanah (geosmin); hidung manusia sangat peka terhadapnya (!) | `terasBG` |
+| 3-12 | 05.30 | Kucing dikasih susu malah diare | Kucing dewasa tidak mencerna laktosa; tambahkan "bukan pengganti saran dokter hewan" | rumah |
+| 3-12 | 15.30 | Susu mendidih meluap, air tidak | Lapisan protein/lemak di permukaan menahan gelembung uap (!) | dapur |
+| 4-12 | 05.30 | Ikan amis makin dicuci makin bau | Bau dari senyawa basa (TMA); air saja tidak cukup, asam jeruk nipis mengikatnya (!) | dapur |
+| 4-12 | 15.30 | Lantai keramik dingin, karpet hangat, termometer sama | Keramik menyedot panas kaki lebih cepat (konduksi), suhunya sama | rumah |
+| 5-12 | 05.30 | Bulu kaki dicukur jadi makin lebat? | Mitos: ujung jadi tumpul sehingga terasa kasar dan tampak gelap, jumlah dan tebal tidak berubah | rumah |
+| 5-12 | 15.30 | Daging rendang alot: direbus lebih lama malah empuk (!) | Otot mengeras di suhu tengah; kolagen baru lumer setelah lama | dapur |
+| 6-12 | 05.30 | Mangga dibungkus koran cepat matang | Gas etilen dari buah terperangkap, bukan panas koran (jangan berurutan dengan Pisang) | dapur |
+| 6-12 | 15.30 | Kipas angin di kamar kosong | Kipas mendinginkan kulit (penguapan), bukan ruangan; kamar kosong = buang listrik | rumah |
+| 7-12 | 05.30 | Roti tawar di kulkas malah cepat keras | Pati mengkristal paling cepat di suhu kulkas; freezer aman | dapur |
+| 7-12 | 15.30 | Soda dikocok, diketuk tutupnya, tetap menyembur (!) | Ketukan tidak terbukti membantu; menunggu yang membuat gelembung naik dan pecah | warung |
+| 8-12 | 05.30 | Tutup toples macet, Budi kalah | Vakum + logam memuai lebih dari kaca: air panas di tutup, atau congkel sedikit supaya udara masuk | dapur |
+| 8-12 | 15.30 | Garam biar air cepat mendidih | Mitos: garam malah sedikit menaikkan titik didih; gunanya rasa (!) | dapur |
+| 9-12 | 05.30 | Es batu rumah keruh, es kafe bening | Udara dan mineral terdorong ke tengah saat air membeku dari semua sisi; air direbus hanya sedikit membantu | dapur / warung |
+| 9-12 | 15.30 | Durian satu biji, bau satu rumah (musim durian) | Puluhan senyawa belerang yang mudah menguap (!) | rumah |
+
+Cadangan: kilat dulu baru guntur (hitung detik), gelas bertumpuk lengket, kucing jatuh selalu kaki dulu, tomat di kulkas hambar, brain freeze, kecoak mati telentang.
+
 ## Seri sejarah perang Indonesia (13-11-2026, sudut pandang: taktik)
 Semua [Perlu cek]. Hindari topik sensitif (1965, Timor Timur, konflik Aceh/GAM modern).
 - **Palagan Ambarawa (1945), taktik supit urang Soedirman** (SUDAH DIRENDER 16-11-2026: `episodes/ambarawa/`, 60,6 dtk, jadwal upload 16-11 18.30-19.30 WIB; rencana 15-12 dibatalkan pemilik)
