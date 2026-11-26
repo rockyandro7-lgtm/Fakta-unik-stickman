@@ -340,3 +340,6 @@ Pelajaran:
 1. Satu video yang cocok dengan rumus (keluhan dapur + keyakinan umum salah + pembalikan) menyumbang hampir 1.000 subs. Rumus ini prioritas untuk sisa rencana 2 minggu.
 2. Loop + penjelasan pendek tetap bertahan di skala besar (APV naik dari 91,4% ke 92,6% walau penonton makin luas).
 3. Turunnya retensi di ~20 detik terakhir: cek apakah bagian penutup bisa dipadatkan di episode berikutnya (target: akhir video tetap di atas 80%).
+
+### Dugaan pemilik untuk diuji (26-11): efek bola salju dari subs
+Dugaan: subs naik, jadi views minimal tiap video baru ikut naik. Cara uji: catat views 24 jam pertama tiap Short sesudah Pisang (Nyamuk, Semut, Telur hijau, Laron, dan seterusnya), bandingkan dengan lantai lama (~300 views, "gelombang ~300"), dan pisahkan per sumber traffic (Shorts feed vs Subscriptions). Kalau lantai naik ke ribuan dan porsi Subscriptions membesar, dugaan terbukti.
