@@ -52,8 +52,8 @@ Semua [Perlu cek] ke sumber primer sebelum naskah; yang bertanda (!) paling perl
 
 | Tgl | Jam | Topik (hook frame 0) | Fakta inti | Set yang bisa dipakai ulang |
 |---|---|---|---|---|
-| 26-11 | 05.30 | Kuning telur rebus hijau: Budi mau buang 30 telur, "busuk!" | Direbus kelamaan: belerang putih telur + besi kuning telur = lapisan hijau, aman. Solusi: jangan kelamaan + rendam air es | `env_telur.js` |
-| 26-11 | 15.30 | Laron menyerbu lampu habis hujan | Laron = rayap bersayap yang keluar bikin koloni baru saat tanah lembap; cahaya bikin bingung. Baskom air di bawah lampu | `rumahBG` (jemuran) |
+| 26-11 | 05.30 | **SUDAH DIRENDER 26-11** (`episodes/telur-hijau/`): Kuning telur rebus hijau: Budi mau buang 30 telur, "busuk!" | Direbus kelamaan: belerang putih telur + besi kuning telur = lapisan hijau, aman. Solusi: jangan kelamaan + rendam air es | `env_telur.js` |
+| 26-11 | 15.30 | **SUDAH DIRENDER 26-11** (`episodes/laron/`): Laron menyerbu lampu habis hujan (twist: laron = rayap, calon raja-ratu) | Laron = rayap bersayap yang keluar bikin koloni baru saat tanah lembap; cahaya bikin bingung. Baskom air di bawah lampu | `rumahBG` (jemuran) |
 | 27-11 | 05.30 | Ekor cicak putus masih joget, cicaknya kabur | Sengaja diputus (autotomi) untuk mengalihkan pemangsa; ekor baru tumbuh tapi isinya tulang rawan | `rumahBG` |
 | 27-11 | 15.30 | Gelas es teh "bocor", meja basah | Embun dari udara, bukan rembesan. Bukti: isi sirup merah, embunnya bening | `warungBG` (pedas) |
 | 28-11 | 05.30 | Bawang goreng "tiba-tiba" gosong; Ibu angkat saat masih pucat | Minyak panas terus memasak setelah diangkat; angkat saat kuning muda | dapur (`env_pisang`/`env_kerupuk`) |
