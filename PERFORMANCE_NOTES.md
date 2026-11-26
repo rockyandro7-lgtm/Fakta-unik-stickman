@@ -319,3 +319,24 @@ Tafsiran (cara kerja algoritme tidak dipublikasikan; ini dugaan dari data):
 6. **Komentar pertama kali muncul (11).** Topik memancing pengalaman pribadi ("pisangku juga hitam di kulkas") + komentar pin dua pilihan (tim meja / tim kulkas).
 
 Yang perlu diminta berikutnya: kurva retensi per detik (cek apakah ada titik turun di kalimat 11-14 = penjelasan), share/simpan, penonton baru vs kembali, negara, dan apakah video lama ikut naik.
+
+## 2026-11-26 22.01: Pisang 897,9K views dalam 3 hari (screenshot pemilik)
+
+| Metrik | 24-11 (~24 jam) | 26-11 (~3 hari) |
+|---|---|---|
+| Views | 321.448 | **897.892** |
+| Subs dari video ini | +26x | **+988** |
+| Average view duration | ~61 dtk (91,4%) | **1:02 (92,6%)**, lifetime |
+
+Status monetisasi (laporan pemilik): syarat subscriber sudah terpenuhi, tinggal syarat views Shorts (10 juta dalam 90 hari terakhir). Perkiraan pemilik: sudah ~2 juta. Mulai 25-11 upload 2 Short per hari (rencana 2 minggu di `topik_bank.md`).
+
+Catatan penting: sejak 31-03-2025 "views" Shorts menghitung setiap putaran (termasuk replay), tetapi syarat YPP dan bagi hasil tetap memakai **engaged views** (di Pisang 24-11: 54% dari views). Angka resmi progres ada di tab Earn (penghitung views Shorts publik yang valid). Catat angka itu di sini, bukan total views.
+
+Bentuk kurva views kumulatif (dibaca dari grafik, perkiraan): datar ~0,4 hari, naik ke ~350K di hari ~1,4, datar, naik ke ~620K di hari ~2,2, datar, lalu **naik makin cepat sampai 900K di ujung grafik** (belum melambat). Pola tangga yang sama dengan Telur, tiap anak tangga lebih besar.
+
+Kurva retensi (lifetime, perkiraan dari grafik): mulai jauh di atas 100% (replay/loop), turun ke ~100% sekitar detik 12, lalu hampir datar di ~90-95% sampai sekitar detik 45, turun pelan ke ~70% di detik 67. Tidak ada "Dip" tajam di bagian penjelasan; penurunan baru terasa di ~20 detik terakhir.
+
+Pelajaran:
+1. Satu video yang cocok dengan rumus (keluhan dapur + keyakinan umum salah + pembalikan) menyumbang hampir 1.000 subs. Rumus ini prioritas untuk sisa rencana 2 minggu.
+2. Loop + penjelasan pendek tetap bertahan di skala besar (APV naik dari 91,4% ke 92,6% walau penonton makin luas).
+3. Turunnya retensi di ~20 detik terakhir: cek apakah bagian penutup bisa dipadatkan di episode berikutnya (target: akhir video tetap di atas 80%).
