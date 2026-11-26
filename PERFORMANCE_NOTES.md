@@ -343,3 +343,8 @@ Pelajaran:
 
 ### Dugaan pemilik untuk diuji (26-11): efek bola salju dari subs
 Dugaan: subs naik, jadi views minimal tiap video baru ikut naik. Cara uji: catat views 24 jam pertama tiap Short sesudah Pisang (Nyamuk, Semut, Telur hijau, Laron, dan seterusnya), bandingkan dengan lantai lama (~300 views, "gelombang ~300"), dan pisahkan per sumber traffic (Shorts feed vs Subscriptions). Kalau lantai naik ke ribuan dan porsi Subscriptions membesar, dugaan terbukti.
+
+### Update 26-11 (laporan pemilik): 3 Short sesudah Pisang semuanya > 100K views (masih naik)
+Lantai views melompat dari ~300 (sebelum Telur) ke > 100K. Ini tidak bisa berasal dari ~1.000 subs saja, jadi pendorongnya distribusi Shorts feed: sistem sudah mengenali kelompok penonton channel ini dan langsung menyodorkan video baru ke mereka. Dugaan bola salju 26-11 terbukti untuk tahap ini.
+Belum bisa dipisahkan: efek channel vs efek rumus (ketiganya memakai rumus yang sama). Pembanding: Jemuran dan Pedas (rumus sama, tayang sebelum Pisang). Kalau keduanya jauh di bawah 100K, momentum channel sesudah Pisang ikut berperan besar.
+Perlu dicatat per video: judul, views, engaged views, stayed, APV, porsi traffic Subscriptions.
