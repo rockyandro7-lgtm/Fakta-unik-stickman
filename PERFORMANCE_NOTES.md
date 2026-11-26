@@ -348,3 +348,9 @@ Dugaan: subs naik, jadi views minimal tiap video baru ikut naik. Cara uji: catat
 Lantai views melompat dari ~300 (sebelum Telur) ke > 100K. Ini tidak bisa berasal dari ~1.000 subs saja, jadi pendorongnya distribusi Shorts feed: sistem sudah mengenali kelompok penonton channel ini dan langsung menyodorkan video baru ke mereka. Dugaan bola salju 26-11 terbukti untuk tahap ini.
 Belum bisa dipisahkan: efek channel vs efek rumus (ketiganya memakai rumus yang sama). Pembanding: Jemuran dan Pedas (rumus sama, tayang sebelum Pisang). Kalau keduanya jauh di bawah 100K, momentum channel sesudah Pisang ikut berperan besar.
 Perlu dicatat per video: judul, views, engaged views, stayed, APV, porsi traffic Subscriptions.
+
+### Tab Earn (screenshot pemilik 26-11 22.12; data per 21-11-2026)
+- Tahap yang tampil: "Start your earning journey" (YPP tahap awal: Memberships, Supers, Shopping; belum bagi hasil iklan). Syarat: 3 upload dalam 90 hari (terpenuhi) + salah satu dari 3.000 jam tayang (baru 5) atau **3 juta qualified Shorts views / 90 hari (baru 212K per 21-11)**.
+- Data tertinggal sekitar 5 hari: Pisang (tayang 23-11) dan video sesudahnya belum masuk.
+- Koreksi perkiraan "sudah ~2 juta": angka resmi per 21-11 baru 212K. Perkiraan kasar per 26-11 (Pisang ~900K views x ~55% engaged + 3 video > 100K) sekitar 0,8-1,2 juta qualified views. Cek ulang saat tanggal data di tab Earn sudah 26-11 atau lebih.
+- Target bertahap: 3 juta (tahap awal) lalu 10 juta (bagi hasil iklan Shorts, syarat 1.000 subs).
