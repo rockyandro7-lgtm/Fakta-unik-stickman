@@ -54,8 +54,8 @@ Semua [Perlu cek] ke sumber primer sebelum naskah; yang bertanda (!) paling perl
 |---|---|---|---|---|
 | 26-11 | 05.30 | **SUDAH DIRENDER 26-11** (`episodes/telur-hijau/`): Kuning telur rebus hijau: Budi mau buang 30 telur, "busuk!" | Direbus kelamaan: belerang putih telur + besi kuning telur = lapisan hijau, aman. Solusi: jangan kelamaan + rendam air es | `env_telur.js` |
 | 26-11 | 15.30 | **SUDAH DIRENDER 26-11** (`episodes/laron/`): Laron menyerbu lampu habis hujan (twist: laron = rayap, calon raja-ratu) | Laron = rayap bersayap yang keluar bikin koloni baru saat tanah lembap; cahaya bikin bingung. Baskom air di bawah lampu | `rumahBG` (jemuran) |
-| 27-11 | 05.30 | Ekor cicak putus masih joget, cicaknya kabur | Sengaja diputus (autotomi) untuk mengalihkan pemangsa; ekor baru tumbuh tapi isinya tulang rawan | `rumahBG` |
-| 27-11 | 15.30 | Gelas es teh "bocor", meja basah | Embun dari udara, bukan rembesan. Bukti: isi sirup merah, embunnya bening | `warungBG` (pedas) |
+| 27-11 | 05.30 → 15.30 | **SUDAH DIRENDER 27-11** (`episodes/cicak/`, jadwal 15.30 karena slot 05.30 terlewat): Ekor cicak putus masih joget, cicaknya kabur | Sengaja diputus (autotomi) untuk mengalihkan pemangsa; ekor baru tumbuh tapi isinya tulang rawan | `rumahBG` |
+| 27-11 | 15.30 → 28-11 05.30 | **SUDAH DIRENDER 27-11** (`episodes/es-teh/`, usulan tayang Sabtu 28-11 05.30): Gelas es teh "bocor", meja basah | Embun dari udara, bukan rembesan. Bukti: isi sirup merah, embunnya bening | `warungBG` (pedas) |
 | 28-11 | 05.30 | Bawang goreng "tiba-tiba" gosong; Ibu angkat saat masih pucat | Minyak panas terus memasak setelah diangkat; angkat saat kuning muda | dapur (`env_pisang`/`env_kerupuk`) |
 | 28-11 | 15.30 | Kilat dulu baru guntur (dari cadangan; Semut sudah tayang 25-11) | Cahaya jauh lebih cepat dari suara; hitung detik antara kilat dan guntur, sekitar 3 detik = 1 km (!) | `terasBG` (nyamuk) |
 | 29-11 | 05.30 | Ayam berkokok sebelum terang | Jam biologis di dalam tubuh ayam, bukan cahaya (studi Jepang 2013, ayam di ruang gelap tetap berkokok jelang pagi) | `terasBG` (nyamuk) |

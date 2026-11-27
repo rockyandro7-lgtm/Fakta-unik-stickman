@@ -11,3 +11,4 @@ episodes/*/audio/*.wav
 # tool lokal (Windows)
 node_modules/
 .tools/
+episodes/*/build.log
