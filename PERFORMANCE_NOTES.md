@@ -354,3 +354,100 @@ Perlu dicatat per video: judul, views, engaged views, stayed, APV, porsi traffic
 - Data tertinggal sekitar 5 hari: Pisang (tayang 23-11) dan video sesudahnya belum masuk.
 - Koreksi perkiraan "sudah ~2 juta": angka resmi per 21-11 baru 212K. Perkiraan kasar per 26-11 (Pisang ~900K views x ~55% engaged + 3 video > 100K) sekitar 0,8-1,2 juta qualified views. Cek ulang saat tanggal data di tab Earn sudah 26-11 atau lebih.
 - Target bertahap: 3 juta (tahap awal) lalu 10 juta (bagi hasil iklan Shorts, syarat 1.000 subs).
+
+## 2026-11-27 14.15: Analisis mendalam lewat Chrome (YouTube Studio, Advanced mode)
+
+Diambil langsung dari Studio (bukan screenshot pemilik). Tabel 28 hari = 29-10 s.d. 25-11 (data Advanced mode tertinggal ~2 hari). Channel: **1.565 subs**, 1,46 juta views dan 13,7K jam tonton dalam 28 hari, 48-hour views 985K.
+
+### Semua Short, 28 hari (29-10 s.d. 25-11)
+
+| Short | Views | Engaged | Stayed | APV | Subs | Like | Share | Komen |
+|---|---|---|---|---|---|---|---|---|
+| Pisang | 739.567 | 396.621 | 87,1% | 92,7% | 829 | 6.768 | 81 | 20 |
+| Telur bopeng | 296.709 | 165.033 | 88,0% | 82,1% | 154 | 2.633 | 20 | 5 |
+| Nyamuk | 117.298 | 63.767 | 82,0% | 88,3% | 57 | 850 | 7 | 10 |
+| Semut | 103.912 | 58.463 | **88,2%** | 85,7% | 48 | 744 | 2 | 1 |
+| Bawang | 45.429 | 25.274 | 86,9% | 92,5% | 55 | 577 | 4 | 3 |
+| Kepedasan | 39.217 | 20.432 | 85,6% | 85,3% | 44 | 423 | 4 | 2 |
+| Laron (baru ~1 hari) | 35.827 | 19.517 | 84,6% | 92,1% | 18 | 368 | 6 | 3 |
+| Pewangi/Jemuran | 31.275 | 15.649 | 80,2% | 88,6% | 30 | 431 | 0 | 3 |
+| Nasi goreng | 29.899 | 16.238 | 82,5% | 92,6% | 46 | 497 | 5 | 5 |
+| Blitzkrieg | 7.517 | 5.810 | 85,6% | 88,5% | 17 | 143 | 0 | 0 |
+| Kerupuk | 5.315 | 3.958 | 81,6% | 88,4% | 7 | 67 | 1 | 0 |
+| Masuk Angin | 4.309 | 3.176 | 81,8% | 94,7% | 9 | 64 | 6 | 0 |
+| AC "Freon Habis" | 1.367 | 344 | 24,3% | 65,5% | 2 | 17 | 0 | 0 |
+| **Ambarawa (sejarah Indonesia)** | **460** | 230 | **63,2%** | **62,0%** | 2 | 6 | 0 | 0 |
+| Total channel | 1.458.234 | 794.623 (54,5%) | 86,4% | 89,1% | 1.353 | 13.589 | 136 | 52 |
+
+Since published (Studio, 27-11 ~14.15 WIB): Pisang 975,7K, Telur 303,8K, **Laron 184,8K (+100 subs)**, Nyamuk 147,1K (+75), Semut 134,9K (+67), Telur hijau 60,8K (+31), **Cicak 65,9K dalam 3 jam 20 menit** (20,5K views di 60 menit terakhir, start tercepat channel; Pisang datar 8 jam pertama).
+
+### Jam tayang vs hasil (sesudah Pisang)
+
+| Short | Tayang (WIB) | Views saat dicek | "Typical" menurut Studio |
+|---|---|---|---|
+| Nyamuk | 25-11 05.00 | 147,1K (~57 jam) | - |
+| Semut | 25-11 17.06 | 134,9K (~45 jam) | 103,9K |
+| Laron | 26-11 08.28 | 184,8K (~30 jam) | 163,7K |
+| Telur hijau | 26-11 16.45 | 60,8K (~21 jam) | 40,9K |
+| Cicak | 27-11 10.53 | 65,9K (~3 jam) | 62,3K |
+
+Heatmap "kapan penonton online" (28 hari, WIB): paling ramai **17.00-19.00 Kamis-Sabtu**, Minggu 08.00-13.00, Sabtu 11.00-13.00. Jam 05.00-06.00 = "sangat sedikit/sedikit" di hari kerja. Data di atas belum menunjukkan jam tayang berpengaruh (Nyamuk 05.00 tetap 147K); topik jauh lebih menentukan. Dua upload sehari tidak saling memakan (Nyamuk+Semut dan Laron+Telur hijau semuanya di atas "typical").
+
+### Traffic dan audiens (28 hari)
+- Shorts feed **97,2%**, YouTube search 2,2% (32,7K views; persentasenya turun dari 4% di 13-11, tetapi jumlahnya kini puluhan ribu), channel pages 0,3%, Subscriptions tidak muncul sama sekali. Jam tonton dari subscriber hanya **0,1%**.
+- Kartu "How viewers find your content" di halaman Insights baru (Suggested 64% / Browse 18% / Channel pages 15%) adalah angka video panjang, bukan Shorts. Pakai Advanced mode, breakdown Traffic source.
+- Penonton bulanan 603,5K: **baru 98,8%, kasual 1,2%, rutin 0,0%**. Channel punya jangkauan, belum punya penonton setia.
+- Usia: **13-17 tahun 25,0%**, 18-24 7,6%, 25-34 31,2%, 35-44 25,3%, 45+ 11,1%. Gender seimbang (L 50,9%, P 48,9%). Catatan lama "perempuan 25-34" sudah tidak berlaku.
+- Indonesia 95,7%, Malaysia 4,2%. Perangkat (jam tonton): HP 84,0%, **TV 10,6%** (co-view 1,76), tablet 4,3%.
+- Penonton kita juga menonton: Short Roblox, animasi cerita (Kota Kotak, SegiBlox, BrixyNate Indonesia), dan fakta unik/info (InfoEkspress).
+- "Videos growing your audience" (penonton baru yang kembali, 90 hari): Telur, Bawang, Blitzkrieg = very high; Masuk Angin, Nasi goreng = high.
+
+### Kurva retensi per detik (since published, % dari views; >100% = replay). Dicocokkan dengan detik naskah (`audio/words_new.json`)
+
+| Detik | Pisang 66,6 | Telur 71,3 | Laron 59,1 | Nyamuk 56,5 | Semut 56,6 |
+|---|---|---|---|---|---|
+| 0 | 168 | 164 | 164 | 161 | 164 |
+| 2 | 137 | 119 | 119 | 117 | 122 |
+| 6 | 113 | 104 | 110 | 101 | 104 |
+| 10 | 104 | 95 | ~105 | 98 | 92 |
+| ~22 | 94 | 83 | 99 | 91 | 86 |
+| ~34 | 91 | 80 | 94 → **87 (36)** | 87 | 82 |
+| ~42 | 90 | 80 | 85 | 86 | 77 |
+| ~50 | 85 | 78 | 81 | **73** | 72 |
+| akhir | 71 | 67 | **63** | 64 | 68 |
+
+Kebocoran yang bisa diperbaiki:
+1. **Nyamuk 42-54 dtk: 86 → 65 (-21 dalam 12 dtk)**, kebocoran terbesar dari semua video. Jawaban inti sudah keluar di dtk 31-36 ("bukan nyari manisnya", "ngikutin napas, nyium bau kulit"). Sesudah itu masih ada 4 kalimat yang membuka sub-topik baru (bakteri kulit, "warteg", "bertahun-tahun", penutup). Penonton merasa pertanyaannya sudah terjawab.
+2. **Laron 8 dtk terakhir: 81 → 63 (-18)** + turun tajam 94 → 87 di dtk 32-36 (kalimat "koloni ngirim mereka keluar... habis hujan" lalu "lampu bikin salah arah"). Fakta baru ("raja-ratu koloni baru, kadang di dekat rumah") baru muncul di dtk 49, lalu penutup taruhan panjang.
+3. **Telur 10-22 dtk: 95 → 83 (-12)** di bagian setup (kalimat 3-6: telur paling segar, kulit nempel, trik internet, "Bopeng."). Sesudah Ibu muncul (dtk 34) kurvanya paling datar dari semua video (80 → 77 selama 20 dtk). Setup terlalu panjang, solusi + penjelasan kuat.
+4. **Semut 6-10 dtk: 104 → 92**: montase "naik level" (tepok, kipas) mengulang isi hook ("tiga kali disapu, tetap balik"). Stayed tertinggi (88,2%), APV paling rendah di antara video sesudah Pisang (85,7%).
+5. **Pisang tidak punya titik bocor.** Sesudah jawaban (daging putih, dtk 33) ada satu pembalikan cerita (punya Rani lembek), penjelasan 4 kalimat yang menjawab satu "kenapa" dengan satu analogi (apel digigit), lalu payoff taruhan 3 dtk + loop.
+
+### Jawaban dugaan yang masih terbuka
+- **Efek bola salju (26-11): terbukti, tapi bukan lewat subscriber.** Jemuran (31,3K) dan Pedas (39,2K), rumus sama tapi tayang sebelum Pisang, jauh di bawah Nyamuk/Semut/Laron (135-185K) sesudah Pisang. Lonjakan lantai datang 100% dari Shorts feed; Subscriptions tidak terlihat di traffic dan jam tonton subscriber 0,1%.
+- **Seri sejarah Indonesia: gagal di percobaan pertama.** Ambarawa 460 views, stayed 63,2%, APV 62,0% (terendah sesudah AC). Blitzkrieg (7,5K) masih jauh di bawah semua topik rumah tangga. Jangan dijadikan slot rutin selama rencana 2 minggu.
+
+### Interaksi
+- Like 0,93% dari views. **Share hanya 136 dari 1,46 juta views (0,009%)**, komentar 52. Semua komentar di Studio berstatus belum dibalas.
+- Komentar yang muncul: reaksi ke tokoh ("Jadi Budi nya gak jadi dapat pahala", Cicak), pengalaman pribadi (Nyamuk paling banyak komentar, 10), permintaan nama ("Bang coba nama aku putra").
+- Subs per 1.000 views: Nasi goreng 1,5, Bawang 1,2, Pisang 1,1, Pedas 1,1, Telur 0,5, Nyamuk 0,5, Semut 0,5, Laron 0,5. Makin luas jangkauan video, makin kecil konversinya.
+
+### Monetisasi
+- Tab Earn masih "data per 21-11": 212K qualified Shorts views (target 3 juta tahap awal, 10 juta bagi hasil iklan).
+- Engaged views 28 hari sampai 25-11 sudah 794,6K. Ditambah 48 jam terakhir (985K views x ~54,5% engaged), perkiraan kasar **~1,1-1,3 juta qualified views per 27-11**. Kalau laju ~250K engaged/hari bertahan, 3 juta tercapai sekitar 4-6 Desember. Ini perkiraan; YouTube bisa menghitung "qualified" sedikit berbeda dari engaged views.
+
+### Temuan teknis
+- **Es teh (terjadwal 27-11) diupload dari file `es-teh_kecil.mp4`**, yaitu versi kompres untuk dilihat, bukan file asli. Cicak memakai `cicak.mp4` (benar). Video yang sudah diupload tidak bisa diganti filenya; selama masih terjadwal, satu-satunya cara adalah hapus lalu upload ulang file asli.
+- Belum ada playlist, dan kolom "Related video" di Short masih kosong. Pisang masih mendapat ~200K views/hari (438K dalam 48 jam); kolom Related video di Pisang bisa diarahkan ke Short dapur terbaru.
+
+### Pelajaran (untuk naskah berikutnya)
+1. **Setelah jawaban inti keluar, sisa video maksimal ~10 detik**: satu analogi benda sehari-hari, payoff taruhan, loop. Jangan membuka sub-topik baru sesudah jawaban (Nyamuk -21, Laron -18).
+2. **Detik 6-15 harus menambah taruhan atau misteri baru, bukan mengulang hook** (Telur, Semut). Pisang kalimat 2: "Padahal dua-duanya dari sesisir yang sama" = misteri baru.
+3. **Pembalikan cerita sebelum penjelasan** (Pisang: punya Rani yang lembek) menahan penonton lebih baik daripada fakta tambahan.
+4. Topik rumah tangga/dapur/hewan rumah tetap jalur utama; sejarah hanya sesekali sebagai eksperimen.
+5. Penonton 13-17 tahun seperempat dari total dan suka animasi cerita: konflik Budi-Rani (kakak-adik) adalah aset, bukan sekadar pengantar.
+
+### Cara ambil data ini lagi (untuk sesi berikutnya)
+- Advanced mode, breakdown Content: metrik `ENGAGED_VIEWS`, `AVERAGE_WATCH_PERCENTAGE`, `SHORTS_FEED_IMPRESSIONS_VTR` (= stayed to watch), `SUBSCRIBERS_GAINED`, `RATINGS_LIKES`, `SHARINGS`, `COMMENTS` (parameter `t_metrics` di URL explore). Breakdown traffic: `dimension=TRAFFIC_SOURCE_TYPE`.
+- Kurva retensi per video: `studio.youtube.com/video/<id>/analytics/hub_overview/explore?entity_type=VIDEO&entity_id=<id>&time_period=lifetime&explore_type=AUDIENCE_RETENTION`. Kurva bisa dibaca dari `path.line-series` di SVG (sumbu % ada di elemen `text`).
+- Detik tiap kalimat naskah: kolom `s` dan `line` di `episodes/<nama>/audio/words_new.json` (sudah dalam waktu video final).
