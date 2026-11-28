@@ -1,4 +1,4 @@
-# Metadata YouTube Shorts: Kenapa guntur telat? (dirender 28-11-2026, 53,6 dtk)
+# Metadata YouTube Shorts: Kenapa guntur telat? (v2, dirender ulang 28-11-2026, 55,3 dtk)
 
 **Judul (pilih satu):**
 1. Guntur Itu Bukan Awan Tabrakan #shorts  (rekomendasi)
@@ -6,7 +6,7 @@
 3. Hitung Ini Waktu Ada Petir #shorts
 
 **Deskripsi:**
-Kilat nyamber, Budi langsung tutup telinga, tapi gunturnya nggak datang-datang. Kata Budi, guntur itu suara awan tabrakan. Rani nggak setuju: guntur lahir barengan kilat, cuma jalannya lelet. Rani menghitung satu, dua, tiga, DUAR: sekitar 3 detik berarti petirnya sekitar 1 kilometer dari rumah. Kilat yang dekat langsung DUAR tanpa menunggu. Guntur bukan awan tabrakan, tapi suara kilat itu sendiri: kilat memanaskan udara sampai 5 kali lebih panas dari permukaan matahari, udaranya mengembang mendadak dan meledak jadi suara DUAR.
+Kilat nyamber, Budi langsung tutup telinga, tapi gunturnya nggak datang-datang. Kata Budi, guntur itu suara awan tabrakan. Rani nggak setuju: guntur lahir barengan kilat, cuma jalannya lelet. Rani bahkan bisa tahu jauhnya petir tanpa ngintip ke luar. Dia menghitung satu, dua, tiga, DUAR: sekitar 3 detik berarti petirnya sekitar 1 kilometer dari rumah. Kilat yang dekat langsung DUAR tanpa menunggu, sampai kucing, cicak, dan Budi kabur semua. Guntur bukan awan tabrakan, tapi suara kilat itu sendiri: kilat memanaskan udara sampai 5 kali lebih panas dari permukaan matahari, udaranya mengembang mendadak dan meledak jadi suara DUAR.
 Kalau masih bisa dengar guntur, petirnya masih cukup dekat untuk menyambar. Tetap di dalam rumah sampai gunturnya benar-benar hilang.
 
 #faktaunik #petir #guntur #musimhujan #mitosrumahan #shorts
@@ -26,6 +26,6 @@ guntur, petir, kilat, kenapa guntur telat, guntur awan tabrakan, cara menghitung
 - Dibuat dari aset video yang sama: `node thumb.js`.
 
 ## Data pendukung
-- Durasi 53,6 dtk, 1080x1920, 30 fps. Render: `guntur.mp4` (upload yang ini) + `guntur_kecil.mp4` (hanya untuk dilihat). Tidak di-commit.
-- Suara: ElevenLabs "Jonathan Wiratama", eleven_v4 (sekitar 838 kredit) + Scribe (sekitar 350 kredit).
+- Durasi 55,3 dtk, 1080x1920, 30 fps. Render: `guntur.mp4` (upload yang ini) + `guntur_kecil.mp4` (hanya untuk dilihat). Tidak di-commit.
+- Suara: ElevenLabs "Jonathan Wiratama", eleven_v4 v2 (sekitar 898 kredit) + Scribe (sekitar 365 kredit); take v1 (838 + 350 kredit) tidak dipakai lagi.
 - Tanpa CTA di video. Sumber fakta: `SUMBER.md` (NWS, NOAA, UCAR, Met Office, Environment Canada).

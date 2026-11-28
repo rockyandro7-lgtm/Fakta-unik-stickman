@@ -1,6 +1,6 @@
 // ---------- Fakta Unik: "Kenapa guntur telat? (bukan awan tabrakan)" (~53,6 dtk, tanpa CTA) ----------
-// Bentuk cerita keempat belas: "teori konyol + uji hitung" (Budi tutup telinga terlalu cepat, teori awan tabrakan, taruhan cuci piring dengan Rani,
-// Rani menghitung 1-2-3 DUAR, kilat dekat = langsung DUAR, Budi ngumpet di bawah meja). Ruang tengah malam = rumahBG (env_jemur) + lampu (env_laron).
+// Bentuk cerita keempat belas: "teori konyol + uji hitung" (v2 28-11: tanpa taruhan. Budi tutup telinga terlalu cepat, teori awan tabrakan, Rani bisa tahu jarak petir tanpa ngintip,
+// Rani menghitung 1-2-3 DUAR, kilat dekat = langsung DUAR, lelucon tiga: kucing ke kolong, cicak ke balik jam, Budi ke bawah meja). Ruang tengah malam = rumahBG (env_jemur) + lampu (env_laron).
 // Aset baru env_guntur.js (kilat, awan berwajah, cahaya vs suara, gelombang, molekul udara, termometer, meja makan). Loop: shot terakhir = hook dengan waktu negatif.
 const SHOTS = [];
 const easeInOut = x => x * x * (3 - 2 * x);
@@ -41,7 +41,7 @@ const boltWin = (seed = 3, big = 0) => [WIN[0] + 60 - 40 * big, WIN[1] - 240, WI
 // o: { flash, bolt, fB, armsB, bx, flipB, bExtra, fR, armsR, rx, flipR, rExtra, tableShake, sink, extra, under }
 function ruang(ctx, t, cam, o = {}) {
   const fl = clamp(o.flash || 0);
-  rumahBG(ctx, t, cam, { rain: 1, jam: 9, night: 1, flash: fl });
+  rumahBG(ctx, t, cam, { rain: 1, jam: o.jam == null ? 9 : o.jam, night: 1, flash: fl });
   if (o.bolt && fl > .05) { ctx.save(); rrect(ctx, WIN[0] - 180, WIN[1] - 230, 360, 460, 6); ctx.clip(); const b = o.bolt; drawKilat(ctx, b[0], b[1], b[2], b[3], Object.assign({ k: Math.min(1, fl * 1.4) }, b[4])); ctx.restore(); }
   if (o.under) o.under(ctx);
   if (o.fR) tokoh(ctx, t, RANI, o.rx == null ? GL.rani : o.rx, o.fR, o.armsR, o.flipR || 1, o.rExtra || {});
@@ -135,16 +135,19 @@ SH(T3.gu, ls(4), { tr: 'whip' }, (ctx, lt, t) => {
   tagSeq(ctx, t, [['LAHIR BARENGAN', T3.la - .05, T3.cu, '#ffd23a', 104], ['SUARA LELET', T3.ja - .05, null, '#9fd3ff', 112]]);
 });
 
-// ===== 4 Taruhannya: yang kalah cuci piring seminggu =====
-const T4 = { ta: wt(4, 'taruhannya'), ya: wt(4, 'yang'), ka: wt(4, 'kalah'), cu: wt(4, 'cuci'), pi: wt(4, 'piring'), se: wt(4, 'seminggu') };
+// ===== 4 Rani bahkan bisa tahu jauhnya petir, tanpa ngintip ke luar =====
+const T4 = { ra: wt(4, 'rani'), bh: wt(4, 'bahkan'), bi: wt(4, 'bisa'), ta: wt(4, 'tahu'), ja: wt(4, 'jauhnya'), pe: wt(4, 'petir'), tp: wt(4, 'tanpa'), ng: wt(4, 'ngintip'), lu: wt(4, 'luar') };
+const RX4 = 380, BX4 = 760;
 SH(ls(4), ls(5), { tr: 'whip' }, (ctx, lt, t) => {
-  const cam = CKS(t, [[ls(4), { x: 470, y: 1120, z: 1.3 }], [T4.cu, { x: 470, y: 1060, z: 1.4 }, ease], [ls(5), { x: 460, y: 1060, z: 1.45 }, easeIn]], 2);
-  const shake = inv(T4.ta, T4.ta + .2, t), hy = 1250 + Math.sin(t * 18) * 14 * shake, dk = backOut(inv(T4.cu - .1, T4.pi + .1, t));
+  const cam = CKS(t, [[ls(4), { x: 560, y: 1110, z: 1.25 }], [T4.tp, { x: 520, y: 1080, z: 1.4 }, ease], [ls(5), { x: 510, y: 1080, z: 1.45 }, easeIn]], 2);
+  const turn = t > T4.bh, ear = easeOut(inv(T4.ja - .1, T4.pe + .1, t)), ex = RX4 - 118, ey = HEADY + 6;
   ruang(ctx, t, cam, {
-    fR: EM(t, [[ls(4), 'licik', { look: [.8, 0] }], [T4.se, 'sombong', { look: [.8, -.2] }]], 10), rx: 330, armsR: { R: armTo(330, 1, 470, hy, 1), L: [.3, -.3] },
-    fB: EM(t, [[ls(4), 'sombong', { look: [-.8, 0] }], [T4.se + .1, 'cemas', { look: [-.6, -.4] }]], 11), bx: 620, flipB: -1, armsB: { R: armTo(620, -1, 485, hy, -1), L: [.3, -.3] } });
-  scr(ctx, c => { if (dk > 0) { c.save(); c.translate(540, 760); c.scale(dk, dk); circle(c, 0, -60, 230); fillStroke(c, 'rgba(255,250,235,.95)', 8); drawTumpukPiring(c, 0, 70, 1, 9, { t, wob: 1 }); c.restore(); } });
-  tagSeq(ctx, t, [['TARUHAN!', T4.ta - .05, T4.cu, '#fff', 124], ['CUCI PIRING 7 HARI', T4.cu - .05, null, '#9fd3ff', 92]]);
+    fR: EM(t, [[ls(4), 'sombong', { look: [.8, -.2] }], [T4.bh + .05, { eyes: 'happy', mouth: 'smirk', look: [0, 0] }]], 10), rx: RX4, flipR: turn ? -1 : 1,
+    armsR: turn && ear > 0 ? { R: armTo(RX4, -1, lerp(RX4 - 60, ex, ear), lerp(1330, ey, ear), 1), L: [.3, -.3] } : null,
+    fB: EM(t, [[ls(4), 'curiga', { look: [-.8, 0] }], [T4.tp + .05, 'kaget', { look: [-.8, -.1] }]], 11), bx: BX4, flipB: -1,
+    extra: c => { if (turn && ear > .85) { ellipse(c, ex, ey, 26, 34); fillStroke(c, INK, 4); } } });
+  scr(ctx, c => { const k = inv(T4.tp, T4.tp + .2, t); if (k > 0) { const p = toScreen(cam, BX4 + 40, HEADY - 190); qmark(c, p[0], p[1], 150 * backOut(k), -.1, 1); } });
+  tagSeq(ctx, t, [['TAHU JAUHNYA PETIR', T4.ta - .05, T4.tp, '#fff6a0', 96], ['TANPA NGINTIP?!', T4.tp - .05, null, '#fff', 110]]);
 });
 
 // ===== 5 Kilat lagi. Rani ngitung: satu... dua... tiga... DUAR! =====
@@ -195,18 +198,26 @@ SH(ls(7), ls(8), { tr: 'whip' }, (ctx, lt, t) => {
   tagSeq(ctx, t, [['DEKAT BANGET!', T7.de - .05, T7.lg, '#fff6a0', 112], ['0 DETIK!', T7.lg - .05, null, '#ff8a8a', 130]], 260);
 });
 
-// ===== 8 Budi loncat ke bawah meja =====
-const T8 = { bu: wt(8, 'budi'), lo: wt(8, 'loncat'), ke: wt(8, 'ke'), ba: wt(8, 'bawah'), me: wt(8, 'meja') };
+// ===== 8 Kucing ngumpet di kolong, cicak kabur ke balik jam, Budi loncat ke bawah meja (lelucon tiga) =====
+const T8 = { ku: wt(8, 'kucing'), ng: wt(8, 'ngumpet'), ko: wt(8, 'kolong'), ci: wt(8, 'cicak'), ka: wt(8, 'kabur'), ba: wt(8, 'balik'), ja: wt(8, 'jam'), bu: wt(8, 'budi'), lo: wt(8, 'loncat'), bw: wt(8, 'bawah'), me: wt(8, 'meja') };
+const CLK = JL.clock, CIC0 = [560, 820], CROT = Math.atan2(CLK[0] - CIC0[0], -(CLK[1] - CIC0[1]));
 SH(ls(8), ls(9), { tr: 'whip' }, (ctx, lt, t) => {
-  const cam = CKS(t, [[ls(8), { x: 420, y: 1200, z: 1.0 }], [T8.ba, { x: -100, y: 1300, z: 1.15 }, easeInOut], [ls(9), { x: -160, y: 1320, z: 1.3 }, easeIn]], 2);
-  const j = easeInOut(inv(T8.lo - .1, T8.ba + .1, t)), bx = lerp(GL.budi, GL.table[0], j), hop = Math.sin(j * Math.PI) * 280, under = t > T8.ba + .1;
+  const cam = CKS(t, [[ls(8), { x: -80, y: 1330, z: 1.25 }], [T8.ci - .15, { x: -200, y: 1340, z: 1.35 }, ease], [T8.ci + .25, { x: 320, y: 740, z: 1.5 }, easeInOut],
+    [T8.bu - .1, { x: 290, y: 720, z: 1.55 }, ease], [T8.lo + .1, { x: 240, y: 1220, z: .95 }, easeInOut], [T8.me, { x: -120, y: 1300, z: 1.2 }, ease], [ls(9), { x: -150, y: 1310, z: 1.28 }, easeIn]], 2);
+  const run = easeInOut(inv(ls(8) - .1, T8.ko, t)), kx = lerp(420, GL.table[0] - 40, run);
+  const cq = easeInOut(inv(T8.ci, T8.ja, t)), cx = lerp(CIC0[0], CLK[0], cq), cy = lerp(CIC0[1], CLK[1], cq);
+  const j = easeInOut(inv(T8.lo - .1, T8.bw + .1, t)), bx = lerp(GL.budi, GL.table[0] + 120, j), hop = Math.sin(j * Math.PI) * 280, under = t > T8.bw + .1;
   ruang(ctx, t, cam, { tableShake: under ? Math.sin(t * 50) * 4 : 0,
-    fR: EF(t, [[ls(8), 'kaget', { look: [-.8, 0] }], [T8.me, 'licik', { look: [-.8, .4] }]], 17), flipR: -1, rx: 300,
-    under: c => { if (under) drawStick(c, C(BUDI, { x: bx + Math.sin(t * 40) * 4, y: FT, s: S, flip: -1, squash: .5, armLen: 1.3, legs: standL, arms: { L: [2.6, .3], R: [2.6, .3] },
-      face: EF(t, [[T8.ba, { eyes: 'flinch', mouth: 'wobble', sweat: 1 }]], 18) })); },
-    extra: c => { if (!under) drawStick(c, C(BUDI, { x: bx, y: FT - hop, s: S, flip: -1, armLen: 1.3, legs: { L: [.9, -1.2], R: [.6, -1.0] }, arms: { L: [2.8, .2], R: [2.4, .2] }, lean: -.4 * Math.sin(j * Math.PI),
+    under: c => {
+      drawKucing(c, kx + (run >= 1 ? Math.sin(t * 40) * 3 : 0), JL.feet, .8, { t, crouch: run >= 1 ? .8 : .3, flip: 1, face: EF(t, [[ls(8), { eyes: 'wide', mouth: 'o', browUp: .6, look: [-.8, 0] }]], 24) });
+      if (t < T8.ja + .1) drawCicakB(c, cx + Math.sin(cq * 9) * 12, cy, .7, { t, tail: 1, walk: cq < 1 ? 1 : 0, rot: CROT + Math.cos(cq * 9) * .12, face: cq < .2 ? EXPR.kaget : null });
+      drawWallClock(c, CLK[0], CLK[1], 105, 9, 0);
+      if (t > T8.ja + .1) { c.save(); c.translate(CLK[0] + 70, CLK[1] + 80); c.rotate(.5 + Math.sin(t * 9) * .15); line(c, 0, 0, 40, 60, 22, INK); line(c, 0, 0, 40, 60, 12, CKP.body); c.restore(); }
+      if (under) drawStick(c, C(BUDI, { x: bx + Math.sin(t * 40) * 4, y: FT, s: S, flip: -1, squash: .5, armLen: 1.3, legs: standL, arms: { L: [2.6, .3], R: [2.6, .3] },
+        face: EF(t, [[T8.bw, { eyes: 'flinch', mouth: 'wobble', sweat: 1 }]], 18) })); },
+    extra: c => { if (!under && t > T8.lo - .1) drawStick(c, C(BUDI, { x: bx, y: FT - hop, s: S, flip: -1, armLen: 1.3, legs: { L: [.9, -1.2], R: [.6, -1.0] }, arms: { L: [2.8, .2], R: [2.4, .2] }, lean: -.4 * Math.sin(j * Math.PI),
       face: EF(t, [[ls(8), { eyes: 'spiral', mouth: 'teeth', sweat: 1 }]], 19) })); } });
-  tagSeq(ctx, t, [['NGUMPET!', T8.lo - .05, null, '#fff', 124]]);
+  tagSeq(ctx, t, [['KUCING: KOLONG', T8.ku - .05, T8.ci, '#fff', 104], ['CICAK: BALIK JAM', T8.ci - .05, T8.bu, '#9dff7a', 100], ['BUDI: BAWAH MEJA', T8.bu - .05, null, '#ffd23a', 100]]);
 });
 
 // ===== 9 Guntur itu bukan awan tabrakan, tapi suara dari kilat itu sendiri =====
@@ -265,17 +276,15 @@ SH(ls(11), ls(12), { tr: 'whip' }, (ctx, lt, t) => {
   tagSeq(ctx, t, [['MENGEMBANG MENDADAK', T11.me - .05, T11.ml, '#fff', 74], ['MELEDAK!', T11.ml - .05, null, '#ff9f5a', 130]], 330);
 });
 
-// ===== 12a Budi kalah, cuci piring, terus kilat nyamber lagi, =====
-const T12 = { bu: wt(12, 'budi'), ka: wt(12, 'kalah'), cu: wt(12, 'cuci'), pi: wt(12, 'piring'), te: wt(12, 'terus'), ki: wt(12, 'kilat'), ny: wt(12, 'nyamber'), la: wt(12, 'lagi'), da: wt(12, 'dan') };
+// ===== 12a Malamnya, Budi nyoba ngitung sendiri, =====
+const T12 = { ma: wt(12, 'malamnya'), bu: wt(12, 'budi'), ny: wt(12, 'nyoba'), ng: wt(12, 'ngitung'), se: wt(12, 'sendiri'), da: wt(12, 'dan') };
 SH(ls(12), T12.da, { tr: 'whip' }, (ctx, lt, t) => {
-  const cam = CKS(t, [[ls(12), { x: 620, y: 1120, z: 1.2 }], [T12.ki, { x: 740, y: 1060, z: 1.35 }, ease], [T12.da, { x: 760, y: 1040, z: 1.42 }, easeIn]], 2);
-  const fl = kedip(t, T12.ki - .02), scrub = t < T12.ki ? Math.sin(t * 14) : 0, ear = easeOut(inv(T12.ny, T12.la + .1, t));
-  ruang(ctx, t, cam, { flash: fl, bolt: boltWin(7), sink: true,
-    fR: EF(t, [[ls(12), 'licik', { look: [.8, .2] }], [T12.ki + .05, 'kaget', { look: [.8, -.4] }]], 22), rx: 300,
-    fB: EM(t, [[ls(12), 'meringis', { look: [0, .6] }], [T12.ki + .05, 'kaget', { look: [.6, -.5] }]], 23), bx: 860,
-    armsB: ear > 0 ? earArms(860, 1, ear) : { R: armTo(860, 1, 900 + scrub * 40, 1300, 1), L: armTo(860, 1, 810, 1300, -1) },
-    extra: c => { drawTumpukPiring(c, 680, 1330, .75, 9, { t, wob: 1 }); if (ear <= 0) drawSpons(c, 905 + scrub * 40, 1300, .7, scrub * .2); earHands(c, 860, ear); } });
-  tagSeq(ctx, t, [['BUDI KALAH', T12.bu - .05, T12.cu, '#ff8a8a', 112], ['CUCI PIRING', T12.cu - .05, T12.ki, '#9fd3ff', 112], ['KILAT LAGI...', T12.ki - .05, null, '#fff6a0', 112]]);
+  const cam = CKS(t, [[ls(12), { x: 600, y: 1120, z: 1.15 }], [T12.ng, { x: 660, y: 1120, z: 1.22 }, ease], [T12.da, { x: 690, y: 1120, z: 1.25 }, easeIn]], 2);
+  const fin = easeOut(inv(T12.ny - .1, T12.ng + .1, t));
+  ruang(ctx, t, cam, { jam: 11,
+    fB: EM(t, [[ls(12), 'netral', { look: [.8, -.3] }], [T12.ny, 'sombong', { look: [.8, -.4] }]], 22), armsB: fin > 0 ? { R: [lerp(.3, 2.4, fin), lerp(-.3, .3, fin)], L: [.3, -.3] } : null,
+    fR: EF(t, [[ls(12), 'licik', { look: [.8, -.1] }]], 23), rx: 260 });
+  tagSeq(ctx, t, [['MALAMNYA...', ls(12) - .05, T12.ny, '#fff', 112], ['NGITUNG SENDIRI', T12.ng - .05, null, '#fff6a0', 108]]);
 });
 // ===== 12b dan -> komposisi frame 0 (loop) =====
 SH(T12.da, ENDT, { tr: 'whip' }, (ctx, lt, t) => {

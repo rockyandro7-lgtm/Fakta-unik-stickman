@@ -1,6 +1,6 @@
 # Mitos Rumahan: kenapa guntur telat (guntur = suara kilat itu sendiri), tanpa CTA. Semua cue dari waktu kata (audio/words_new.json), aturan v6.
 # Suara (audio/vo_raw.mp3): ElevenLabs eleven_v4, voice Jonathan Wiratama (QC3gSHMyKh8m20lGyUNZ), generations_count 1, prompt = script.json digabung
-#   (satu take, 57,4 dtk mentah, ~838 kredit). Timing: Scribe eleven_scribe_v1 -> scribe_raw.json (111/111 kata; merge.json: gak -> nggak, pake -> pakai; ~350 kredit).
+#   v2 28-11 (tanpa taruhan, lelucon tiga): satu take, 59,8 dtk mentah, ~898 kredit. Timing: Scribe eleven_scribe_v1 -> scribe_raw.json (~365 kredit; merge.json: gak -> nggak, pake -> pakai).
 # Sinkron: tools/sync/tighten.py --keep 0.22 --protect 24.3-27.9 (jeda hitungan satu... dua... tiga... dipertahankan; tanpa atempo, 53,02 dtk)
 #   -> mapwords.py -> snaponset.py -> align_scribe.py.
 from audio_lib import *
@@ -28,8 +28,9 @@ def rain(dur, g=1.0):
     return x * np.minimum(1, t / .3) * np.minimum(1, (dur - t) / .3) * g
 def tickc():
     n = int(.08 * SR); t = T(n); return np.sin(2 * np.pi * 1800 * t) * np.exp(-t * 60) * .5
-def slurp(dur=.5):
-    n = int(dur * SR); t = T(n); return bp(rng.standard_normal(n), 600, 3000) * np.sin(np.pi * t / dur) * .4
+def meow():
+    n = int(.6 * SR); t = T(n); f = 620 + 180 * np.sin(np.pi * t / .6) - 200 * t
+    x = sum(np.sin(2 * np.pi * np.cumsum(f * h) / SR) / h for h in (1, 2, 3, 4)); return bp(x, 400, 4000) * env(n, .05, .5, 2) * .35
 for tt in B[1:] + [W(3, 'gunturnya'), W(12, 'dan')]:
     place(sfx, whoosh(.36), tt - .22, .25)
 # hujan di semua adegan rumah/langit (di bawah semuanya)
@@ -47,9 +48,8 @@ place(sfx, boing(300, .3), W(3, 'nggak'), .3)
 place(sfx, crack(), W(3, 'lahir') - .1, .7); place(sfx, pop(900), W(3, 'barengan'), .4); place(sfx, pop(600), W(3, 'barengan') + .08, .4)
 place(sfx, whoosh(.4), W(3, 'cuma'), .6)
 for k in range(5): place(sfx, thud(200 - k * 8, .12, .4), W(3, 'jalannya') + k * .32, .4)
-# 4 taruhan
-place(sfx, clang(700, .4) * .3, W(4, 'taruhannya') + .2, .4)
-for k in range(3): place(sfx, clang(1400 + k * 90, .3) * .25, W(4, 'cuci') + k * .12, .35)
+# 4 Rani tahu jarak petir tanpa ngintip
+place(sfx, pop(700), W(4, 'bahkan'), .4); place(sfx, sparkle_sfx(), W(4, 'jauhnya'), .3); place(sfx, boing(240, .45), W(4, 'tanpa'), .35)
 # 5 hitung satu dua tiga DUAR
 place(sfx, crack(), W(5, 'kilat') - .02, .9)
 for key in ('satu', 'dua', 'tiga'): place(sfx, tickc(), W(5, key), .8)
@@ -58,7 +58,9 @@ place(sfx, boom(2.6, 1.1), W(5, 'duar') - .05, 1.0)
 place(sfx, crack(), W(6, 'tiga'), .4); place(sfx, boom(2.2, .5), W(6, 'satu') - .2, .5); place(sfx, chime(1318, .5), W(6, 'kilo'), .35)
 # 7 kilat dekat: crack + boom bersamaan
 place(sfx, crack(), W(7, 'nyamber') - .02, 1.0); place(sfx, boom(3.0, 1.4), W(7, 'nyamber') + .03, 1.0); place(sfx, boom(1.6, .5), W(7, 'duar') - .05, .5)
-# 8 loncat ke bawah meja
+# 8 lelucon tiga: kucing ke kolong, cicak ke balik jam, Budi ke bawah meja
+place(sfx, meow(), W(8, 'kucing'), .6); place(sfx, whoosh(.4), W(8, 'ngumpet'), .4)
+for k in range(8): place(sfx, tickc(), W(8, 'cicak') + k * .1, .35)
 place(sfx, whoosh(.5), W(8, 'loncat'), .6); place(sfx, thud(90, .3, .8), W(8, 'meja'), .6)
 # 9 mitos, suara kilat
 place(sfx, thud(140, .2, .6), W(9, 'bukan'), .5); place(sfx, crack(), W(9, 'suara') - .15, .8); place(sfx, boom(2.0, .7), W(9, 'suara') - .1, .7)
@@ -67,9 +69,8 @@ place(sfx, riser(3.6) * .6, W(10, 'manasin'), .4)
 for k in range(5): place(sfx, pop(700 + k * 120), W(10, 'lima') + k * (W(10, 'matahari') - W(10, 'lima')) / 4, .45)
 # 11 mengembang, meledak, DUAR
 place(sfx, whoosh(.7), W(11, 'mengembang'), .6); place(sfx, boom(2.6, 1.3), W(11, 'meledak') - .05, .9); place(sfx, boom(1.4, .6), W(11, 'duar') - .05, .5)
-# 12 cuci piring, kilat lagi
-for k in range(6): place(sfx, slurp(.35), W(12, 'cuci') + k * .3, .4)
-place(sfx, crack(), W(12, 'kilat') - .02, .9)
+# 12 Budi mau ngitung sendiri
+place(sfx, pop(900), W(12, 'nyoba'), .4); place(sfx, tickc(), W(12, 'ngitung'), .5)
 place(sfx, crack(), END - .03, .3)
 # musik: tegang-lucu, berhenti di tiap DUAR supaya dentumannya terasa
 music = np.zeros(N)

@@ -13,4 +13,4 @@
 - Keyakinan "guntur = awan bertabrakan" adalah salah kaprah yang umum; dibantah sumber #1.
 - Environment Canada: kalau masih bisa mendengar guntur, kita masih dalam jangkauan sambaran petir. Karena itu semua adegan badai di dalam rumah, dan deskripsi YouTube menambahkan saran tetap di dalam rumah.
 - Tidak menyebut angka suhu di video (cukup "5 kali permukaan matahari", sama di kedua sumber).
-- Cerita Budi, Rani, dan taruhan cuci piring adalah fiksi sebagai wadah.
+- Cerita Budi, Rani, kucing, dan cicak adalah fiksi sebagai wadah.
