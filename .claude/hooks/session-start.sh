@@ -23,6 +23,10 @@ for delay in 0 2 4; do
   sleep "$delay"
   if timeout 60 git fetch --prune --quiet origin 2>/dev/null; then fetched=1; break; fi
 done
+# Clone cloud biasanya dangkal (shallow): tanpa riwayat lengkap, branch lama yang sudah digabung terlihat "belum masuk main" (alarm palsu).
+if [ "$fetched" = 1 ] && [ "$(git rev-parse --is-shallow-repository 2>/dev/null)" = "true" ]; then
+  timeout 120 git fetch --unshallow --quiet origin 2>/dev/null || true
+fi
 if [ "$fetched" != 1 ]; then
   echo "[sinkron repo] Gagal git fetch. Jalankan 'git fetch --prune origin' manual sebelum mulai kerja."
   exit 0

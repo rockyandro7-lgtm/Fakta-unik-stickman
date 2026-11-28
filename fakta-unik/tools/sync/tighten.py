@@ -1,7 +1,8 @@
 """Padatkan jeda suara + samakan durasi ke target, sambil menyimpan PETA WAKTU (aturan v6: semua timing dari audio final).
 
 Jalankan dari folder episode:
-  python <skill>/tools/sync/tighten.py audio/vo_raw.mp3 --target 44.4 [--keep 0.24] [--max-tempo 1.10]
+  python <skill>/tools/sync/tighten.py audio/vo_raw.mp3 --target 44.4 [--keep 0.24] [--max-tempo 1.10] [--protect 24.5-27.9,...]
+  --protect: rentang waktu MENTAH (dtk) yang jedanya tidak dipadatkan (misal hitungan "satu... dua... tiga..." yang sengaja lambat).
 Hasil:
   audio/vo.wav          suara final (hening awal/akhir dipangkas, jeda > keep dipendekkan, lalu atempo agar = target)
   audio/timemap.json    {"anchors": [[t_mentah, t_final], ...], "tempo": x} (linear per potong)
@@ -11,6 +12,7 @@ import argparse, json, os, re, subprocess
 import numpy as np, soundfile as sf
 ap = argparse.ArgumentParser(); ap.add_argument('src'); ap.add_argument('--target', type=float, default=0)
 ap.add_argument('--keep', type=float, default=.24); ap.add_argument('--noise', default='-38dB'); ap.add_argument('--max-tempo', type=float, default=1.10)
+ap.add_argument('--protect', default='')
 a = ap.parse_args(); os.makedirs('audio', exist_ok=True); SR = 44100
 subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', a.src, '-ac', '1', '-ar', str(SR), 'audio/vo_full.wav'], check=True)
 x, _ = sf.read('audio/vo_full.wav'); dur = len(x) / SR
@@ -18,6 +20,8 @@ log = subprocess.run(['ffmpeg', '-v', 'info', '-i', 'audio/vo_full.wav', '-af', 
 st = [float(v) for v in re.findall(r'silence_start: ([\d.]+)', log)]; en = [float(v) for v in re.findall(r'silence_end: ([\d.]+)', log)]
 if len(en) < len(st): en.append(dur)
 sil = list(zip(st, en))
+PROT = [tuple(float(v) for v in r.split('-')) for r in a.protect.split(',') if r]
+sil = [(s, e) for s, e in sil if not any(s < p1 and e > p0 for p0, p1 in PROT)]
 # potongan yang dibuang: [mulai, akhir] dalam waktu mentah
 cuts = []
 for s, e in sil:
